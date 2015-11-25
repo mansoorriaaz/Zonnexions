@@ -15,6 +15,8 @@
 		5382B9541C05C334006AA0D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5382B9521C05C334006AA0D6 /* LaunchScreen.storyboard */; };
 		5382B95F1C05C334006AA0D6 /* ZonnexionsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5382B95E1C05C334006AA0D6 /* ZonnexionsTests.m */; };
 		5382B96A1C05C334006AA0D6 /* ZonnexionsUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5382B9691C05C334006AA0D6 /* ZonnexionsUITests.m */; };
+		5382B9781C05C7B6006AA0D6 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 5382B9771C05C7B6006AA0D6 /* Podfile */; };
+		E61EB66CBDDEB2BD8D2F338F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DB8EBA975A92D4E89E58F1D /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,10 @@
 		5382B9651C05C334006AA0D6 /* ZonnexionsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZonnexionsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5382B9691C05C334006AA0D6 /* ZonnexionsUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZonnexionsUITests.m; sourceTree = "<group>"; };
 		5382B96B1C05C334006AA0D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5382B9771C05C7B6006AA0D6 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		73E55AFB8A05783925F6571A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		9DB8EBA975A92D4E89E58F1D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		F734AF28AC55E12F93C679AB /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E61EB66CBDDEB2BD8D2F338F /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,13 +85,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4A3D4DD7AA6D3DFC144A54FC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				73E55AFB8A05783925F6571A /* Pods.debug.xcconfig */,
+				F734AF28AC55E12F93C679AB /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		5382B9381C05C334006AA0D6 = {
 			isa = PBXGroup;
 			children = (
+				5382B9771C05C7B6006AA0D6 /* Podfile */,
 				5382B9431C05C334006AA0D6 /* Zonnexions */,
 				5382B95D1C05C334006AA0D6 /* ZonnexionsTests */,
 				5382B9681C05C334006AA0D6 /* ZonnexionsUITests */,
 				5382B9421C05C334006AA0D6 /* Products */,
+				4A3D4DD7AA6D3DFC144A54FC /* Pods */,
+				5C63C16152EAC574C3B3A34B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -140,6 +159,14 @@
 			path = ZonnexionsUITests;
 			sourceTree = "<group>";
 		};
+		5C63C16152EAC574C3B3A34B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9DB8EBA975A92D4E89E58F1D /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -147,9 +174,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5382B96E1C05C334006AA0D6 /* Build configuration list for PBXNativeTarget "Zonnexions" */;
 			buildPhases = (
+				1FED35491E80FE1297614EF3 /* Check Pods Manifest.lock */,
 				5382B93D1C05C334006AA0D6 /* Sources */,
 				5382B93E1C05C334006AA0D6 /* Frameworks */,
 				5382B93F1C05C334006AA0D6 /* Resources */,
+				FCBD91737ABB03AD7BF03782 /* Embed Pods Frameworks */,
+				9455DDC5C7363FDCADE92F64 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -245,6 +275,7 @@
 			files = (
 				5382B9541C05C334006AA0D6 /* LaunchScreen.storyboard in Resources */,
 				5382B9511C05C334006AA0D6 /* Assets.xcassets in Resources */,
+				5382B9781C05C7B6006AA0D6 /* Podfile in Resources */,
 				5382B94F1C05C334006AA0D6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -264,6 +295,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1FED35491E80FE1297614EF3 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		9455DDC5C7363FDCADE92F64 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FCBD91737ABB03AD7BF03782 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5382B93D1C05C334006AA0D6 /* Sources */ = {
@@ -411,23 +490,31 @@
 		};
 		5382B96F1C05C334006AA0D6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 73E55AFB8A05783925F6571A /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Zonnexions/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.EP.Zonnexions;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		5382B9701C05C334006AA0D6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F734AF28AC55E12F93C679AB /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Zonnexions/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.EP.Zonnexions;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -498,6 +585,7 @@
 				5382B9701C05C334006AA0D6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5382B9711C05C334006AA0D6 /* Build configuration list for PBXNativeTarget "ZonnexionsTests" */ = {
 			isa = XCConfigurationList;
@@ -506,6 +594,7 @@
 				5382B9731C05C334006AA0D6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5382B9741C05C334006AA0D6 /* Build configuration list for PBXNativeTarget "ZonnexionsUITests" */ = {
 			isa = XCConfigurationList;
@@ -514,6 +603,7 @@
 				5382B9761C05C334006AA0D6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
