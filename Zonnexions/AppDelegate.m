@@ -8,6 +8,13 @@
 
 #import "AppDelegate.h"
 
+
+#import "MMDrawerController.h"
+#import "MMDrawerVisualState.h"
+#import "LeftDrawerViewController.h"
+
+#import <QuartzCore/QuartzCore.h>
+
 @import GoogleMaps;
 
 @interface AppDelegate ()
@@ -20,6 +27,38 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [GMSServices provideAPIKey:@"AIzaSyCnAeb_HbBGv3O260mlsYMmyJluyGJPrac"];
     // Override point for customization after application launch.
+    
+    UIViewController * leftDrawer = [[LeftDrawerViewController alloc] init];
+    //UIViewController * leftDrawer = [[UIViewController alloc] init];
+    UIViewController * center = [[UIViewController alloc] init];
+    UIViewController * rightDrawer = [[UIViewController alloc] init];
+    
+    self.drawerController = [[MMDrawerController alloc]
+                             initWithCenterViewController:center
+                             leftDrawerViewController:leftDrawer
+                             rightDrawerViewController:rightDrawer];
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    [leftDrawer.view setBackgroundColor:[UIColor blueColor]];
+    [rightDrawer.view setBackgroundColor:[UIColor orangeColor]];
+    [center.view setBackgroundColor:[UIColor redColor]];
+    
+    UIColor * tintColor = [UIColor colorWithRed:29.0/255.0
+                                          green:173.0/255.0
+                                           blue:234.0/255.0
+                                          alpha:1.0];
+    
+    [self.drawerController setShowsShadow:YES];
+    [self.drawerController setRestorationIdentifier:@"MMDrawer"];
+    //[self.drawerController setMaximumRightDrawerWidth:200.0];
+    [self.drawerController setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeBezelPanningCenterView];
+    [self.drawerController setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeAll];
+    
+    [self.window setTintColor:tintColor];
+    [self.window setRootViewController:self.drawerController];
+    
+
     return YES;
 }
 

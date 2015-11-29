@@ -16,6 +16,15 @@
 		5382B95F1C05C334006AA0D6 /* ZonnexionsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5382B95E1C05C334006AA0D6 /* ZonnexionsTests.m */; };
 		5382B96A1C05C334006AA0D6 /* ZonnexionsUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5382B9691C05C334006AA0D6 /* ZonnexionsUITests.m */; };
 		5382B9781C05C7B6006AA0D6 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 5382B9771C05C7B6006AA0D6 /* Podfile */; };
+		53EBA31F1C0AF7E000607407 /* MMDrawerBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 53EBA3171C0AF7E000607407 /* MMDrawerBarButtonItem.m */; };
+		53EBA3201C0AF7E000607407 /* MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53EBA31A1C0AF7E000607407 /* MMDrawerController.m */; };
+		53EBA3211C0AF7E000607407 /* MMDrawerVisualState.m in Sources */ = {isa = PBXBuildFile; fileRef = 53EBA31C1C0AF7E000607407 /* MMDrawerVisualState.m */; };
+		53EBA3221C0AF7E000607407 /* UIViewController+MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53EBA31E1C0AF7E000607407 /* UIViewController+MMDrawerController.m */; };
+		53EBA3261C0B014600607407 /* LeftDrawerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53EBA3241C0B014600607407 /* LeftDrawerViewController.m */; };
+		53EBA3271C0B014600607407 /* LeftDrawerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53EBA3251C0B014600607407 /* LeftDrawerViewController.xib */; };
+		53EBA32A1C0B01FF00607407 /* SetingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53EBA3291C0B01FF00607407 /* SetingsViewController.m */; };
+		53EBA32D1C0B119000607407 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53EBA32C1C0B119000607407 /* MapViewController.m */; };
+		53EBA4431C0B1D2400607407 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53EBA4421C0B1D2400607407 /* SWRevealViewController.m */; };
 		E61EB66CBDDEB2BD8D2F338F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DB8EBA975A92D4E89E58F1D /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +63,24 @@
 		5382B9691C05C334006AA0D6 /* ZonnexionsUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZonnexionsUITests.m; sourceTree = "<group>"; };
 		5382B96B1C05C334006AA0D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5382B9771C05C7B6006AA0D6 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		53EBA3161C0AF7E000607407 /* MMDrawerBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMDrawerBarButtonItem.h; sourceTree = "<group>"; };
+		53EBA3171C0AF7E000607407 /* MMDrawerBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMDrawerBarButtonItem.m; sourceTree = "<group>"; };
+		53EBA3181C0AF7E000607407 /* MMDrawerController+Subclass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MMDrawerController+Subclass.h"; sourceTree = "<group>"; };
+		53EBA3191C0AF7E000607407 /* MMDrawerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMDrawerController.h; sourceTree = "<group>"; };
+		53EBA31A1C0AF7E000607407 /* MMDrawerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMDrawerController.m; sourceTree = "<group>"; };
+		53EBA31B1C0AF7E000607407 /* MMDrawerVisualState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMDrawerVisualState.h; sourceTree = "<group>"; };
+		53EBA31C1C0AF7E000607407 /* MMDrawerVisualState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMDrawerVisualState.m; sourceTree = "<group>"; };
+		53EBA31D1C0AF7E000607407 /* UIViewController+MMDrawerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MMDrawerController.h"; sourceTree = "<group>"; };
+		53EBA31E1C0AF7E000607407 /* UIViewController+MMDrawerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MMDrawerController.m"; sourceTree = "<group>"; };
+		53EBA3231C0B014600607407 /* LeftDrawerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftDrawerViewController.h; sourceTree = "<group>"; };
+		53EBA3241C0B014600607407 /* LeftDrawerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftDrawerViewController.m; sourceTree = "<group>"; };
+		53EBA3251C0B014600607407 /* LeftDrawerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LeftDrawerViewController.xib; sourceTree = "<group>"; };
+		53EBA3281C0B01FF00607407 /* SetingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetingsViewController.h; sourceTree = "<group>"; };
+		53EBA3291C0B01FF00607407 /* SetingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetingsViewController.m; sourceTree = "<group>"; };
+		53EBA32B1C0B119000607407 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapViewController.h; path = ../../splitBanana/MapViewController.h; sourceTree = "<group>"; };
+		53EBA32C1C0B119000607407 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MapViewController.m; path = ../../splitBanana/MapViewController.m; sourceTree = "<group>"; };
+		53EBA4411C0B1D2400607407 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		53EBA4421C0B1D2400607407 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		73E55AFB8A05783925F6571A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		9DB8EBA975A92D4E89E58F1D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		F734AF28AC55E12F93C679AB /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -98,6 +125,8 @@
 			isa = PBXGroup;
 			children = (
 				5382B9771C05C7B6006AA0D6 /* Podfile */,
+				53EBA4401C0B1D2400607407 /* SWRevealViewController */,
+				53EBA3151C0AF7E000607407 /* MMDrawerController */,
 				5382B9431C05C334006AA0D6 /* Zonnexions */,
 				5382B95D1C05C334006AA0D6 /* ZonnexionsTests */,
 				5382B9681C05C334006AA0D6 /* ZonnexionsUITests */,
@@ -124,6 +153,13 @@
 				5382B9481C05C334006AA0D6 /* AppDelegate.m */,
 				5382B94A1C05C334006AA0D6 /* ViewController.h */,
 				5382B94B1C05C334006AA0D6 /* ViewController.m */,
+				53EBA3281C0B01FF00607407 /* SetingsViewController.h */,
+				53EBA3291C0B01FF00607407 /* SetingsViewController.m */,
+				53EBA3231C0B014600607407 /* LeftDrawerViewController.h */,
+				53EBA3241C0B014600607407 /* LeftDrawerViewController.m */,
+				53EBA3251C0B014600607407 /* LeftDrawerViewController.xib */,
+				53EBA32B1C0B119000607407 /* MapViewController.h */,
+				53EBA32C1C0B119000607407 /* MapViewController.m */,
 				5382B94D1C05C334006AA0D6 /* Main.storyboard */,
 				5382B9501C05C334006AA0D6 /* Assets.xcassets */,
 				5382B9521C05C334006AA0D6 /* LaunchScreen.storyboard */,
@@ -157,6 +193,32 @@
 				5382B96B1C05C334006AA0D6 /* Info.plist */,
 			);
 			path = ZonnexionsUITests;
+			sourceTree = "<group>";
+		};
+		53EBA3151C0AF7E000607407 /* MMDrawerController */ = {
+			isa = PBXGroup;
+			children = (
+				53EBA3161C0AF7E000607407 /* MMDrawerBarButtonItem.h */,
+				53EBA3171C0AF7E000607407 /* MMDrawerBarButtonItem.m */,
+				53EBA3181C0AF7E000607407 /* MMDrawerController+Subclass.h */,
+				53EBA3191C0AF7E000607407 /* MMDrawerController.h */,
+				53EBA31A1C0AF7E000607407 /* MMDrawerController.m */,
+				53EBA31B1C0AF7E000607407 /* MMDrawerVisualState.h */,
+				53EBA31C1C0AF7E000607407 /* MMDrawerVisualState.m */,
+				53EBA31D1C0AF7E000607407 /* UIViewController+MMDrawerController.h */,
+				53EBA31E1C0AF7E000607407 /* UIViewController+MMDrawerController.m */,
+			);
+			path = MMDrawerController;
+			sourceTree = SOURCE_ROOT;
+		};
+		53EBA4401C0B1D2400607407 /* SWRevealViewController */ = {
+			isa = PBXGroup;
+			children = (
+				53EBA4411C0B1D2400607407 /* SWRevealViewController.h */,
+				53EBA4421C0B1D2400607407 /* SWRevealViewController.m */,
+			);
+			name = SWRevealViewController;
+			path = "SWRevealViewController-master/SWRevealViewController";
 			sourceTree = "<group>";
 		};
 		5C63C16152EAC574C3B3A34B /* Frameworks */ = {
@@ -273,6 +335,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53EBA3271C0B014600607407 /* LeftDrawerViewController.xib in Resources */,
 				5382B9541C05C334006AA0D6 /* LaunchScreen.storyboard in Resources */,
 				5382B9511C05C334006AA0D6 /* Assets.xcassets in Resources */,
 				5382B9781C05C7B6006AA0D6 /* Podfile in Resources */,
@@ -349,7 +412,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53EBA3211C0AF7E000607407 /* MMDrawerVisualState.m in Sources */,
 				5382B94C1C05C334006AA0D6 /* ViewController.m in Sources */,
+				53EBA3221C0AF7E000607407 /* UIViewController+MMDrawerController.m in Sources */,
+				53EBA3201C0AF7E000607407 /* MMDrawerController.m in Sources */,
+				53EBA3261C0B014600607407 /* LeftDrawerViewController.m in Sources */,
+				53EBA32A1C0B01FF00607407 /* SetingsViewController.m in Sources */,
+				53EBA31F1C0AF7E000607407 /* MMDrawerBarButtonItem.m in Sources */,
+				53EBA32D1C0B119000607407 /* MapViewController.m in Sources */,
+				53EBA4431C0B1D2400607407 /* SWRevealViewController.m in Sources */,
 				5382B9491C05C334006AA0D6 /* AppDelegate.m in Sources */,
 				5382B9461C05C334006AA0D6 /* main.m in Sources */,
 			);
@@ -442,7 +513,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -480,7 +551,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
