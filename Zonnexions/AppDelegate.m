@@ -13,6 +13,9 @@
 #import "MMDrawerVisualState.h"
 #import "LeftDrawerViewController.h"
 
+#import "FrontViewController.h"
+#import "RearViewController.h"
+
 #import <QuartzCore/QuartzCore.h>
 
 @import GoogleMaps;
@@ -23,11 +26,13 @@
 
 @implementation AppDelegate
 
+@synthesize window = _window;
+@synthesize viewController = _viewController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [GMSServices provideAPIKey:@"AIzaSyCnAeb_HbBGv3O260mlsYMmyJluyGJPrac"];
     // Override point for customization after application launch.
-    
+    /*
     UIViewController * leftDrawer = [[LeftDrawerViewController alloc] init];
     //UIViewController * leftDrawer = [[UIViewController alloc] init];
     UIViewController * center = [[UIViewController alloc] init];
@@ -57,7 +62,26 @@
     
     [self.window setTintColor:tintColor];
     [self.window setRootViewController:self.drawerController];
+    */
     
+    UIWindow *window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window = window;
+    
+    FrontViewController *frontViewController = [[FrontViewController alloc] init];
+    RearViewController *rearViewController = [[RearViewController alloc] init];
+    
+    UINavigationController *frontNavigationController = [[UINavigationController alloc] initWithRootViewController:frontViewController];
+    UINavigationController *rearNavigationController = [[UINavigationController alloc] initWithRootViewController:rearViewController];
+    
+    SWRevealViewController *mainRevealController = [[SWRevealViewController alloc]
+                                                    initWithRearViewController:rearNavigationController frontViewController:frontNavigationController];
+    
+    mainRevealController.delegate = self;
+    
+    self.viewController = mainRevealController;
+    
+    self.window.rootViewController = self.viewController;
+    [self.window makeKeyAndVisible];
 
     return YES;
 }
