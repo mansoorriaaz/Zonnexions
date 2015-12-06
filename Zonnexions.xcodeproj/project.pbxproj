@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		534737981C13CBED00D87B7B /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 534737971C13CBED00D87B7B /* MapViewController.m */; };
 		536621051C0B5D25006AF426 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536621041C0B5D25006AF426 /* ChatViewController.swift */; };
 		5366211A1C0B5D4C006AF426 /* SocketAckEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536621071C0B5D4C006AF426 /* SocketAckEmitter.swift */; };
 		5366211B1C0B5D4C006AF426 /* SocketAckManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536621081C0B5D4C006AF426 /* SocketAckManager.swift */; };
@@ -43,7 +44,6 @@
 		53EBA3261C0B014600607407 /* LeftDrawerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53EBA3241C0B014600607407 /* LeftDrawerViewController.m */; };
 		53EBA3271C0B014600607407 /* LeftDrawerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53EBA3251C0B014600607407 /* LeftDrawerViewController.xib */; };
 		53EBA32A1C0B01FF00607407 /* SetingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53EBA3291C0B01FF00607407 /* SetingsViewController.m */; };
-		53EBA32D1C0B119000607407 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53EBA32C1C0B119000607407 /* MapViewController.m */; };
 		53EBA4431C0B1D2400607407 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53EBA4421C0B1D2400607407 /* SWRevealViewController.m */; };
 		53EBA4491C0B2B9200607407 /* FrontViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53EBA4461C0B2B9200607407 /* FrontViewController.m */; };
 		53EBA44A1C0B2B9200607407 /* RearViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53EBA4481C0B2B9200607407 /* RearViewController.m */; };
@@ -73,6 +73,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		534737961C13CBED00D87B7B /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		534737971C13CBED00D87B7B /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		536621031C0B5D25006AF426 /* Zonnexions-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Zonnexions-Bridging-Header.h"; sourceTree = "<group>"; };
 		536621041C0B5D25006AF426 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		536621071C0B5D4C006AF426 /* SocketAckEmitter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketAckEmitter.swift; sourceTree = "<group>"; };
@@ -125,8 +127,6 @@
 		53EBA3251C0B014600607407 /* LeftDrawerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LeftDrawerViewController.xib; sourceTree = "<group>"; };
 		53EBA3281C0B01FF00607407 /* SetingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetingsViewController.h; sourceTree = "<group>"; };
 		53EBA3291C0B01FF00607407 /* SetingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetingsViewController.m; sourceTree = "<group>"; };
-		53EBA32B1C0B119000607407 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapViewController.h; path = ../../splitBanana/MapViewController.h; sourceTree = "<group>"; };
-		53EBA32C1C0B119000607407 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MapViewController.m; path = ../../splitBanana/MapViewController.m; sourceTree = "<group>"; };
 		53EBA4411C0B1D2400607407 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		53EBA4421C0B1D2400607407 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		53EBA4451C0B2B9200607407 /* FrontViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FrontViewController.h; sourceTree = "<group>"; };
@@ -241,6 +241,8 @@
 				5382B9481C05C334006AA0D6 /* AppDelegate.m */,
 				5382B94A1C05C334006AA0D6 /* ViewController.h */,
 				5382B94B1C05C334006AA0D6 /* ViewController.m */,
+				534737961C13CBED00D87B7B /* MapViewController.h */,
+				534737971C13CBED00D87B7B /* MapViewController.m */,
 				53EBA4531C0B332800607407 /* FriendsViewController.h */,
 				53EBA4541C0B332800607407 /* FriendsViewController.m */,
 				53EBA3281C0B01FF00607407 /* SetingsViewController.h */,
@@ -248,8 +250,6 @@
 				53EBA3231C0B014600607407 /* LeftDrawerViewController.h */,
 				53EBA3241C0B014600607407 /* LeftDrawerViewController.m */,
 				53EBA3251C0B014600607407 /* LeftDrawerViewController.xib */,
-				53EBA32B1C0B119000607407 /* MapViewController.h */,
-				53EBA32C1C0B119000607407 /* MapViewController.m */,
 				5382B94D1C05C334006AA0D6 /* Main.storyboard */,
 				5382B9501C05C334006AA0D6 /* Assets.xcassets */,
 				5382B9521C05C334006AA0D6 /* LaunchScreen.storyboard */,
@@ -537,6 +537,7 @@
 				5366212A1C0B5D4C006AF426 /* SocketTypes.swift in Sources */,
 				53EBA44A1C0B2B9200607407 /* RearViewController.m in Sources */,
 				5382B94C1C05C334006AA0D6 /* ViewController.m in Sources */,
+				534737981C13CBED00D87B7B /* MapViewController.m in Sources */,
 				536621281C0B5D4C006AF426 /* SocketParser.swift in Sources */,
 				53EBA3221C0AF7E000607407 /* UIViewController+MMDrawerController.m in Sources */,
 				53EBA3201C0AF7E000607407 /* MMDrawerController.m in Sources */,
@@ -548,7 +549,6 @@
 				53EBA31F1C0AF7E000607407 /* MMDrawerBarButtonItem.m in Sources */,
 				536621261C0B5D4C006AF426 /* SocketLogger.swift in Sources */,
 				5366211E1C0B5D4C006AF426 /* SocketEngineClient.swift in Sources */,
-				53EBA32D1C0B119000607407 /* MapViewController.m in Sources */,
 				53EBA4431C0B1D2400607407 /* SWRevealViewController.m in Sources */,
 				5382B9491C05C334006AA0D6 /* AppDelegate.m in Sources */,
 				536621051C0B5D25006AF426 /* ChatViewController.swift in Sources */,
