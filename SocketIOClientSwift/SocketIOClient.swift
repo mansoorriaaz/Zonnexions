@@ -30,6 +30,7 @@ public final class SocketIOClient: NSObject, SocketEngineClient {
     public private(set) var engine: SocketEngineSpec?
     public private(set) var status = SocketIOClientStatus.NotConnected
     
+    public var forceNew = false
     public var nsp = "/"
     public var options: Set<SocketIOClientOption>
     public var reconnects = true
@@ -58,17 +59,14 @@ public final class SocketIOClient: NSObject, SocketEngineClient {
     /**
      Type safe way to create a new SocketIOClient. opts can be omitted
      */
-    public init(var socketURL: String, options: Set<SocketIOClientOption> = []) {
+    public init(socketURL: String, options: Set<SocketIOClientOption> = []) {
         self.options = options
         
         if socketURL["https://"].matches().count != 0 {
             self.options.insertIgnore(.Secure(true))
         }
         
-        socketURL = socketURL["http://"] ~= ""
-        socketURL = socketURL["https://"] ~= ""
-        
-        self.socketURL = socketURL
+        self.socketURL = socketURL["https?://"] ~= ""
         
         for option in options ?? [] {
             switch option {
@@ -88,6 +86,8 @@ public final class SocketIOClient: NSObject, SocketEngineClient {
                 DefaultSocketLogger.Logger = logger
             case .HandleQueue(let queue):
                 handleQueue = queue
+            case .ForceNew(let force):
+                forceNew = force
             default:
                 continue
             }
@@ -109,7 +109,6 @@ public final class SocketIOClient: NSObject, SocketEngineClient {
     
     deinit {
         DefaultSocketLogger.Logger.log("Client is being deinit", type: logType)
-        DefaultSocketLogger.Logger.log = false
         engine?.close()
     }
     
@@ -154,20 +153,20 @@ public final class SocketIOClient: NSObject, SocketEngineClient {
             assert(timeoutAfter >= 0, "Invalid timeout: \(timeoutAfter)")
             
             guard status != .Connected else {
-                return
-            }
-            
-            if status == .Closed {
-                DefaultSocketLogger.Logger.log("Warning! This socket was previously closed. This might be dangerous!",
+                DefaultSocketLogger.Logger.log("Tried connecting on an already connected socket",
                     type: logType)
-            }
-            
-            status = SocketIOClientStatus.Connecting
-            addEngine().open(connectParams)
-            
-            guard timeoutAfter != 0 else {
                 return
             }
+            
+            status = .Connecting
+            
+            if engine == nil || forceNew {
+                addEngine().open(connectParams)
+            } else {
+                engine?.open(connectParams)
+            }
+            
+            guard timeoutAfter != 0 else { return }
             
             let time = dispatch_time(DISPATCH_TIME_NOW, Int64(timeoutAfter) * Int64(NSEC_PER_SEC))
             
@@ -388,38 +387,45 @@ public final class SocketIOClient: NSObject, SocketEngineClient {
     }
     
     /**
+    Removes a handler with the specified UUID gotten from an `on` or `once`
+    */
+    public func off(id id: NSUUID) {
+        DefaultSocketLogger.Logger.log("Removing handler with id: %@", type: logType, args: id)
+        
+        handlers = handlers.filter { $0.id != id }
+    }
+    
+    /**
      Adds a handler for an event.
+     Returns: A unique id for the handler
      */
-    public func on(event: String, callback: NormalCallback) {
+    public func on(event: String, callback: NormalCallback) -> NSUUID {
         DefaultSocketLogger.Logger.log("Adding handler for event: %@", type: logType, args: event)
         
         let handler = SocketEventHandler(event: event, id: NSUUID(), callback: callback)
         handlers.append(handler)
+        
+        return handler.id
     }
     
     /**
      Adds a single-use handler for an event.
+     Returns: A unique id for the handler
      */
-    public func once(event: String, callback: NormalCallback) {
+    public func once(event: String, callback: NormalCallback) -> NSUUID {
         DefaultSocketLogger.Logger.log("Adding once handler for event: %@", type: logType, args: event)
         
         let id = NSUUID()
         
         let handler = SocketEventHandler(event: event, id: id) {[weak self] data, ack in
             guard let this = self else {return}
-            this.handlers = this.handlers.filter {$0.id != id}
+            this.off(id: id)
             callback(data, ack)
         }
         
         handlers.append(handler)
-    }
-    
-    /**
-     Removes all handlers.
-     Can be used after disconnecting to break any potential remaining retain cycles.
-     */
-    public func removeAllHandlers() {
-        handlers.removeAll(keepCapacity: false)
+        
+        return handler.id
     }
     
     /**
@@ -453,6 +459,14 @@ public final class SocketIOClient: NSObject, SocketEngineClient {
      */
     public func reconnect() {
         tryReconnect()
+    }
+    
+    /**
+     Removes all handlers.
+     Can be used after disconnecting to break any potential remaining retain cycles.
+     */
+    public func removeAllHandlers() {
+        handlers.removeAll(keepCapacity: false)
     }
     
     private func tryReconnect() {
@@ -493,6 +507,10 @@ public final class SocketIOClient: NSObject, SocketEngineClient {
 
 // Test extensions
 extension SocketIOClient {
+    var testHandlers: [SocketEventHandler] {
+        return handlers
+    }
+    
     func setTestable() {
         status = .Connected
     }

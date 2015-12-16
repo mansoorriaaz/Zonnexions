@@ -1,10 +1,97 @@
 PODS:
+  - CMDQueryStringSerialization (0.4.1):
+    - ISO8601
+  - cocoa-oauth (0.0.1):
+    - NSData+Base64 (~> 1.0)
+  - Crashlytics (3.4.1):
+    - Fabric (~> 1.6.0)
+  - Fabric (1.6.1)
   - GoogleMaps (1.10.5)
+  - ISO8601 (0.3.0)
+  - NSData+Base64 (1.0.0)
+  - ReactiveCocoa (2.5):
+    - ReactiveCocoa/UI (= 2.5)
+  - ReactiveCocoa/Core (2.5):
+    - ReactiveCocoa/no-arc
+  - ReactiveCocoa/no-arc (2.5)
+  - ReactiveCocoa/UI (2.5):
+    - ReactiveCocoa/Core
+  - SimpleAuth (0.3.9):
+    - SimpleAuth/BoxWeb (= 0.3.9)
+    - SimpleAuth/Core (= 0.3.9)
+    - SimpleAuth/DropboxWeb (= 0.3.9)
+    - SimpleAuth/Facebook (= 0.3.9)
+    - SimpleAuth/FacebookWeb (= 0.3.9)
+    - SimpleAuth/FoursquareWeb (= 0.3.9)
+    - SimpleAuth/GoogleWeb (= 0.3.9)
+    - SimpleAuth/Instagram (= 0.3.9)
+    - SimpleAuth/LinkedInWeb (= 0.3.9)
+    - SimpleAuth/Meetup (= 0.3.9)
+    - SimpleAuth/OneDriveWeb (= 0.3.9)
+    - SimpleAuth/SinaWeiboWeb (= 0.3.9)
+    - SimpleAuth/Strava (= 0.3.9)
+    - SimpleAuth/Trello (= 0.3.9)
+    - SimpleAuth/TripIt (= 0.3.9)
+    - SimpleAuth/Tumblr (= 0.3.9)
+    - SimpleAuth/Twitter (= 0.3.9)
+    - SimpleAuth/TwitterWeb (= 0.3.9)
+  - SimpleAuth/BoxWeb (0.3.9):
+    - SimpleAuth/Core
+  - SimpleAuth/Core (0.3.9):
+    - CMDQueryStringSerialization
+    - ReactiveCocoa
+  - SimpleAuth/DropboxWeb (0.3.9):
+    - SimpleAuth/Core
+  - SimpleAuth/Facebook (0.3.9):
+    - SimpleAuth/Core
+  - SimpleAuth/FacebookWeb (0.3.9):
+    - SimpleAuth/Core
+  - SimpleAuth/FoursquareWeb (0.3.9):
+    - SimpleAuth/Core
+  - SimpleAuth/GoogleWeb (0.3.9):
+    - SimpleAuth/Core
+  - SimpleAuth/Instagram (0.3.9):
+    - SimpleAuth/Core
+  - SimpleAuth/LinkedInWeb (0.3.9):
+    - SimpleAuth/Core
+  - SimpleAuth/Meetup (0.3.9):
+    - SimpleAuth/Core
+  - SimpleAuth/OneDriveWeb (0.3.9):
+    - SimpleAuth/Core
+  - SimpleAuth/SinaWeiboWeb (0.3.9):
+    - SimpleAuth/Core
+  - SimpleAuth/Strava (0.3.9):
+    - SimpleAuth/Core
+  - SimpleAuth/Trello (0.3.9):
+    - SimpleAuth/Core
+  - SimpleAuth/TripIt (0.3.9):
+    - cocoa-oauth
+    - SimpleAuth/Core
+  - SimpleAuth/Tumblr (0.3.9):
+    - cocoa-oauth
+    - SimpleAuth/Core
+  - SimpleAuth/Twitter (0.3.9):
+    - cocoa-oauth
+    - SimpleAuth/Core
+  - SimpleAuth/TwitterWeb (0.3.9):
+    - cocoa-oauth
+    - SimpleAuth/Core
 
 DEPENDENCIES:
+  - Crashlytics
+  - Fabric
   - GoogleMaps
+  - SimpleAuth
 
 SPEC CHECKSUMS:
+  CMDQueryStringSerialization: 4bb0a2f5e7d8d8678d911d88072274952cbef4e5
+  cocoa-oauth: 1200a2170276a62a975f2786d505dab6e2db1fa8
+  Crashlytics: 41574a245bc6ae10c55d57f385ebd2004e5bee05
+  Fabric: bf0ceb04e7c924090efc5f8c55e4fbcca189e0a0
   GoogleMaps: da51c62c338c2d9c47cdad470a0d1e0e4b8544e4
+  ISO8601: 8d8a22d5edf0554a1cf75bac028c76c1dc0ffaef
+  NSData+Base64: 4e84902c4db907a15673474677e57763ef3903e4
+  ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
+  SimpleAuth: bc7d594f90711a7e6ef7624dce5aa8c8b09770ab
 
 COCOAPODS: 0.39.0

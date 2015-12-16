@@ -6,6 +6,58 @@
 //  Copyright © 2015 EP. All rights reserved.
 //
 
+
+import Foundation
+import UIKit
+
+@objc class File: NSObject {
+    let socket = SocketIOClient(socketURL: "103.23.21.217:3000")
+    
+    var property:String = ""
+    func method() {
+        /*
+        socket.on("connecti") {data, ack in
+            //println("Message for you! \(data[0])")
+            print("connected")
+        }
+        */
+        
+        
+        print(socket.socketURL)
+        socket.on("hello")
+            {
+                data, ack in
+                print(" hello connected")
+                print(data)
+        }
+        socket.connect()
+        print("end method")
+        
+    }
+    /*
+    
+    func hello()
+    {
+        /*socket.on("hello"){data, ack in
+            print("hello mac")
+        }*/
+        socket.on("hello")
+        {
+            data, ack in
+            print(" hello connected")
+            print(data)
+        }
+        
+        socket.connect()
+        
+    }
+    
+    */
+    
+}
+
+
+/*
 import Foundation
 import UIKit
 
@@ -15,10 +67,14 @@ import UIKit
 
 class ViewController: UIViewController, UIAlertViewDelegate {
 
-let socket = SocketIOClient(socketURL: "node.sekolahhebat.com:3000")
+let socket = SocketIOClient(socketURL: "103.23.21.217:3000")
+    
+    
 
 //   let socket = SocketIOClient(socketURL: "localhost:8080", options: [.Log(true), .ForcePolling(true)])
 
+    
+    
 
 override func viewDidLoad()
     {
@@ -50,3 +106,4 @@ override func viewDidLoad()
     
     }
 }
+*/

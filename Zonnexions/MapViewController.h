@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "AppDelegate.h"
+#import "ViewController.h"
 #import "SWRevealViewController.h"
 
-@interface MapViewController : UIViewController <UIGestureRecognizerDelegate>
+@interface MapViewController : ViewController <UIGestureRecognizerDelegate>
 
 @end

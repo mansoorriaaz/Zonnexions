@@ -10,8 +10,9 @@
 #import "AppDelegate.h"
 #import "MapViewController.h"
 #import "SWRevealViewController.h"
+#import "ViewController.h"
 
-@interface FriendsViewController : UIViewController <UITableViewDataSource,UITableViewDelegate>
+@interface FriendsViewController : ViewController <UITableViewDataSource,UITableViewDelegate>
 
 
 

@@ -22,6 +22,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.appd = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+    
+    [self.appd.socket on:@"hello" callback:^(NSArray * data, SocketAckEmitter * ack) {
+        NSLog(@"ths is an response from server =  %@",data);
+    }];
     // Do any additional setup after loading the view, typically from a nib.
 }
 

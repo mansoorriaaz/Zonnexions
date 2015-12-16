@@ -22,6 +22,7 @@
 
 */
 
+#import "Zonnexions-Swift.h"
 #import "RearViewController.h"
 
 #import "SWRevealViewController.h"
@@ -29,6 +30,9 @@
 #import "MapViewController.h"
 #import "SetingsViewController.h"
 #import "FriendsViewController.h"
+#import "ChatViewController.h"
+
+#import "testingViewController.h"
 
 
 @interface RearViewController() 
@@ -172,12 +176,12 @@
 	else if (row == 3)
 	{
 		text = @"Friend List";
-	}/*
+	}
     else if (row == 4)
 	{
-		text = @"A RevealViewController !!";
+		text = @"Chat";
 	}
-    */
+    
     cell.textLabel.text = NSLocalizedString( text, nil );
 	
 	return cell;
@@ -224,7 +228,9 @@
     else if (row == 1)
     {
         MapViewController *mapViewController = [[MapViewController alloc] init];
+        //testingViewController *mapViewController = [[testingViewController alloc] init];
         newFrontController = [[UINavigationController alloc] initWithRootViewController:mapViewController];
+        
     }
     
     else if ( row == 2 )
@@ -261,8 +267,8 @@
     }
     else if (row == 4)
     {
-         *friendsViewController = [[FriendsViewController alloc] init];
-        newFrontController = [[UINavigationController alloc] initWithRootViewController:friendsViewController];
+        ChatViewController *chatViewController = [[ChatViewController alloc] init];
+        newFrontController = [[UINavigationController alloc] initWithRootViewController:chatViewController];
     }
     
     [revealController pushFrontViewController:newFrontController animated:YES];

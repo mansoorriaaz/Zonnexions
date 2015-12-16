@@ -27,6 +27,7 @@
 #import "FrontViewController.h"
 #import "SWRevealViewController.h"
 
+
 @interface FrontViewController()
 
 // Private Methods:
@@ -42,8 +43,7 @@
 - (void)viewDidLoad
 {
 	[super viewDidLoad];
-	
-	self.title = NSLocalizedString(@"Tampilan Awal Apps", nil);
+    self.title = NSLocalizedString(@"Tampilan Awal Apps", nil);
     
     SWRevealViewController *revealController = [self revealViewController];
     
