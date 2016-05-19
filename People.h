@@ -12,5 +12,6 @@
 
 @property NSString *name;
 @property NSString *customId;
+@property NSString *distance;
 
 @end

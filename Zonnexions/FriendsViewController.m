@@ -15,9 +15,11 @@
 @end
 
 NSMutableArray *tableData3;
+NSMutableDictionary *tableDataUser;
 int check;
 NSString *friendName;
 People *currentUser;
+People *user;
 CLLocation *location;
 CLLocationManager *locationManager;
 LGChatController *chatController;
@@ -78,13 +80,16 @@ CLLocationDistance *distance;
 
 - (void)userlist:(NSNotification *) notification
 {
+    NSLog(@"USER LIST");
     NSLog(@"table3 1 : %@", [tableData3 description]);
     [tableData3 removeAllObjects];
     NSLog(@"table3 2 : %@", [tableData3 description]);
-    NSLog(@"user list");
-        NSDictionary *dic = [notification userInfo];
+    
+    NSDictionary *dic = [notification userInfo];
+    NSLog(@"dic desc %@", [dic description]);
     for (NSString* key in dic){
-        People *user = [[People alloc] init];
+    NSLog(@"user list");    
+        user = [[People alloc] init];
         user.name = (NSString *)[dic objectForKey:key];
         user.customId = key;
         
@@ -96,6 +101,7 @@ CLLocationDistance *distance;
 
 - (void)grabFriend
 {
+    NSLog(@"GRAB FRIEND");
     locationManager = [[CLLocationManager alloc] init];
     locationManager.distanceFilter = kCLDistanceFilterNone;
     locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters; // 100 m
@@ -137,6 +143,20 @@ CLLocationDistance *distance;
         NSLog(@"marking:");
         NSDictionary *dic = [notification userInfo];
         NSLog(@"marked : %@", [dic description]);
+        tableDataUser = [[NSMutableDictionary alloc]initWithDictionary:dic];
+        NSLog(@"user loc : %@", [tableDataUser description] );
+//        int i;
+//        for (NSObject* key in tableData3) {
+//            People *user = (People *) [tableData3 objectAtIndex:i];
+//            
+//            if (user.name == [tableDataUser objectForKey:@"responder"]) {
+//                user.name = [tableDataUser objectForKey:@"responder"];
+//                user.customId = [tableDataUser objectForKey:@"responderCustomId"];
+//                user.distance = [tableDataUser objectForKey:@"distance"];
+//                [tableData3 addObject:user];
+//            }
+//            i++;
+//        }
         
 //        CLLocationDegrees _lat = [[dic objectForKey:@"lat"] doubleValue];
 //        CLLocationDegrees _long = [[dic objectForKey:@"long"] doubleValue];
@@ -151,7 +171,7 @@ CLLocationDistance *distance;
 //        marker.userKey = [dic objectForKey:@"responderCustomId"];
 //        marker.snippet = @"test";
 //        marker.infoWindowAnchor = CGPointMake(0.44f, 0.45f);
-        
+        [self.tableView reloadData];
     }
     
 }
@@ -219,14 +239,34 @@ CLLocationDistance *distance;
     }
     
     People *user = (People *) [tableData3 objectAtIndex:indexPath.row];
+    NSLog(@"table data user %@", [tableDataUser description]);
     NSString * text = user.name;
+
+//    if (tableDataUser) {
+//        int i;
+//        for (NSString *key in tableDataUser) {
+//            if (user.name == [tableDataUser objectForKey:@"responder"]) {
+//                text = [tableDataUser valueForKey:@"distance"];
+//            }
+//            i++;
+//        }
+//    }
+    
+//    NSDictionary *dict = [tableDataUser objectForKey:@"responder"];
+//    NSDictionary *dict=[tableDataUser valueForKeyPath:user.name][5];
+//    NSString *dict=[[tableDataUser valueForKeyPath:user.name][0] objectForKey:@"distance"];
+//    NSLog(@"dict data %@", [dict description]);
+//    NSLog(@"dict data %@", dict);
+
+//    NSString *locationData = [tableDataUser objectForKey:user.name];
+    
     
     UIFont * customFont = [UIFont fontWithName:@"Montserrat-ultralight" size:14]; //custom font
     
     CGSize labelSize = [text sizeWithFont:customFont constrainedToSize:CGSizeMake(380, 20) lineBreakMode:NSLineBreakByTruncatingTail];
     
     UILabel *nameLabel = [[UILabel alloc]initWithFrame:CGRectMake(91, 10, 380, 40)];
-    nameLabel.text = text;
+    nameLabel.text = user.name;
     nameLabel.font = [UIFont fontWithName:@"Montserrat-Bold" size:18];
     nameLabel.numberOfLines = 1;
     nameLabel.baselineAdjustment = UIBaselineAdjustmentAlignBaselines; // or UIBaselineAdjustmentAlignCenters, or UIBaselineAdjustmentNone
@@ -241,7 +281,7 @@ CLLocationDistance *distance;
     
     UILabel *rangeLabel = [[UILabel alloc]initWithFrame:CGRectMake(91, 45, 400, labelSize.height)];
     NSString *jarak;
-    rangeLabel.text = @"approx %@ meters", jarak ;
+    rangeLabel.text = @"approx %@ meters", text ;
     rangeLabel.font = customFont;
     rangeLabel.numberOfLines = 1;
     rangeLabel.baselineAdjustment = UIBaselineAdjustmentAlignBaselines; // or UIBaselineAdjustmentAlignCenters, or UIBaselineAdjustmentNone

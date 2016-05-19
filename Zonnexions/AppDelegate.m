@@ -203,6 +203,7 @@
    
     [self.socket on:@"user list" callback:^(NSArray* data, SocketAckEmitter* ack) {
         NSMutableDictionary *dic = (NSMutableDictionary*)[data objectAtIndex:0];
+        
         NSLog(@"%@", [[NSUserDefaults standardUserDefaults]objectForKey:@"custom id"]);
         [dic removeObjectForKey:[[NSUserDefaults standardUserDefaults] objectForKey:@"custom id"]];
         [[NSNotificationCenter defaultCenter] postNotificationName:@"user list" object:self userInfo:dic];
