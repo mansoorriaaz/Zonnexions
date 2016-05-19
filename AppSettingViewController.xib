@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Montserrat-Regular.otf">
+            <string>Montserrat-Regular</string>
+            <string>Montserrat-Regular</string>
+            <string>Montserrat-Regular</string>
+            <string>Montserrat-Regular</string>
+        </mutableArray>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AppSettingViewController">
+            <connections>
+                <outlet property="Distance" destination="Bqh-iB-JcM" id="Mp8-pO-qbL"/>
+                <outlet property="distance" destination="Bqh-iB-JcM" id="FuK-PX-1Bj"/>
+                <outlet property="distanceType" destination="wur-VI-zrI" id="48a-sG-719"/>
+                <outlet property="mySlider" destination="RZU-Vi-ofc" id="Kjh-er-N2U"/>
+                <outlet property="shareLoc" destination="LXt-ub-Zit" id="Ab5-KF-8R2"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rCh-kJ-cMs">
+                    <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                    <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="25"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="RZU-Vi-ofc">
+                    <rect key="frame" x="0.0" y="-15" width="118" height="31"/>
+                    <connections>
+                        <action selector="cut:" destination="-2" eventType="valueChanged" id="8cL-zY-mWE"/>
+                        <action selector="sliderChanged:" destination="-1" eventType="valueChanged" id="hEn-Kf-mdo"/>
+                    </connections>
+                </slider>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6aw-to-OWu">
+                    <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                    <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                    <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
+                        <rect key="frame" x="23" y="174" width="118" height="21"/>
+                    </variation>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="KM" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wur-VI-zrI">
+                    <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                    <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                    <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
+                        <rect key="frame" x="336" y="174" width="42" height="21"/>
+                    </variation>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bqh-iB-JcM">
+                    <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                    <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
+                        <rect key="frame" x="261" y="174" width="58" height="21"/>
+                    </variation>
+                </label>
+                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LXt-ub-Zit">
+                    <rect key="frame" x="-25" y="-15" width="51" height="31"/>
+                    <connections>
+                        <action selector="sharingLocation:" destination="-1" eventType="valueChanged" id="JZC-4D-fd1"/>
+                    </connections>
+                </switch>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Share Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2h1-N5-C69">
+                    <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                    <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="20"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="0.1333333333" green="0.47450980390000003" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="LXt-ub-Zit" firstAttribute="top" secondItem="rCh-kJ-cMs" secondAttribute="bottom" constant="8" id="5VE-ef-g0p"/>
+                <constraint firstItem="wur-VI-zrI" firstAttribute="leading" secondItem="Bqh-iB-JcM" secondAttribute="trailing" constant="17" id="8WR-2e-O39"/>
+                <constraint firstItem="2h1-N5-C69" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="23" id="CJn-MJ-bRW"/>
+                <constraint firstAttribute="trailing" secondItem="RZU-Vi-ofc" secondAttribute="trailing" constant="16" id="HX3-Bv-rc1"/>
+                <constraint firstItem="RZU-Vi-ofc" firstAttribute="top" secondItem="6aw-to-OWu" secondAttribute="bottom" constant="-1" id="L6C-Yt-6G2"/>
+                <constraint firstAttribute="trailing" secondItem="wur-VI-zrI" secondAttribute="trailing" constant="22" id="TTT-jJ-Ss1"/>
+                <constraint firstItem="6aw-to-OWu" firstAttribute="top" secondItem="2h1-N5-C69" secondAttribute="bottom" constant="19" id="Uf3-Ng-VdQ"/>
+                <constraint firstItem="Bqh-iB-JcM" firstAttribute="top" secondItem="LXt-ub-Zit" secondAttribute="bottom" constant="14" id="XvZ-5d-nM2"/>
+                <constraint firstItem="Bqh-iB-JcM" firstAttribute="leading" secondItem="6aw-to-OWu" secondAttribute="trailing" constant="120" id="ZE5-0W-rFe"/>
+                <constraint firstItem="rCh-kJ-cMs" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="79" id="mcZ-Z5-9be"/>
+                <constraint firstItem="RZU-Vi-ofc" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="pJf-ge-75S"/>
+                <constraint firstItem="6aw-to-OWu" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="23" id="vPg-HI-uDd"/>
+                <constraint firstItem="2h1-N5-C69" firstAttribute="top" secondItem="rCh-kJ-cMs" secondAttribute="bottom" constant="13" id="xRP-7D-BIo"/>
+                <constraint firstItem="wur-VI-zrI" firstAttribute="top" secondItem="LXt-ub-Zit" secondAttribute="bottom" constant="14" id="yBK-HP-4K8"/>
+                <constraint firstAttribute="trailing" secondItem="rCh-kJ-cMs" secondAttribute="trailing" constant="132" id="ydZ-qJ-ofX"/>
+                <constraint firstItem="rCh-kJ-cMs" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="132" id="z5E-tL-V0z"/>
+                <constraint firstAttribute="trailing" secondItem="LXt-ub-Zit" secondAttribute="trailing" constant="16" id="ztf-9S-Zkg"/>
+            </constraints>
+            <variation key="default">
+                <mask key="subviews">
+                    <exclude reference="rCh-kJ-cMs"/>
+                    <exclude reference="RZU-Vi-ofc"/>
+                    <exclude reference="6aw-to-OWu"/>
+                    <exclude reference="wur-VI-zrI"/>
+                    <exclude reference="Bqh-iB-JcM"/>
+                    <exclude reference="LXt-ub-Zit"/>
+                    <exclude reference="2h1-N5-C69"/>
+                </mask>
+                <mask key="constraints">
+                    <exclude reference="HX3-Bv-rc1"/>
+                    <exclude reference="L6C-Yt-6G2"/>
+                    <exclude reference="pJf-ge-75S"/>
+                    <exclude reference="5VE-ef-g0p"/>
+                    <exclude reference="ztf-9S-Zkg"/>
+                    <exclude reference="CJn-MJ-bRW"/>
+                    <exclude reference="xRP-7D-BIo"/>
+                    <exclude reference="Uf3-Ng-VdQ"/>
+                    <exclude reference="vPg-HI-uDd"/>
+                    <exclude reference="XvZ-5d-nM2"/>
+                    <exclude reference="ZE5-0W-rFe"/>
+                    <exclude reference="mcZ-Z5-9be"/>
+                    <exclude reference="ydZ-qJ-ofX"/>
+                    <exclude reference="z5E-tL-V0z"/>
+                    <exclude reference="8WR-2e-O39"/>
+                    <exclude reference="TTT-jJ-Ss1"/>
+                    <exclude reference="yBK-HP-4K8"/>
+                </mask>
+            </variation>
+            <variation key="heightClass=regular-widthClass=compact">
+                <mask key="subviews">
+                    <include reference="rCh-kJ-cMs"/>
+                    <include reference="RZU-Vi-ofc"/>
+                    <include reference="6aw-to-OWu"/>
+                    <include reference="wur-VI-zrI"/>
+                    <include reference="Bqh-iB-JcM"/>
+                    <include reference="LXt-ub-Zit"/>
+                    <include reference="2h1-N5-C69"/>
+                </mask>
+                <mask key="constraints">
+                    <include reference="HX3-Bv-rc1"/>
+                    <include reference="L6C-Yt-6G2"/>
+                    <include reference="pJf-ge-75S"/>
+                    <include reference="5VE-ef-g0p"/>
+                    <include reference="ztf-9S-Zkg"/>
+                    <include reference="CJn-MJ-bRW"/>
+                    <include reference="xRP-7D-BIo"/>
+                    <include reference="Uf3-Ng-VdQ"/>
+                    <include reference="vPg-HI-uDd"/>
+                    <include reference="XvZ-5d-nM2"/>
+                    <include reference="ZE5-0W-rFe"/>
+                    <include reference="mcZ-Z5-9be"/>
+                    <include reference="ydZ-qJ-ofX"/>
+                    <include reference="z5E-tL-V0z"/>
+                    <include reference="8WR-2e-O39"/>
+                    <include reference="TTT-jJ-Ss1"/>
+                    <include reference="yBK-HP-4K8"/>
+                </mask>
+            </variation>
+            <point key="canvasLocation" x="426" y="273"/>
+        </view>
+    </objects>
+</document>

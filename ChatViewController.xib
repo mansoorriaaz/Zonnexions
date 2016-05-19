@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChatViewController">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sxe-tL-K82">
+                    <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                    <state key="normal" title="Send"/>
+                </button>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="n68-2G-Yha">
+                    <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MUH-jt-9hX">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
+                        <rect key="frame" x="0.0" y="35" width="400" height="727"/>
+                    </variation>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="sxe-tL-K82" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="320" id="0dU-gC-VoF"/>
+                <constraint firstAttribute="trailing" secondItem="sxe-tL-K82" secondAttribute="trailing" id="1Sh-KH-2Dl"/>
+                <constraint firstItem="n68-2G-Yha" firstAttribute="top" secondItem="MUH-jt-9hX" secondAttribute="bottom" constant="8" id="ELe-df-yZg"/>
+                <constraint firstItem="MUH-jt-9hX" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="35" id="UHd-fw-74s"/>
+                <constraint firstItem="sxe-tL-K82" firstAttribute="leading" secondItem="n68-2G-Yha" secondAttribute="trailing" id="ajJ-Pa-5Fo"/>
+                <constraint firstItem="n68-2G-Yha" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="bUc-aU-fSq"/>
+                <constraint firstAttribute="bottom" secondItem="sxe-tL-K82" secondAttribute="bottom" id="bn3-xQ-Fuq"/>
+                <constraint firstAttribute="bottom" secondItem="n68-2G-Yha" secondAttribute="bottom" id="t8M-2h-95x"/>
+            </constraints>
+            <variation key="default">
+                <mask key="subviews">
+                    <exclude reference="sxe-tL-K82"/>
+                    <exclude reference="n68-2G-Yha"/>
+                    <exclude reference="MUH-jt-9hX"/>
+                </mask>
+                <mask key="constraints">
+                    <exclude reference="ELe-df-yZg"/>
+                    <exclude reference="bUc-aU-fSq"/>
+                    <exclude reference="t8M-2h-95x"/>
+                    <exclude reference="0dU-gC-VoF"/>
+                    <exclude reference="1Sh-KH-2Dl"/>
+                    <exclude reference="ajJ-Pa-5Fo"/>
+                    <exclude reference="bn3-xQ-Fuq"/>
+                    <exclude reference="UHd-fw-74s"/>
+                </mask>
+            </variation>
+            <variation key="heightClass=regular-widthClass=compact">
+                <mask key="subviews">
+                    <include reference="sxe-tL-K82"/>
+                    <include reference="n68-2G-Yha"/>
+                    <include reference="MUH-jt-9hX"/>
+                </mask>
+                <mask key="constraints">
+                    <include reference="ELe-df-yZg"/>
+                    <include reference="bUc-aU-fSq"/>
+                    <include reference="t8M-2h-95x"/>
+                    <include reference="0dU-gC-VoF"/>
+                    <include reference="1Sh-KH-2Dl"/>
+                    <include reference="ajJ-Pa-5Fo"/>
+                    <include reference="bn3-xQ-Fuq"/>
+                    <include reference="UHd-fw-74s"/>
+                </mask>
+            </variation>
+            <point key="canvasLocation" x="355" y="389"/>
+        </view>
+    </objects>
+</document>

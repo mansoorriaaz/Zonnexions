@@ -7,21 +7,14 @@
 //
 
 #import "AppDelegate.h"
-#import <Fabric/Fabric.h>
-#import <Crashlytics/Crashlytics.h>
-
-
-#import "MMDrawerController.h"
-#import "MMDrawerVisualState.h"
-#import "LeftDrawerViewController.h"
 
 #import "FrontViewController.h"
 #import "RearViewController.h"
 
-#import <QuartzCore/QuartzCore.h>
+#import "MMDrawerVisualState.h"
+#import "LeftDrawerViewController.h"
 
-#import <SimpleAuth/SimpleAuth.h>
-
+#import "LoginViewController.h"
 
 @import GoogleMaps;
 
@@ -31,6 +24,8 @@
 @implementation AppDelegate
 {
     CLLocationManager *locationManager;
+    UILocalNotification *notification;
+    Chat *c;
 }
 
 @synthesize window = _window;
@@ -106,27 +101,51 @@
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    notification = [[UILocalNotification alloc]init];
+    
+//    for (NSString* family in [UIFont familyNames])
+//    {
+//        NSLog(@"%@", family);
+//        
+//        for (NSString* name in [UIFont fontNamesForFamilyName: family])
+//        {
+//            NSLog(@"  %@", name);
+//        }
+//    }
+    
+    self.isShared = true;
+    NSLog(@"is authenticated = %i",self.isAuthenticated);
     [Fabric with:@[[Crashlytics class]]];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(hello:)
+                                                 name:@"authentication"
+                                               object:nil];
+    
+
 
     [GMSServices provideAPIKey:@"AIzaSyBwYzW4g0L-UHVeIHEiulOZXlMtgfrYn2k"];
-    [self configureAuthorizaionProviders];
+//    [self configureAuthorizaionProviders];
     
     [self updateLocation];
     
-    self.socket = [[SocketIOClient alloc] initWithSocketURL:@"103.23.21.217:3000" options:NULL];
+    self.socket = [[SocketIOClient alloc] initWithSocketURL:@"103.23.22.6:3000" options:@{@"log": @YES, @"forcePolling": @YES}];
     
     [self.socket on:@"authenticated" callback:^(NSArray* data, SocketAckEmitter* ack) {
         NSLog(@"welcome %@", data);
+        self.isAuthenticated = YES;
     }];
     
     [self.socket on:@"hello" callback:^(NSArray* data, SocketAckEmitter* ack) {
         NSLog(@"socket connected %@", data);
-        NSMutableDictionary *jsonAuth = [[NSMutableDictionary alloc]init];
-        [jsonAuth setObject:@"ekapradityagk@icloud.com" forKey:@"email"];
-        
-        [self.socket emit:@"authentication" withItems:[NSArray arrayWithObject:jsonAuth]];
+        if([[NSUserDefaults standardUserDefaults]objectForKey:@"fbData"]!= NULL){
+            self.isAuthenticated = true;
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"authentication" object:self userInfo:[[NSUserDefaults standardUserDefaults] objectForKey:@"fbData"]];
+            NSLog(@"fb data not null");
+        }else{
+            NSLog(@"fb data null");
+        }
     }];
-    
     
     // Override point for customization after application launch.
     /*
@@ -178,14 +197,25 @@
     self.viewController = mainRevealController;
     
     self.window.rootViewController = self.viewController;
+//    LoginViewController *viewAwal = [[LoginViewController alloc] init];
+//    self.window.rootViewController = viewAwal;
     [self.window makeKeyAndVisible];
+   
+    [self.socket on:@"user list" callback:^(NSArray* data, SocketAckEmitter* ack) {
+        NSMutableDictionary *dic = (NSMutableDictionary*)[data objectAtIndex:0];
+        NSLog(@"%@", [[NSUserDefaults standardUserDefaults]objectForKey:@"custom id"]);
+        [dic removeObjectForKey:[[NSUserDefaults standardUserDefaults] objectForKey:@"custom id"]];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"user list" object:self userInfo:dic];
+        
+    }];
     
     [self.socket on:@"request user location" callback:^(NSArray* data, SocketAckEmitter* ack) {
+        
         NSMutableDictionary *dic = (NSMutableDictionary*)[data objectAtIndex:0];
         
         NSMutableDictionary *jsonLocation = [[NSMutableDictionary alloc]init];
         [jsonLocation setObject:[dic objectForKey:@"requester"] forKey:@"requester"];
-        [jsonLocation setObject:@"entah lah" forKey:@"responder"];
+        //[jsonLocation setObject: forKey:@"responder"];
         [jsonLocation setObject:[NSNumber numberWithDouble:locationManager.location.coordinate.latitude] forKey:@"lat"];
         [jsonLocation setObject:[NSNumber numberWithDouble:locationManager.location.coordinate.longitude] forKey:@"long"];
         [jsonLocation setObject:@"ios" forKey:@"mobile"];
@@ -204,8 +234,18 @@
         
         NSLog(@"JSon %@", [jsonLocation description]);
         
-        
-        [self.socket emit:@"user location" withItems:[NSArray arrayWithObject:jsonLocation]];
+        if (self.isShared == true) {
+            NSLog(@"shared");
+            NSLog(@"distance %f", distance);
+            NSLog(@"limit %@", [dic objectForKey:@"limit"]);
+            if ((int)distance  < (int)[dic objectForKey:@"limit"] || [dic objectForKey:@"limit"] == 0) {
+                NSLog(@"limit achieved");
+                if (self.isAuthenticated) {
+                    NSLog(@"authenticated and emitting user location dude... %@", data);
+                    [self.socket emit:@"user location" withItems:[NSArray arrayWithObject:jsonLocation]];
+                }
+            }
+        }
         
         
         /*
@@ -227,7 +267,7 @@
     }];
     //[self measureDistance];
     [self.socket on:@"friend near" callback:^(NSArray* data, SocketAckEmitter* ack) {
-        NSLog(@"friend near %@", data);
+        NSLog(@"friend near %@", [data description]);
         
         NSMutableDictionary *dic = (NSMutableDictionary*)[data objectAtIndex:0];
         /*
@@ -244,17 +284,99 @@
         
     }];
     
-    [self.socket on:@"chat message" callback:^(NSArray* data, SocketAckEmitter* ack) {
+    [self.socket on:@"chat pending" callback:^(NSArray* data, SocketAckEmitter* ack) {
+        //NSLog(@"from chat a %@", [data objectAtIndex:0]);
+        NSMutableArray *di = (NSMutableArray*)[data objectAtIndex:0];
+        //NSLog(@"from chat b %@", di);
+        for (int i = 0 ; i < [di count]; i++) {
+            NSArray *d = (NSArray*)[di objectAtIndex:i];
+            //NSLog(@"d %@", d);
+            NSString *jsonString = [d description];
+            //NSLog(@"json %@", jsonString);
+            NSData *dataAr = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
+            id json = [NSJSONSerialization JSONObjectWithData:dataAr options:0 error:nil];
+            NSLog(@"%@",[json objectForKey:@"message"]);
+            c = [[Chat alloc] init];
+            
+            c.is_me = false;
+            c.chatWith = [NSString stringWithFormat:@"%@", [json objectForKey:@"origin"]];
+            c.message = (NSString* ) [json objectForKey:@"message"];
+            c.timeStamp = [NSString stringWithFormat:@"%@",[json objectForKey:@"time_stamp"]] ;
+            
+            RLMRealm *realm = [RLMRealm defaultRealm];
+            [realm beginWriteTransaction];
+            [realm addObject:c];
+            [realm commitWriteTransaction];
+        }
+        
+//        for (d.; <#condition#>; <#increment#>) {
+//            <#statements#>
+//        }
+        
+//        [ack with: [NSArray arrayWithObject:[NSNumber numberWithBool:YES]]];
+//        
+        
+//
+//        //[chatController addNewMessage:helloWorld];
+//        
+//        //        if (self.isBackGround == true) {
+////        notification.repeatInterval = NSDayCalendarUnit;
+////        [notification setAlertBody:[NSString stringWithFormat:@"You have New Message : %@", c.message]];
+////        [notification setFireDate:[NSDate dateWithTimeIntervalSinceNow:1]];
+////        [notification setTimeZone:[NSTimeZone  localTimeZone]];
+////        [application setScheduledLocalNotifications:[NSArray arrayWithObject:notification]];
+//        //      }
+//        
+//        [[NSNotificationCenter defaultCenter] postNotificationName:@"chat message" object:self userInfo:d];
+    }];
+    
+    [self.socket on:@"send chat" callback:^(NSArray* data, SocketAckEmitter* ack) {
         NSLog(@"from chat %@", data);
         NSMutableDictionary *dic = (NSMutableDictionary*)[data objectAtIndex:0];
         NSLog(@"dic %@", [dic description]);
+
+        [ack with: [NSArray arrayWithObject:[NSNumber numberWithBool:YES]]];
+        
+            c = [[Chat alloc] init];
+            
+            c.is_me = false;
+            c.chatWith = [NSString stringWithFormat:@"%@", [dic objectForKey:@"origin"]];
+            c.message = (NSString* ) [dic objectForKey:@"message"];
+            c.timeStamp = [NSString stringWithFormat:@"%@",[dic objectForKey:@"time_stamp"]] ;
+            
+            RLMRealm *realm = [RLMRealm defaultRealm];
+            [realm beginWriteTransaction];
+            [realm addObject:c];
+            [realm commitWriteTransaction];
+            
+            //[chatController addNewMessage:helloWorld];
+       
+//        if (self.isBackGround == true) {
+            notification.repeatInterval = NSDayCalendarUnit;
+            [notification setAlertBody:[NSString stringWithFormat:@"You have New Message : %@", c.message]];
+            [notification setFireDate:[NSDate dateWithTimeIntervalSinceNow:1]];
+            [notification setTimeZone:[NSTimeZone  localTimeZone]];
+            [application setScheduledLocalNotifications:[NSArray arrayWithObject:notification]];
+  //      }
+        
         [[NSNotificationCenter defaultCenter] postNotificationName:@"chat message" object:self userInfo:dic];        
     }];
-    
+    /*
+    [[FBSDKApplicationDelegate sharedInstance] application:application
+                             didFinishLaunchingWithOptions:launchOptions];
+    */
+    if ([UIApplication instancesRespondToSelector:@selector(registerUserNotificationSettings:)]){
+        [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeBadge|UIUserNotificationTypeSound categories:nil]];
+    }
     
     [self.socket connect];
     
     return YES;
+}
+
+-(void)hello:(NSNotification *) notification{
+    NSLog(@"authentication onHello post notification brooo");
+    [self.socket emit:@"authentication" withItems:[NSArray arrayWithObject:[[NSUserDefaults standardUserDefaults] objectForKey:@"fbData"]]];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
@@ -263,20 +385,38 @@
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
+    self.isBackGround = true;
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    NSLog(@"enter");
+    
+    NSLog(@"done?");
+    
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+    self.isBackGround = false;
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    [FBSDKAppEvents activateApp];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    //[self.socket disconnect];
+}
+
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation {
+    return [[FBSDKApplicationDelegate sharedInstance] application:application
+                                                          openURL:url
+                                                sourceApplication:sourceApplication
+                                                       annotation:annotation];
 }
 
 

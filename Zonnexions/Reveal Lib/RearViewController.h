@@ -24,10 +24,14 @@
 
 #import <UIKit/UIKit.h>
 #import "SetingsViewController.h"
+#import "AppSettingViewController.h"
+#import "ViewController.h"
 
-@interface RearViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@interface RearViewController : ViewController <UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, retain) IBOutlet UITableView *rearTableView;
+
++ (UIImage *)imageWithImage:(UIImage *)image scaledToSize:(CGSize)newSize;
 //@property (nonatomic, retain) IBOutlet UIToolbar *rearToolBar;
 
 

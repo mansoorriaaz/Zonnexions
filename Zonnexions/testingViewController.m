@@ -19,14 +19,6 @@
     
     self.appd = (AppDelegate *)[[UIApplication sharedApplication]delegate];
     
-    [self.appd.socket on:@"chat message" callback:^(NSArray* data, SocketAckEmitter* ack) {
-        NSLog(@"from chat %@", data);
-    }];
-
-    [self funcForThought];
-//    [appdtest.socket emit:@"find friend" withItems:[]];
-//    [appdtest.socket emit:@"find friend" withItems:dict];
-    
     // Do any additional setup after loading the view from its nib.
 }
 

@@ -9,7 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "ViewController.h"
 #import "SWRevealViewController.h"
+#import "CustomInfoWindow.h"
+#import <GoogleMaps/GoogleMaps.h>
+#import "ProfileViewController.h"
+#import "People.h"
+#import "CustomMarker.h"
 
-@interface MapViewController : ViewController <UIGestureRecognizerDelegate>
+@interface MapViewController : ViewController <UIGestureRecognizerDelegate, GMSMapViewDelegate>
 
 @end

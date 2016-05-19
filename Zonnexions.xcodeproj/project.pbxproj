@@ -33,9 +33,42 @@
 		53EBA4511C0B2D3200607407 /* reveal-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 53EBA44F1C0B2D3200607407 /* reveal-icon.png */; };
 		53EBA4521C0B2D3200607407 /* reveal-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 53EBA4501C0B2D3200607407 /* reveal-icon@2x.png */; };
 		53EBA4551C0B332800607407 /* FriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53EBA4541C0B332800607407 /* FriendsViewController.m */; };
-		B60C51071C14A399005B5AA9 /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B60C51061C14A399005B5AA9 /* ChatViewController.m */; };
+		B600C4CB1C2873B300442126 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B600C4CA1C2873B300442126 /* Realm.framework */; };
+		B600C4CF1C2874EA00442126 /* libc++.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B600C4CE1C2874EA00442126 /* libc++.1.dylib */; };
+		B602ACCC1C286C53000669AD /* Chat.m in Sources */ = {isa = PBXBuildFile; fileRef = B602ACCB1C286C53000669AD /* Chat.m */; };
 		B61197701C2047A1000FA21F /* LGSimpleChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = B611976E1C2047A1000FA21F /* LGSimpleChat.swift */; };
 		B61197711C2047A1000FA21F /* License in Resources */ = {isa = PBXBuildFile; fileRef = B611976F1C2047A1000FA21F /* License */; };
+		B619459A1CCE001800E4FAA4 /* Montserrat-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = B61945911CCE001800E4FAA4 /* Montserrat-Black.otf */; };
+		B619459B1CCE001800E4FAA4 /* Montserrat-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = B61945921CCE001800E4FAA4 /* Montserrat-Bold.otf */; };
+		B619459C1CCE001800E4FAA4 /* Montserrat-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = B61945931CCE001800E4FAA4 /* Montserrat-ExtraBold.otf */; };
+		B619459D1CCE001800E4FAA4 /* Montserrat-Hairline.otf in Resources */ = {isa = PBXBuildFile; fileRef = B61945941CCE001800E4FAA4 /* Montserrat-Hairline.otf */; };
+		B619459E1CCE001800E4FAA4 /* Montserrat-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = B61945951CCE001800E4FAA4 /* Montserrat-Light.otf */; };
+		B619459F1CCE001800E4FAA4 /* Montserrat-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = B61945961CCE001800E4FAA4 /* Montserrat-Regular.otf */; };
+		B61945A01CCE001800E4FAA4 /* Montserrat-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = B61945971CCE001800E4FAA4 /* Montserrat-SemiBold.otf */; };
+		B61945A11CCE001800E4FAA4 /* Montserrat-UltraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = B61945981CCE001800E4FAA4 /* Montserrat-UltraLight.otf */; };
+		B61945A21CCE001800E4FAA4 /* SIL Open Font License.txt in Resources */ = {isa = PBXBuildFile; fileRef = B61945991CCE001800E4FAA4 /* SIL Open Font License.txt */; };
+		B644E86F1CCE13AD009347E9 /* Z Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = B644E86E1CCE13AD009347E9 /* Z Logo.png */; };
+		B644E8731CCE1B76009347E9 /* Email Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B644E8701CCE1B76009347E9 /* Email Icon.png */; };
+		B644E8741CCE1B76009347E9 /* Facebook Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B644E8711CCE1B76009347E9 /* Facebook Icon.png */; };
+		B644E8751CCE1B76009347E9 /* Google Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B644E8721CCE1B76009347E9 /* Google Icon.png */; };
+		B648955F1CCF3136004B97B5 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B648955D1CCF3136004B97B5 /* SignUpViewController.m */; };
+		B64895601CCF3136004B97B5 /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B648955E1CCF3136004B97B5 /* SignUpViewController.xib */; };
+		B64D16AB1C37DF6200B51B3C /* mystery-man.png in Resources */ = {isa = PBXBuildFile; fileRef = B64D16AA1C37DF6200B51B3C /* mystery-man.png */; };
+		B64D16AD1C37E1A300B51B3C /* navigate-right.png in Resources */ = {isa = PBXBuildFile; fileRef = B64D16AC1C37E1A300B51B3C /* navigate-right.png */; };
+		B64D16B01C37F89E00B51B3C /* CustomMarker.m in Sources */ = {isa = PBXBuildFile; fileRef = B64D16AF1C37F89E00B51B3C /* CustomMarker.m */; };
+		B65498021C284B3100711106 /* People.m in Sources */ = {isa = PBXBuildFile; fileRef = B65498011C284B3100711106 /* People.m */; };
+		B654980B1C28547500711106 /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B65498091C28547500711106 /* ChatViewController.m */; };
+		B654980C1C28547500711106 /* ChatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B654980A1C28547500711106 /* ChatViewController.xib */; };
+		B69646D71CDDCF2C004580DB /* button-add.png in Resources */ = {isa = PBXBuildFile; fileRef = B69646D11CDDCF2C004580DB /* button-add.png */; };
+		B69646D81CDDCF2C004580DB /* button-tick-off.png in Resources */ = {isa = PBXBuildFile; fileRef = B69646D21CDDCF2C004580DB /* button-tick-off.png */; };
+		B69646D91CDDCF2C004580DB /* button-tick-on.png in Resources */ = {isa = PBXBuildFile; fileRef = B69646D31CDDCF2C004580DB /* button-tick-on.png */; };
+		B69646DA1CDDCF2C004580DB /* button-white-big.png in Resources */ = {isa = PBXBuildFile; fileRef = B69646D41CDDCF2C004580DB /* button-white-big.png */; };
+		B69646DB1CDDCF2C004580DB /* cover_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = B69646D51CDDCF2C004580DB /* cover_blue.png */; };
+		B69646DC1CDDCF2C004580DB /* cover_white.png in Resources */ = {isa = PBXBuildFile; fileRef = B69646D61CDDCF2C004580DB /* cover_white.png */; };
+		B6A7AA661C4CB8C1003160EF /* ProfilSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6A7AA641C4CB8C1003160EF /* ProfilSettingViewController.m */; };
+		B6A7AA671C4CB8C1003160EF /* ProfilSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6A7AA651C4CB8C1003160EF /* ProfilSettingViewController.xib */; };
+		B6B2B2421C219DB500531055 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6B2B2411C219DB500531055 /* FBSDKCoreKit.framework */; };
+		B6B2B2441C21A2F600531055 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6B2B2431C21A2F600531055 /* FBSDKLoginKit.framework */; };
 		B6C31F371C1D84BA00E0D39A /* testingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C31F351C1D84BA00E0D39A /* testingViewController.m */; };
 		B6C31F381C1D84BA00E0D39A /* testingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6C31F361C1D84BA00E0D39A /* testingViewController.xib */; };
 		B6CC66A01C1D00E200AFB2D9 /* SocketAckEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CC668D1C1D00E200AFB2D9 /* SocketAckEmitter.swift */; };
@@ -57,6 +90,18 @@
 		B6CC66B01C1D00E200AFB2D9 /* SocketTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CC669D1C1D00E200AFB2D9 /* SocketTypes.swift */; };
 		B6CC66B11C1D00E200AFB2D9 /* SocketIOClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CC669E1C1D00E200AFB2D9 /* SocketIOClient.swift */; };
 		B6CC66B21C1D00E200AFB2D9 /* SwiftRegex.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CC669F1C1D00E200AFB2D9 /* SwiftRegex.swift */; };
+		B6D55E3D1C34FA850023B7EE /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6D55E3B1C34FA850023B7EE /* LoginViewController.m */; };
+		B6D55E3E1C34FA850023B7EE /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6D55E3C1C34FA850023B7EE /* LoginViewController.xib */; };
+		B6DCE2DC1CEC84BB00A3A1C6 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B6DCE2DB1CEC84BB00A3A1C6 /* icon.png */; };
+		B6F9D35B1C2959E600F2B9CA /* AppSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6F9D3591C2959E600F2B9CA /* AppSettingViewController.m */; };
+		B6F9D35C1C2959E600F2B9CA /* AppSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6F9D35A1C2959E600F2B9CA /* AppSettingViewController.xib */; };
+		B6F9D35E1C297A3900F2B9CA /* InfoWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6F9D35D1C297A3900F2B9CA /* InfoWindow.xib */; };
+		B6F9D3611C297AEE00F2B9CA /* CustomInfoWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = B6F9D3601C297AEE00F2B9CA /* CustomInfoWindow.m */; };
+		B6F9D3651C298F3F00F2B9CA /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6F9D3631C298F3F00F2B9CA /* ProfileViewController.m */; };
+		B6F9D3661C298F3F00F2B9CA /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6F9D3641C298F3F00F2B9CA /* ProfileViewController.xib */; };
+		B6F9D3681C298FB500F2B9CA /* navigat_boxtk01.png in Resources */ = {isa = PBXBuildFile; fileRef = B6F9D3671C298FB500F2B9CA /* navigat_boxtk01.png */; };
+		B6FC7B471CEDB327005CDDAA /* tableViewCellCustomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6FC7B451CEDB327005CDDAA /* tableViewCellCustomViewController.m */; };
+		B6FC7B481CEDB327005CDDAA /* tableViewCellCustomViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6FC7B461CEDB327005CDDAA /* tableViewCellCustomViewController.xib */; };
 		E61EB66CBDDEB2BD8D2F338F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DB8EBA975A92D4E89E58F1D /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -127,10 +172,49 @@
 		53EBA4541C0B332800607407 /* FriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsViewController.m; sourceTree = "<group>"; };
 		73E55AFB8A05783925F6571A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		9DB8EBA975A92D4E89E58F1D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		B60C51051C14A399005B5AA9 /* ChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatViewController.h; sourceTree = "<group>"; };
-		B60C51061C14A399005B5AA9 /* ChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
+		B600C4CA1C2873B300442126 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
+		B600C4CC1C28740200442126 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = "libc++.dylib"; sourceTree = "<group>"; };
+		B600C4CE1C2874EA00442126 /* libc++.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.1.dylib"; path = "../../../../../../usr/lib/libc++.1.dylib"; sourceTree = "<group>"; };
+		B602ACCA1C286C53000669AD /* Chat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Chat.h; sourceTree = "<group>"; };
+		B602ACCB1C286C53000669AD /* Chat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Chat.m; sourceTree = "<group>"; };
 		B611976E1C2047A1000FA21F /* LGSimpleChat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LGSimpleChat.swift; sourceTree = "<group>"; };
 		B611976F1C2047A1000FA21F /* License */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = License; sourceTree = "<group>"; };
+		B61945911CCE001800E4FAA4 /* Montserrat-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Black.otf"; sourceTree = "<group>"; };
+		B61945921CCE001800E4FAA4 /* Montserrat-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.otf"; sourceTree = "<group>"; };
+		B61945931CCE001800E4FAA4 /* Montserrat-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraBold.otf"; sourceTree = "<group>"; };
+		B61945941CCE001800E4FAA4 /* Montserrat-Hairline.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Hairline.otf"; sourceTree = "<group>"; };
+		B61945951CCE001800E4FAA4 /* Montserrat-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.otf"; sourceTree = "<group>"; };
+		B61945961CCE001800E4FAA4 /* Montserrat-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.otf"; sourceTree = "<group>"; };
+		B61945971CCE001800E4FAA4 /* Montserrat-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.otf"; sourceTree = "<group>"; };
+		B61945981CCE001800E4FAA4 /* Montserrat-UltraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-UltraLight.otf"; sourceTree = "<group>"; };
+		B61945991CCE001800E4FAA4 /* SIL Open Font License.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "SIL Open Font License.txt"; sourceTree = "<group>"; };
+		B644E86E1CCE13AD009347E9 /* Z Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Z Logo.png"; sourceTree = "<group>"; };
+		B644E8701CCE1B76009347E9 /* Email Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Email Icon.png"; sourceTree = "<group>"; };
+		B644E8711CCE1B76009347E9 /* Facebook Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Facebook Icon.png"; sourceTree = "<group>"; };
+		B644E8721CCE1B76009347E9 /* Google Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Google Icon.png"; sourceTree = "<group>"; };
+		B648955C1CCF3136004B97B5 /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
+		B648955D1CCF3136004B97B5 /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
+		B648955E1CCF3136004B97B5 /* SignUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
+		B64D16AA1C37DF6200B51B3C /* mystery-man.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "mystery-man.png"; path = "Assets.xcassets/mystery-man.png"; sourceTree = "<group>"; };
+		B64D16AC1C37E1A300B51B3C /* navigate-right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "navigate-right.png"; path = "Assets.xcassets/navigate-right.png"; sourceTree = "<group>"; };
+		B64D16AE1C37F89E00B51B3C /* CustomMarker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomMarker.h; sourceTree = "<group>"; };
+		B64D16AF1C37F89E00B51B3C /* CustomMarker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomMarker.m; sourceTree = "<group>"; };
+		B65498001C284B3100711106 /* People.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = People.h; sourceTree = "<group>"; };
+		B65498011C284B3100711106 /* People.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = People.m; sourceTree = "<group>"; };
+		B65498081C28547500711106 /* ChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatViewController.h; sourceTree = "<group>"; };
+		B65498091C28547500711106 /* ChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
+		B654980A1C28547500711106 /* ChatViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChatViewController.xib; sourceTree = "<group>"; };
+		B69646D11CDDCF2C004580DB /* button-add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-add.png"; sourceTree = "<group>"; };
+		B69646D21CDDCF2C004580DB /* button-tick-off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-tick-off.png"; sourceTree = "<group>"; };
+		B69646D31CDDCF2C004580DB /* button-tick-on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-tick-on.png"; sourceTree = "<group>"; };
+		B69646D41CDDCF2C004580DB /* button-white-big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-white-big.png"; sourceTree = "<group>"; };
+		B69646D51CDDCF2C004580DB /* cover_blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cover_blue.png; sourceTree = "<group>"; };
+		B69646D61CDDCF2C004580DB /* cover_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cover_white.png; sourceTree = "<group>"; };
+		B6A7AA631C4CB8C1003160EF /* ProfilSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfilSettingViewController.h; sourceTree = "<group>"; };
+		B6A7AA641C4CB8C1003160EF /* ProfilSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfilSettingViewController.m; sourceTree = "<group>"; };
+		B6A7AA651C4CB8C1003160EF /* ProfilSettingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfilSettingViewController.xib; sourceTree = "<group>"; };
+		B6B2B2411C219DB500531055 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		B6B2B2431C21A2F600531055 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		B6C31F341C1D84BA00E0D39A /* testingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testingViewController.h; sourceTree = "<group>"; };
 		B6C31F351C1D84BA00E0D39A /* testingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = testingViewController.m; sourceTree = "<group>"; };
 		B6C31F361C1D84BA00E0D39A /* testingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = testingViewController.xib; sourceTree = "<group>"; };
@@ -153,6 +237,23 @@
 		B6CC669D1C1D00E200AFB2D9 /* SocketTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SocketTypes.swift; path = SocketIOClientSwift/SocketTypes.swift; sourceTree = "<group>"; };
 		B6CC669E1C1D00E200AFB2D9 /* SocketIOClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SocketIOClient.swift; path = SocketIOClientSwift/SocketIOClient.swift; sourceTree = "<group>"; };
 		B6CC669F1C1D00E200AFB2D9 /* SwiftRegex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftRegex.swift; path = SocketIOClientSwift/SwiftRegex.swift; sourceTree = "<group>"; };
+		B6D55E3A1C34FA850023B7EE /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		B6D55E3B1C34FA850023B7EE /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		B6D55E3C1C34FA850023B7EE /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		B6DCE2DB1CEC84BB00A3A1C6 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		B6F9D3581C2959E600F2B9CA /* AppSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppSettingViewController.h; sourceTree = "<group>"; };
+		B6F9D3591C2959E600F2B9CA /* AppSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppSettingViewController.m; sourceTree = "<group>"; };
+		B6F9D35A1C2959E600F2B9CA /* AppSettingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppSettingViewController.xib; sourceTree = "<group>"; };
+		B6F9D35D1C297A3900F2B9CA /* InfoWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InfoWindow.xib; sourceTree = "<group>"; };
+		B6F9D35F1C297AEE00F2B9CA /* CustomInfoWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomInfoWindow.h; sourceTree = "<group>"; };
+		B6F9D3601C297AEE00F2B9CA /* CustomInfoWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomInfoWindow.m; sourceTree = "<group>"; };
+		B6F9D3621C298F3F00F2B9CA /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		B6F9D3631C298F3F00F2B9CA /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		B6F9D3641C298F3F00F2B9CA /* ProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
+		B6F9D3671C298FB500F2B9CA /* navigat_boxtk01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navigat_boxtk01.png; sourceTree = "<group>"; };
+		B6FC7B441CEDB327005CDDAA /* tableViewCellCustomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tableViewCellCustomViewController.h; sourceTree = "<group>"; };
+		B6FC7B451CEDB327005CDDAA /* tableViewCellCustomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = tableViewCellCustomViewController.m; sourceTree = "<group>"; };
+		B6FC7B461CEDB327005CDDAA /* tableViewCellCustomViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = tableViewCellCustomViewController.xib; sourceTree = "<group>"; };
 		F734AF28AC55E12F93C679AB /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -161,6 +262,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B600C4CF1C2874EA00442126 /* libc++.1.dylib in Frameworks */,
+				B600C4CB1C2873B300442126 /* Realm.framework in Frameworks */,
+				B6B2B2441C21A2F600531055 /* FBSDKLoginKit.framework in Frameworks */,
+				B6B2B2421C219DB500531055 /* FBSDKCoreKit.framework in Frameworks */,
 				E61EB66CBDDEB2BD8D2F338F /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -194,8 +299,42 @@
 		5382B9381C05C334006AA0D6 = {
 			isa = PBXGroup;
 			children = (
+				B6A7AA631C4CB8C1003160EF /* ProfilSettingViewController.h */,
+				B6A7AA641C4CB8C1003160EF /* ProfilSettingViewController.m */,
+				B6A7AA651C4CB8C1003160EF /* ProfilSettingViewController.xib */,
+				B64D16AE1C37F89E00B51B3C /* CustomMarker.h */,
+				B64D16AF1C37F89E00B51B3C /* CustomMarker.m */,
+				B6D55E3A1C34FA850023B7EE /* LoginViewController.h */,
+				B6D55E3B1C34FA850023B7EE /* LoginViewController.m */,
+				B6D55E3C1C34FA850023B7EE /* LoginViewController.xib */,
+				B6F9D3621C298F3F00F2B9CA /* ProfileViewController.h */,
+				B6F9D3631C298F3F00F2B9CA /* ProfileViewController.m */,
+				B6F9D3641C298F3F00F2B9CA /* ProfileViewController.xib */,
+				B6F9D35F1C297AEE00F2B9CA /* CustomInfoWindow.h */,
+				B6F9D3601C297AEE00F2B9CA /* CustomInfoWindow.m */,
+				B6F9D35D1C297A3900F2B9CA /* InfoWindow.xib */,
+				B6F9D3581C2959E600F2B9CA /* AppSettingViewController.h */,
+				B6F9D3591C2959E600F2B9CA /* AppSettingViewController.m */,
+				B6F9D35A1C2959E600F2B9CA /* AppSettingViewController.xib */,
+				B602ACCA1C286C53000669AD /* Chat.h */,
+				B602ACCB1C286C53000669AD /* Chat.m */,
+				B65498081C28547500711106 /* ChatViewController.h */,
+				B65498091C28547500711106 /* ChatViewController.m */,
+				B654980A1C28547500711106 /* ChatViewController.xib */,
+				B65498001C284B3100711106 /* People.h */,
+				B65498011C284B3100711106 /* People.m */,
+				B69646D11CDDCF2C004580DB /* button-add.png */,
+				B69646D21CDDCF2C004580DB /* button-tick-off.png */,
+				B69646D31CDDCF2C004580DB /* button-tick-on.png */,
+				B69646D41CDDCF2C004580DB /* button-white-big.png */,
+				B69646D51CDDCF2C004580DB /* cover_blue.png */,
+				B69646D61CDDCF2C004580DB /* cover_white.png */,
+				B6F9D3671C298FB500F2B9CA /* navigat_boxtk01.png */,
+				B6DCE2DB1CEC84BB00A3A1C6 /* icon.png */,
 				536621041C0B5D25006AF426 /* NodeController.swift */,
+				B648955B1CCF311B004B97B5 /* Modified */,
 				5382B9771C05C7B6006AA0D6 /* Podfile */,
+				B61945901CCE001800E4FAA4 /* font montserrat */,
 				B611976D1C2047A1000FA21F /* LGSimpleChat */,
 				B6CC66B31C1D00F200AFB2D9 /* SocketIOLib */,
 				53EBA4441C0B2B9200607407 /* Reveal Lib */,
@@ -234,8 +373,6 @@
 				53EBA4541C0B332800607407 /* FriendsViewController.m */,
 				53EBA3281C0B01FF00607407 /* SetingsViewController.h */,
 				53EBA3291C0B01FF00607407 /* SetingsViewController.m */,
-				B60C51051C14A399005B5AA9 /* ChatViewController.h */,
-				B60C51061C14A399005B5AA9 /* ChatViewController.m */,
 				53EBA3231C0B014600607407 /* LeftDrawerViewController.h */,
 				53EBA3241C0B014600607407 /* LeftDrawerViewController.m */,
 				53EBA3251C0B014600607407 /* LeftDrawerViewController.xib */,
@@ -254,8 +391,14 @@
 		5382B9441C05C334006AA0D6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B644E86E1CCE13AD009347E9 /* Z Logo.png */,
+				B64D16AC1C37E1A300B51B3C /* navigate-right.png */,
+				B64D16AA1C37DF6200B51B3C /* mystery-man.png */,
 				53EBA44F1C0B2D3200607407 /* reveal-icon.png */,
 				53EBA4501C0B2D3200607407 /* reveal-icon@2x.png */,
+				B644E8701CCE1B76009347E9 /* Email Icon.png */,
+				B644E8711CCE1B76009347E9 /* Facebook Icon.png */,
+				B644E8721CCE1B76009347E9 /* Google Icon.png */,
 				5382B9451C05C334006AA0D6 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -322,6 +465,11 @@
 		5C63C16152EAC574C3B3A34B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B600C4CE1C2874EA00442126 /* libc++.1.dylib */,
+				B600C4CC1C28740200442126 /* libc++.dylib */,
+				B600C4CA1C2873B300442126 /* Realm.framework */,
+				B6B2B2431C21A2F600531055 /* FBSDKLoginKit.framework */,
+				B6B2B2411C219DB500531055 /* FBSDKCoreKit.framework */,
 				9DB8EBA975A92D4E89E58F1D /* libPods.a */,
 			);
 			name = Frameworks;
@@ -334,6 +482,43 @@
 				B611976F1C2047A1000FA21F /* License */,
 			);
 			path = LGSimpleChat;
+			sourceTree = "<group>";
+		};
+		B61945901CCE001800E4FAA4 /* font montserrat */ = {
+			isa = PBXGroup;
+			children = (
+				B61945911CCE001800E4FAA4 /* Montserrat-Black.otf */,
+				B61945921CCE001800E4FAA4 /* Montserrat-Bold.otf */,
+				B61945931CCE001800E4FAA4 /* Montserrat-ExtraBold.otf */,
+				B61945941CCE001800E4FAA4 /* Montserrat-Hairline.otf */,
+				B61945951CCE001800E4FAA4 /* Montserrat-Light.otf */,
+				B61945961CCE001800E4FAA4 /* Montserrat-Regular.otf */,
+				B61945971CCE001800E4FAA4 /* Montserrat-SemiBold.otf */,
+				B61945981CCE001800E4FAA4 /* Montserrat-UltraLight.otf */,
+				B61945991CCE001800E4FAA4 /* SIL Open Font License.txt */,
+			);
+			path = "font montserrat";
+			sourceTree = "<group>";
+		};
+		B648955B1CCF311B004B97B5 /* Modified */ = {
+			isa = PBXGroup;
+			children = (
+				B64895611CCF3146004B97B5 /* SignUp */,
+				B6FC7B441CEDB327005CDDAA /* tableViewCellCustomViewController.h */,
+				B6FC7B451CEDB327005CDDAA /* tableViewCellCustomViewController.m */,
+				B6FC7B461CEDB327005CDDAA /* tableViewCellCustomViewController.xib */,
+			);
+			name = Modified;
+			sourceTree = "<group>";
+		};
+		B64895611CCF3146004B97B5 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				B648955C1CCF3136004B97B5 /* SignUpViewController.h */,
+				B648955D1CCF3136004B97B5 /* SignUpViewController.m */,
+				B648955E1CCF3136004B97B5 /* SignUpViewController.xib */,
+			);
+			name = SignUp;
 			sourceTree = "<group>";
 		};
 		B6CC66B31C1D00F200AFB2D9 /* SocketIOLib */ = {
@@ -475,17 +660,48 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6DCE2DC1CEC84BB00A3A1C6 /* icon.png in Resources */,
+				B619459E1CCE001800E4FAA4 /* Montserrat-Light.otf in Resources */,
+				B6F9D35E1C297A3900F2B9CA /* InfoWindow.xib in Resources */,
+				B6A7AA671C4CB8C1003160EF /* ProfilSettingViewController.xib in Resources */,
 				53EBA3271C0B014600607407 /* LeftDrawerViewController.xib in Resources */,
 				5382B9541C05C334006AA0D6 /* LaunchScreen.storyboard in Resources */,
+				B69646D71CDDCF2C004580DB /* button-add.png in Resources */,
+				B69646D81CDDCF2C004580DB /* button-tick-off.png in Resources */,
+				B619459F1CCE001800E4FAA4 /* Montserrat-Regular.otf in Resources */,
+				B64895601CCF3136004B97B5 /* SignUpViewController.xib in Resources */,
+				B619459C1CCE001800E4FAA4 /* Montserrat-ExtraBold.otf in Resources */,
+				B644E8741CCE1B76009347E9 /* Facebook Icon.png in Resources */,
+				B6F9D3661C298F3F00F2B9CA /* ProfileViewController.xib in Resources */,
+				B619459D1CCE001800E4FAA4 /* Montserrat-Hairline.otf in Resources */,
+				B69646DB1CDDCF2C004580DB /* cover_blue.png in Resources */,
+				B654980C1C28547500711106 /* ChatViewController.xib in Resources */,
 				5382B9511C05C334006AA0D6 /* Assets.xcassets in Resources */,
 				53EBA44E1C0B2C3A00607407 /* RearViewController.xib in Resources */,
+				B644E86F1CCE13AD009347E9 /* Z Logo.png in Resources */,
+				B61945A01CCE001800E4FAA4 /* Montserrat-SemiBold.otf in Resources */,
+				B6F9D35C1C2959E600F2B9CA /* AppSettingViewController.xib in Resources */,
+				B644E8751CCE1B76009347E9 /* Google Icon.png in Resources */,
+				B6D55E3E1C34FA850023B7EE /* LoginViewController.xib in Resources */,
+				B6F9D3681C298FB500F2B9CA /* navigat_boxtk01.png in Resources */,
+				B644E8731CCE1B76009347E9 /* Email Icon.png in Resources */,
+				B61945A21CCE001800E4FAA4 /* SIL Open Font License.txt in Resources */,
+				B61945A11CCE001800E4FAA4 /* Montserrat-UltraLight.otf in Resources */,
+				B64D16AB1C37DF6200B51B3C /* mystery-man.png in Resources */,
 				5382B9781C05C7B6006AA0D6 /* Podfile in Resources */,
+				B619459A1CCE001800E4FAA4 /* Montserrat-Black.otf in Resources */,
 				53EBA4521C0B2D3200607407 /* reveal-icon@2x.png in Resources */,
 				53EBA44D1C0B2C3A00607407 /* FrontViewController.xib in Resources */,
 				5382B94F1C05C334006AA0D6 /* Main.storyboard in Resources */,
+				B69646D91CDDCF2C004580DB /* button-tick-on.png in Resources */,
+				B69646DC1CDDCF2C004580DB /* cover_white.png in Resources */,
+				B6FC7B481CEDB327005CDDAA /* tableViewCellCustomViewController.xib in Resources */,
+				B69646DA1CDDCF2C004580DB /* button-white-big.png in Resources */,
+				B64D16AD1C37E1A300B51B3C /* navigate-right.png in Resources */,
 				B61197711C2047A1000FA21F /* License in Resources */,
 				53EBA4511C0B2D3200607407 /* reveal-icon.png in Resources */,
 				B6C31F381C1D84BA00E0D39A /* testingViewController.xib in Resources */,
+				B619459B1CCE001800E4FAA4 /* Montserrat-Bold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -574,35 +790,45 @@
 				53EBA4491C0B2B9200607407 /* FrontViewController.m in Sources */,
 				53EBA3211C0AF7E000607407 /* MMDrawerVisualState.m in Sources */,
 				B6CC66A21C1D00E200AFB2D9 /* SocketEngine.swift in Sources */,
+				B6A7AA661C4CB8C1003160EF /* ProfilSettingViewController.m in Sources */,
 				B6CC66A51C1D00E200AFB2D9 /* SocketEngineSpec.swift in Sources */,
+				B6F9D3651C298F3F00F2B9CA /* ProfileViewController.m in Sources */,
 				B6CC66A11C1D00E200AFB2D9 /* SocketAnyEvent.swift in Sources */,
 				53EBA4551C0B332800607407 /* FriendsViewController.m in Sources */,
+				B6FC7B471CEDB327005CDDAA /* tableViewCellCustomViewController.m in Sources */,
 				B6CC66AF1C1D00E200AFB2D9 /* SocketStringReader.swift in Sources */,
 				B6CC66A81C1D00E200AFB2D9 /* SocketIOClientStatus.swift in Sources */,
 				B6CC66AA1C1D00E200AFB2D9 /* SocketEnginePacketType.swift in Sources */,
+				B64D16B01C37F89E00B51B3C /* CustomMarker.m in Sources */,
 				B6CC66B11C1D00E200AFB2D9 /* SocketIOClient.swift in Sources */,
 				B6CC66A01C1D00E200AFB2D9 /* SocketAckEmitter.swift in Sources */,
-				B60C51071C14A399005B5AA9 /* ChatViewController.m in Sources */,
 				B6CC66AB1C1D00E200AFB2D9 /* SocketIOClientOption.swift in Sources */,
 				B6CC66AD1C1D00E200AFB2D9 /* SocketParser.swift in Sources */,
+				B602ACCC1C286C53000669AD /* Chat.m in Sources */,
 				B6CC66B01C1D00E200AFB2D9 /* SocketTypes.swift in Sources */,
+				B648955F1CCF3136004B97B5 /* SignUpViewController.m in Sources */,
 				B6CC66A91C1D00E200AFB2D9 /* WebSocket.swift in Sources */,
 				B6CC66AE1C1D00E200AFB2D9 /* SocketPacket.swift in Sources */,
 				B6CC66B21C1D00E200AFB2D9 /* SwiftRegex.swift in Sources */,
 				53EBA44A1C0B2B9200607407 /* RearViewController.m in Sources */,
+				B6D55E3D1C34FA850023B7EE /* LoginViewController.m in Sources */,
 				5382B94C1C05C334006AA0D6 /* ViewController.m in Sources */,
 				534737981C13CBED00D87B7B /* MapViewController.m in Sources */,
+				B6F9D3611C297AEE00F2B9CA /* CustomInfoWindow.m in Sources */,
 				53EBA3221C0AF7E000607407 /* UIViewController+MMDrawerController.m in Sources */,
 				53EBA3201C0AF7E000607407 /* MMDrawerController.m in Sources */,
 				B6CC66AC1C1D00E200AFB2D9 /* SocketLogger.swift in Sources */,
 				53EBA3261C0B014600607407 /* LeftDrawerViewController.m in Sources */,
 				B6CC66A31C1D00E200AFB2D9 /* SocketEngineClient.swift in Sources */,
 				53EBA32A1C0B01FF00607407 /* SetingsViewController.m in Sources */,
+				B6F9D35B1C2959E600F2B9CA /* AppSettingViewController.m in Sources */,
 				B6CC66A61C1D00E200AFB2D9 /* SocketAckManager.swift in Sources */,
+				B65498021C284B3100711106 /* People.m in Sources */,
 				53EBA31F1C0AF7E000607407 /* MMDrawerBarButtonItem.m in Sources */,
 				53EBA4431C0B1D2400607407 /* SWRevealViewController.m in Sources */,
 				5382B9491C05C334006AA0D6 /* AppDelegate.m in Sources */,
 				B6CC66A41C1D00E200AFB2D9 /* SocketEventHandler.swift in Sources */,
+				B654980B1C28547500711106 /* ChatViewController.m in Sources */,
 				B6CC66A71C1D00E200AFB2D9 /* SocketFixUTF8.swift in Sources */,
 				536621051C0B5D25006AF426 /* NodeController.swift in Sources */,
 				5382B9461C05C334006AA0D6 /* main.m in Sources */,
@@ -753,9 +979,18 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FacebookSDK",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Zonnexions/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = BIT.EP.Zonnexions;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Zonnexions-Bridging-Header.h";
@@ -773,9 +1008,18 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FacebookSDK",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Zonnexions/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = BIT.EP.Zonnexions;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -32,12 +32,15 @@
 #import "FriendsViewController.h"
 #import "ChatViewController.h"
 
+#import "ProfilSettingViewController.h"
 #import "testingViewController.h"
+
 
 
 @interface RearViewController() 
 {
     NSInteger _presentedRow;
+    UITableViewCell *cell;
 }
 
 @end
@@ -91,7 +94,7 @@
 - (void)viewDidLoad
 {
 	[super viewDidLoad];
-	
+    
     // We determine whether we have a grand parent SWRevealViewController, this means we are at least one level behind the hierarchy
     SWRevealViewController *parentRevealController = self.revealViewController;
     SWRevealViewController *grandParentRevealController = parentRevealController.revealViewController;
@@ -102,6 +105,13 @@
     // if we have a reveal controller as a grand parent, this means we are are being added as a
     // child of a detail (child) reveal controller, so we add a gesture recognizer provided by our grand parent to our
     // navigation bar as well as a "reveal" button, we also set
+//    UIImage *image;
+    UIImageView *img = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"icon.png"]];
+    [img setContentMode:UIViewContentModeScaleAspectFit];
+    self.navigationItem.title = @"Zonnexions";
+    self.navigationItem.titleView = img;
+//    self.navigationItem.titleView.
+
     if ( grandParentRevealController )
     {
         // to present a title, we count the number of ancestor reveal controllers we have, this is of course
@@ -111,19 +121,38 @@
         while( nil != (controller = [controller revealViewController]) )
             level++;
         
-        NSString *title = [NSString stringWithFormat:@"Detail Level %d", level];
-            
+//        NSString *title = [NSString stringWithFormat:@"Detail Level %d", level];
+        
         [self.navigationController.navigationBar addGestureRecognizer:grandParentRevealController.panGestureRecognizer];
+        
         self.navigationItem.leftBarButtonItem = revealButtonItem;
-        self.navigationItem.title = title;
     }
     
     // otherwise, we are in the top reveal controller, so we just add a title
     else
     {
-        self.navigationItem.title = @"Master";
+//        self.navigationItem.title = @"Zonnexions";
+//        self.navigationItem.titleView = img;
     }
 }
+
++ (UIImage *)imageWithImage:(UIImage *)image scaledToSize:(CGSize)newSize {
+    //UIGraphicsBeginImageContext(newSize);
+    // In next line, pass 0.0 to use the current device's pixel scaling factor (and thus account for Retina resolution).
+    // Pass 1.0 to force exact pixel size.
+    UIGraphicsBeginImageContextWithOptions(newSize, NO, 0.0);
+    [image drawInRect:CGRectMake(0, 0, newSize.width, newSize.height)];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return newImage;
+}
+
+
+- (void)viewProfile {
+//    SignUpViewController *signup = [[SignUpViewController alloc] initWithNibName:nil bundle:nil];
+//    [self presentModalViewController:signup animated:NO];
+}
+
 
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -142,18 +171,32 @@
 }
 
 
-#pragma marl - UITableView Data Source
+#pragma mark - UITableView Data Source
+//- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath;
+
+-(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
+    cell.backgroundColor = [UIColor clearColor];
+    cell.textLabel.font = [UIFont fontWithName:@"Montserrat-Hairline" size:32];
+    cell.textLabel.textColor = [UIColor whiteColor];
+    
+}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
 	return 5;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 75;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	static NSString *cellIdentifier = @"Cell";
-	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-	NSInteger row = indexPath.row;
+    cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    
+    NSInteger row = indexPath.row;
     
 	if (nil == cell)
 	{
@@ -163,33 +206,37 @@
     NSString *text = nil;
 	if (row == 0)
 	{
-		text = @"Layar Utama";
+		text = @"Profile";
 	}
 	else if (row == 1)
 	{
-        text = @"Peta";
-	}
-	else if (row == 2)
-	{
-		text = @"Profile";
-	}
-	else if (row == 3)
-	{
-		text = @"Friend List";
-	}
+        text = @"Map";
+    }
+    else if (row == 2)
+    {
+        text = @"Friend";
+    }
+    else if (row == 3)
+    {
+        text = @"Setting";
+    }
     else if (row == 4)
-	{
-		text = @"Chat";
-	}
+    {
+        if (self.appd.isShared == true) {
+            text = @"Hide Me";
+        }else text = @"Show Me";
+    }
     
     cell.textLabel.text = NSLocalizedString( text, nil );
-	
+    
+
 	return cell;
 }
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    NSLog(@"tap");
     // Grab a handle to the reveal controller, as if you'd do with a navigtion controller via self.navigationController.
     SWRevealViewController *revealController = self.revealViewController;
     
@@ -198,82 +245,104 @@
     
     // if we are trying to push the same row or perform an operation that does not imply frontViewController replacement
     // we'll just set position and return
-    
     if ( row == _presentedRow )
     {
-        [revealController setFrontViewPosition:FrontViewPositionLeft animated:YES];
-        return;
+        if (row != 4) {
+            [revealController setFrontViewPosition:FrontViewPositionLeft animated:YES];
+            return;
+        }
     }
-    else if (row == 5)
-    {
-        [revealController setFrontViewPosition:FrontViewPositionRightMost animated:YES];
-        return;
+    
+    UIViewController *newFrontController = nil;
+
+    switch (indexPath.row) {
+        case 0:{
+                    }
+            break;
+        case 1:{
+            MapViewController *mapViewController = [[MapViewController alloc] init];
+            //testingViewController *mapViewController = [[testingViewController alloc] init];
+            newFrontController = [[UINavigationController alloc] initWithRootViewController:mapViewController];
+        }
+            break;
+        case 2:{
+            FriendsViewController *friendsViewController = [[FriendsViewController alloc] init];
+            newFrontController = [[UINavigationController alloc] initWithRootViewController:friendsViewController];
+        }
+            break;
+        case 3:{
+            AppSettingViewController *settingViewController =[[AppSettingViewController alloc] init];
+            newFrontController = [[UINavigationController alloc] initWithRootViewController:settingViewController];
+        }
+            break;
+        case 4:{
+            if (self.appd.isShared == true) {
+                cell.textLabel.text = @"Show Me";
+                self.appd.isShared = false;
+            }else{
+                cell.textLabel.text = @"Hide Me";
+                self.appd.isShared = true;
+            }
+        }
+            break;
+        default:
+            break;
     }
-    else if (row == 6)
-    {
-        [revealController setFrontViewPosition:FrontViewPositionRight animated:YES];
-        return;
-    }
+    
+    
+//    else if (row == 5)
+//    {
+//        [revealController setFrontViewPosition:FrontViewPositionRightMost animated:YES];
+//        return;
+//    }
+//    else if (row == 6)
+//    {
+//        [revealController setFrontViewPosition:FrontViewPositionRight animated:YES];
+//        return;
+//    }
 
     // otherwise we'll create a new frontViewController and push it with animation
 
-    UIViewController *newFrontController = nil;
-
+    
     if (row == 0)
     {
-        FrontViewController *frontViewController = [[FrontViewController alloc] init];
-        newFrontController = [[UINavigationController alloc] initWithRootViewController:frontViewController];
+//        FrontViewController *frontViewController = [[FrontViewController alloc] init];
+//        newFrontController = [[UINavigationController alloc] initWithRootViewController:frontViewController];
+        
+        
     }
     
     else if (row == 1)
     {
-        MapViewController *mapViewController = [[MapViewController alloc] init];
-        //testingViewController *mapViewController = [[testingViewController alloc] init];
-        newFrontController = [[UINavigationController alloc] initWithRootViewController:mapViewController];
-        
+//        ProfilSettingViewController *profilView = [[ProfilSettingViewController alloc] init];
+//        newFrontController = [[UINavigationController alloc] initWithRootViewController:profilView];
     }
     
     else if ( row == 2 )
     {
-        
-        SetingsViewController *settingViewController =[[SetingsViewController alloc] init];
-        newFrontController = [[UINavigationController alloc] initWithRootViewController:settingViewController];
-        
-        /*
-        FrontViewController *frontViewController = [[FrontViewController alloc] init];
-        UINavigationController *frontNavigationController = [[UINavigationController alloc] initWithRootViewController:frontViewController];
-        
-        RearViewController *rearViewController = [[RearViewController alloc] init];
-        UINavigationController *rearNavigationController = [[UINavigationController alloc] initWithRootViewController:rearViewController];
-
-        
-        
-        SWRevealViewController *childRevealController = [[SWRevealViewController alloc]
-            initWithRearViewController:rearNavigationController frontViewController:frontNavigationController];
-
-        
-        
-        
-        childRevealController.rearViewRevealDisplacement = 0.0f;
-        [childRevealController setFrontViewPosition:FrontViewPositionRight animated:NO];
-        
-        newFrontController = childRevealController;
-         */
+//        FriendsViewController *friendsViewController = [[FriendsViewController alloc] init];
+//        newFrontController = [[UINavigationController alloc] initWithRootViewController:friendsViewController];
     }
     else if (row == 3)
     {
-        FriendsViewController *friendsViewController = [[FriendsViewController alloc] init];
-        newFrontController = [[UINavigationController alloc] initWithRootViewController:friendsViewController];
+        
+//        AppSettingViewController *settingViewController =[[AppSettingViewController alloc] init];
+//        newFrontController = [[UINavigationController alloc] initWithRootViewController:settingViewController];
+        
     }
-    else if (row == 4)
+    else if (row >= 4)
     {
-        ChatViewController *chatViewController = [[ChatViewController alloc] init];
-        newFrontController = [[UINavigationController alloc] initWithRootViewController:chatViewController];
+//        return;
+//        ProfilSettingViewController *profilView = [[ProfilSettingViewController alloc] init];
+//        newFrontController = [[UINavigationController alloc] initWithRootViewController:profilView];
     }
     
-    [revealController pushFrontViewController:newFrontController animated:YES];
-    
-    _presentedRow = row;  // <- store the presented row
+    if (indexPath.row != 4) {
+        NSLog(@"not 4");
+        [revealController pushFrontViewController:newFrontController animated:YES];
+        
+        _presentedRow = row;  // <- store the presented row
+    }
 }
 
 

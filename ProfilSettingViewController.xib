@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Montserrat-Light.otf">
+            <string>Montserrat-Light</string>
+        </mutableArray>
+        <mutableArray key="Montserrat-Regular.otf">
+            <string>Montserrat-Regular</string>
+        </mutableArray>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfilSettingViewController">
+            <connections>
+                <outlet property="imageViewProfile" destination="VM5-ck-6uJ" id="kul-Ie-sk7"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cover_blue.png" translatesAutoresizingMaskIntoConstraints="NO" id="VM5-ck-6uJ" userLabel="Image View Profile">
+                    <rect key="frame" x="85" y="87" width="141" height="141"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="VM5-ck-6uJ" secondAttribute="height" multiplier="1:1" id="Dj0-aa-fdD"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profile" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gx8-el-6u0">
+                    <rect key="frame" x="127" y="64" width="66" height="0.0"/>
+                    <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="21"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YTI-a6-DL1">
+                    <rect key="frame" x="8" y="254" width="304" height="219"/>
+                </scrollView>
+                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8IO-By-lVz">
+                    <rect key="frame" x="81" y="490" width="159" height="53"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="8IO-By-lVz" secondAttribute="height" multiplier="3:1" id="gZs-hg-N6Z"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="18"/>
+                    <state key="normal" title="Submit" backgroundImage="button-white-big.png">
+                        <color key="titleColor" red="0.1333333333" green="0.47450980390000003" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.0" green="0.44705882352941173" blue="0.73333333333333328" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="8IO-By-lVz" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="159:568" id="1Ap-Wf-SYj"/>
+                <constraint firstItem="YTI-a6-DL1" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="1LA-Zt-Vic"/>
+                <constraint firstItem="8IO-By-lVz" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="81" id="2T7-73-HuH"/>
+                <constraint firstAttribute="trailing" secondItem="YTI-a6-DL1" secondAttribute="trailing" constant="8" id="EB9-LX-l7S"/>
+                <constraint firstAttribute="trailing" secondItem="VM5-ck-6uJ" secondAttribute="trailing" constant="85" id="FRa-ca-sWr"/>
+                <constraint firstItem="YTI-a6-DL1" firstAttribute="top" secondItem="VM5-ck-6uJ" secondAttribute="bottom" constant="26" id="GC2-Yj-IO0"/>
+                <constraint firstItem="Gx8-el-6u0" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="HZ8-ol-dFx"/>
+                <constraint firstItem="VM5-ck-6uJ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="85" id="KBk-Vb-au1"/>
+                <constraint firstAttribute="trailing" secondItem="8IO-By-lVz" secondAttribute="trailing" constant="80" id="U26-4F-JVF"/>
+                <constraint firstAttribute="trailing" secondItem="Gx8-el-6u0" secondAttribute="trailing" constant="127" id="Wdw-SC-VhY"/>
+                <constraint firstItem="8IO-By-lVz" firstAttribute="top" secondItem="YTI-a6-DL1" secondAttribute="bottom" constant="17" id="Z4r-25-REd"/>
+                <constraint firstAttribute="bottom" secondItem="VM5-ck-6uJ" secondAttribute="bottom" constant="340" id="c2U-Eq-0b2"/>
+                <constraint firstItem="VM5-ck-6uJ" firstAttribute="top" secondItem="Gx8-el-6u0" secondAttribute="bottom" constant="23" id="qcP-P6-kKP"/>
+                <constraint firstItem="Gx8-el-6u0" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="127" id="t8N-5L-vqj"/>
+            </constraints>
+            <point key="canvasLocation" x="245" y="285"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="button-white-big.png" width="270" height="74"/>
+        <image name="cover_blue.png" width="225" height="225"/>
+    </resources>
+</document>

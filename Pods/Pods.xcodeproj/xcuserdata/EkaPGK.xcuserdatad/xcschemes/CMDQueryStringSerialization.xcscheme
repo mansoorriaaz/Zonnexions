@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '8E23044F198ACDFD7230F976'
+               BlueprintIdentifier = '58A5F25FAD1567D3C1E1C4A7'
                BlueprintName = 'CMDQueryStringSerialization'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libCMDQueryStringSerialization.a'>

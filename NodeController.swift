@@ -11,7 +11,7 @@ import Foundation
 import UIKit
 
 @objc class File: NSObject {
-    let socket = SocketIOClient(socketURL: "103.23.21.217:3000")
+    let socket = SocketIOClient(socketURL: "103.23.22.6:3000")
     
     var property:String = ""
     func method() {
@@ -20,7 +20,7 @@ import UIKit
             //println("Message for you! \(data[0])")
             print("connected")
         }
-        */
+
         
         
         print(socket.socketURL)
@@ -32,7 +32,7 @@ import UIKit
         }
         socket.connect()
         print("end method")
-        
+        */
     }
     /*
     

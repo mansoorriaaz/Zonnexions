@@ -25,7 +25,10 @@
 */
 
 #import <UIKit/UIKit.h>
+#import "ViewController.h"
 
-@interface FrontViewController : UIViewController
+@interface FrontViewController : ViewController
+
+-(void)checkPermission;
 
 @end

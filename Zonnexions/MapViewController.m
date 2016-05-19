@@ -7,7 +7,6 @@
 //
 
 #import "MapViewController.h"
-#import <GoogleMaps/GoogleMaps.h>
 
 @import GoogleMaps;
 
@@ -21,6 +20,8 @@
     BOOL firstLocationUpdate_;
     CLLocation *location;
     CLLocationManager *locationManager;
+    NSString *userName;
+    People *user;
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -31,6 +32,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     //[self callMap];
+    user = [[People alloc] init];
+    
+    NSLog(@"limit %d", self.appd.limitDistance );
     self.appd = (AppDelegate *)[[UIApplication sharedApplication]delegate];
     
     [[NSNotificationCenter defaultCenter] addObserver:self
@@ -45,7 +49,7 @@
                                                object:nil];
     
     
-    self.title = NSLocalizedString(@"Map View", nil);
+    self.title = NSLocalizedString(@"Zonnexions", nil);
     
     SWRevealViewController *revealController = [self revealViewController];
     
@@ -63,7 +67,7 @@
     mapView_ = [GMSMapView mapWithFrame:CGRectZero camera:camera];
     mapView_.settings.compassButton = YES;
     mapView_.settings.myLocationButton = YES;
-    
+    mapView_.delegate = self;
     // Listen to the myLocation property of GMSMapView.
     [mapView_ addObserver:self
                forKeyPath:@"myLocation"
@@ -81,46 +85,31 @@
         // Do any additional setup after loading the view.
 }
 
+-(UIView *) mapView:(GMSMapView *)mapView markerInfoContents:(CustomMarker *)marker{
+    CustomInfoWindow *infoWindow = [[[NSBundle mainBundle] loadNibNamed:@"InfoWindow" owner:self options:nil] objectAtIndex:0];
+    infoWindow.name.text = marker.title;
+    infoWindow.alamat.text = @"Location : xxx";
+    userName = infoWindow.name.text;
+    NSLog(@"masuk: %@", userName);
+    return infoWindow;
+}
+
+- (void)mapView:(GMSMapView *)mapView didTapInfoWindowOfMarker:(CustomMarker *)marker {
+    NSLog(@"marker name : %@", marker.userName);
+    NSLog(@"marker key : %@", marker.userKey);
+    
+    NSLog(@"nama user : %@", userName);
+    ProfileViewController *profil = [[ProfileViewController alloc] init];
+    profil.userName = marker.userName;
+    profil.userKey = marker.userKey;
+    profil.alamatUser.text = @"Location : xxx";
+    [self.navigationController pushViewController:profil animated:YES];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-- (void) callMap
-{
-    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:-33.86
-                                                            longitude:151.20
-                                                                 zoom:6];
-    
-    mapView_ = [GMSMapView mapWithFrame:CGRectZero camera:camera];
-    mapView_.myLocationEnabled = YES;
-    //mapView_.frame = CGRectMake(0, 0, width, height / 2);
-    //self.view.frame = mapView_.frame;
-    mapView_.settings.compassButton = YES;
-    mapView_.settings.myLocationButton = YES;
-    
-    // Listen to the myLocation property of GMSMapView.
-    [mapView_ addObserver:self
-               forKeyPath:@"myLocation"
-                  options:NSKeyValueObservingOptionNew
-                  context:NULL];
-    self.view = mapView_;
-    
-    
-    dispatch_async(dispatch_get_main_queue(), ^{
-        mapView_.myLocationEnabled = YES;
-    });
-    
-    /* Creates a marker in the center of the map.
-    GMSMarker *marker = [[GMSMarker alloc] init];
-    marker.position = CLLocationCoordinate2DMake(-33.86, 151.20);
-    marker.title = @"Sydney";
-    marker.snippet = @"Australia";
-    marker.map = mapView_;
-     */
-    
-}
-
 - (void)friendMarking:(NSNotification *) notification
 {
     NSLog(@"marking");
@@ -132,21 +121,18 @@
         CLLocationDegrees _lat = [[dic objectForKey:@"lat"] doubleValue];
         CLLocationDegrees _long = [[dic objectForKey:@"long"] doubleValue];
         
-        GMSMarker *marker = [[GMSMarker alloc] init];
+        CustomMarker *marker = [[CustomMarker alloc] init];
         marker.position = CLLocationCoordinate2DMake(_lat,_long);
         marker.appearAnimation = kGMSMarkerAnimationPop;
         marker.icon = [UIImage imageNamed:@"flag_icon"];
         marker.map = mapView_;
-    }
-    
-}
+        marker.title = [dic objectForKey:@"responder"];
+        marker.userName = [dic objectForKey:@"responder"];
+        marker.userKey = [dic objectForKey:@"responderCustomId"];
+        marker.snippet = @"test";
+        marker.infoWindowAnchor = CGPointMake(0.44f, 0.45f);
 
-- (void)friendMarking2
-{
-    CLLocationCoordinate2D position = CLLocationCoordinate2DMake(-6.266921, 106.778602);
-    GMSMarker *marker = [GMSMarker markerWithPosition:position];
-    marker.title = @"Hello World";
-    marker.map = mapView_;
+    }
     
 }
 
@@ -184,33 +170,12 @@
         
         NSLog(@"JSon %@", [jsonLocation description]);
         
+        if (self.appd.isAuthenticated) {
+            [self.appd.socket emit:@"user location" withItems:[NSArray arrayWithObject:jsonLocation]];
+        }
         
-        [self.appd.socket emit:@"user location" withItems:[NSArray arrayWithObject:jsonLocation]];
         
     }
-    /*
-    NSLog(@"measure %f", locationManager.location.coordinate.latitude);
-
-    NSMutableDictionary *json = [[NSMutableDictionary alloc]init];
-    [json setObject:@"mansoorcool.cool@gmail.com" forKey:@"requester"];
-    [json setObject:[NSNumber numberWithDouble:locationManager.location.coordinate.latitude] forKey:@"lat"];
-    [json setObject:[NSNumber numberWithDouble:locationManager.location.coordinate.longitude] forKey:@"long"];
-    /**
-     Format yang di atas
-     json { requester : "mansoorcool.cool@gmail.com",lat : 0,long : 0 }
-     
-    [self.appd.socket on:@"chat message" callback:^(NSArray* data, SocketAckEmitter* ack) {
-        NSLog(@"from func = %@", data);
-    }];
-    
-    //Misal yang lebih complex(Misalkan ada object lagi dalamnya.. )
-    NSMutableDictionary *geo = [[NSMutableDictionary alloc]init];
-    [geo setObject:[NSNumber numberWithDouble:locationManager.location.coordinate.longitude] forKey:@"long"];
-    [geo setObject:[NSNumber numberWithDouble:locationManager.location.coordinate.latitude] forKey:@"lat"];
-    [json setObject:geo forKey:@"geo"];
-    
-    
-     */
 }
 
 - (void)dealloc {
@@ -234,7 +199,6 @@
                                                          zoom:14];
         NSLog(@"lat observe %f", location.coordinate.latitude);
         NSLog(@"long observe %f", location.coordinate.longitude);
-        //[self funcForThought];
     }
 }
 
@@ -245,15 +209,20 @@
     locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters; // 100 m
     [locationManager startUpdatingLocation];
     
-    NSLog(@"func");
     //Beda NSDictionary dengan MutabaleDictarny yaitu yang mutable bisa di kelola(hapus, tambah,edit) yang lawanya ga bisa.
     NSLog(@"lat func %f", location.coordinate.latitude);
     NSLog(@"long func %f", location.coordinate.longitude);
     
     NSMutableDictionary *json = [[NSMutableDictionary alloc]init];
-    [json setObject:@"mansoorcool.cool@gmail.com" forKey:@"requester"];
+    [json setObject:[[NSUserDefaults standardUserDefaults] objectForKey:@"custom id"] forKey:@"requester"];
     [json setObject:[NSNumber numberWithDouble:locationManager.location.coordinate.latitude] forKey:@"lat"];
     [json setObject:[NSNumber numberWithDouble:locationManager.location.coordinate.longitude] forKey:@"long"];
+    if (self.appd.limitDistance > 0) {
+        [json setObject: [NSNumber numberWithInt:self.appd.limitDistance] forKey:@"limit"];
+        NSLog(@"limit sent");
+    }
+    
+    NSLog(@"limit = %d", self.appd.limitDistance);
     /**
      Format yang di atas
      json {
@@ -264,25 +233,8 @@
      }
      */
     //Emit terima data NsArray so kita masukin seluruh NsDictionary ke array.
-    
     // json untuk emit balik location
-    
-    
-    
-    [self.appd.socket emit:@"find friend" withItems:[NSArray arrayWithObject:json]];
-    
-    
+    if (self.appd.isAuthenticated) { [self.appd.socket emit:@"find friend" withItems:[NSArray arrayWithObject:json]]; }
 }
-
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

@@ -11,6 +11,10 @@
 #import "MapViewController.h"
 #import "SWRevealViewController.h"
 #import "ViewController.h"
+#import "People.h"
+#import "ChatViewController.h"
+#import "Chat.h"
+
 
 @interface FriendsViewController : ViewController <UITableViewDataSource,UITableViewDelegate>
 
