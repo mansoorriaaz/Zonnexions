@@ -8,6 +8,7 @@ PODS:
   - Fabric (1.6.1)
   - GoogleMaps (1.10.5)
   - ISO8601 (0.3.0)
+  - MZAppearance (1.1.6)
   - NSData+Base64 (1.0.0)
   - ReactiveCocoa (2.5):
     - ReactiveCocoa/UI (= 2.5)
@@ -81,6 +82,7 @@ DEPENDENCIES:
   - Crashlytics
   - Fabric
   - GoogleMaps
+  - MZAppearance
   - SimpleAuth
 
 SPEC CHECKSUMS:
@@ -90,6 +92,7 @@ SPEC CHECKSUMS:
   Fabric: bf0ceb04e7c924090efc5f8c55e4fbcca189e0a0
   GoogleMaps: da51c62c338c2d9c47cdad470a0d1e0e4b8544e4
   ISO8601: 8d8a22d5edf0554a1cf75bac028c76c1dc0ffaef
+  MZAppearance: 0c06d3fa9cc55142f1da14bc8631fbe8fd6e19d5
   NSData+Base64: 4e84902c4db907a15673474677e57763ef3903e4
   ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
   SimpleAuth: bc7d594f90711a7e6ef7624dce5aa8c8b09770ab

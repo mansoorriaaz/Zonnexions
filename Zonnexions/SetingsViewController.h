@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
-#import "MapViewController.h"
 #import "SWRevealViewController.h"
+#import "ViewController.h"
 
 @interface SetingsViewController : UIViewController <UITableViewDataSource,UITableViewDelegate>
 

@@ -130,6 +130,10 @@
     [self updateLocation];
     
     self.socket = [[SocketIOClient alloc] initWithSocketURL:@"103.23.22.6:3000" options:@{@"log": @YES, @"forcePolling": @YES}];
+
+//    self.socket = [[SocketIOClient alloc] initWithSocketURL:@"http://103.23.22.6:9000?__sails_io_sdk_version=0.11.0" options:@{@"log": @YES, @"forcePolling": @YES}];
+
+
     
     [self.socket on:@"authenticated" callback:^(NSArray* data, SocketAckEmitter* ack) {
         NSLog(@"welcome %@", data);

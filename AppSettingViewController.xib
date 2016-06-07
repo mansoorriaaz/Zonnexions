@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="Montserrat-Regular.otf">
+            <string>Montserrat-Regular</string>
             <string>Montserrat-Regular</string>
             <string>Montserrat-Regular</string>
             <string>Montserrat-Regular</string>
@@ -28,8 +29,14 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rCh-kJ-cMs">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Settings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zlE-Wb-fqr">
                     <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                    <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="25"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rCh-kJ-cMs">
+                    <rect key="frame" x="42" y="21" width="42" height="21"/>
                     <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="25"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
@@ -80,6 +87,10 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Yxs-jp-cVe">
+                    <rect key="frame" x="140" y="379" width="240" height="128"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
             </subviews>
             <color key="backgroundColor" red="0.1333333333" green="0.47450980390000003" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
@@ -87,11 +98,14 @@
                 <constraint firstItem="wur-VI-zrI" firstAttribute="leading" secondItem="Bqh-iB-JcM" secondAttribute="trailing" constant="17" id="8WR-2e-O39"/>
                 <constraint firstItem="2h1-N5-C69" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="23" id="CJn-MJ-bRW"/>
                 <constraint firstAttribute="trailing" secondItem="RZU-Vi-ofc" secondAttribute="trailing" constant="16" id="HX3-Bv-rc1"/>
+                <constraint firstItem="Yxs-jp-cVe" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="180" id="Kql-e0-0a7"/>
                 <constraint firstItem="RZU-Vi-ofc" firstAttribute="top" secondItem="6aw-to-OWu" secondAttribute="bottom" constant="-1" id="L6C-Yt-6G2"/>
                 <constraint firstAttribute="trailing" secondItem="wur-VI-zrI" secondAttribute="trailing" constant="22" id="TTT-jJ-Ss1"/>
                 <constraint firstItem="6aw-to-OWu" firstAttribute="top" secondItem="2h1-N5-C69" secondAttribute="bottom" constant="19" id="Uf3-Ng-VdQ"/>
                 <constraint firstItem="Bqh-iB-JcM" firstAttribute="top" secondItem="LXt-ub-Zit" secondAttribute="bottom" constant="14" id="XvZ-5d-nM2"/>
                 <constraint firstItem="Bqh-iB-JcM" firstAttribute="leading" secondItem="6aw-to-OWu" secondAttribute="trailing" constant="120" id="ZE5-0W-rFe"/>
+                <constraint firstAttribute="bottom" secondItem="Yxs-jp-cVe" secondAttribute="bottom" constant="214" id="Zqo-ZH-9db"/>
+                <constraint firstAttribute="trailing" secondItem="Yxs-jp-cVe" secondAttribute="trailing" constant="180" id="fjA-J1-A67"/>
                 <constraint firstItem="rCh-kJ-cMs" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="79" id="mcZ-Z5-9be"/>
                 <constraint firstItem="RZU-Vi-ofc" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="pJf-ge-75S"/>
                 <constraint firstItem="6aw-to-OWu" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="23" id="vPg-HI-uDd"/>
@@ -123,12 +137,12 @@
                     <exclude reference="vPg-HI-uDd"/>
                     <exclude reference="XvZ-5d-nM2"/>
                     <exclude reference="ZE5-0W-rFe"/>
-                    <exclude reference="mcZ-Z5-9be"/>
-                    <exclude reference="ydZ-qJ-ofX"/>
-                    <exclude reference="z5E-tL-V0z"/>
                     <exclude reference="8WR-2e-O39"/>
                     <exclude reference="TTT-jJ-Ss1"/>
                     <exclude reference="yBK-HP-4K8"/>
+                    <exclude reference="mcZ-Z5-9be"/>
+                    <exclude reference="ydZ-qJ-ofX"/>
+                    <exclude reference="z5E-tL-V0z"/>
                 </mask>
             </variation>
             <variation key="heightClass=regular-widthClass=compact">
@@ -153,12 +167,12 @@
                     <include reference="vPg-HI-uDd"/>
                     <include reference="XvZ-5d-nM2"/>
                     <include reference="ZE5-0W-rFe"/>
-                    <include reference="mcZ-Z5-9be"/>
-                    <include reference="ydZ-qJ-ofX"/>
-                    <include reference="z5E-tL-V0z"/>
                     <include reference="8WR-2e-O39"/>
                     <include reference="TTT-jJ-Ss1"/>
                     <include reference="yBK-HP-4K8"/>
+                    <include reference="mcZ-Z5-9be"/>
+                    <include reference="ydZ-qJ-ofX"/>
+                    <include reference="z5E-tL-V0z"/>
                 </mask>
             </variation>
             <point key="canvasLocation" x="426" y="273"/>

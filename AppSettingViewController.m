@@ -61,13 +61,21 @@
 
 - (void)setSwipe
 {
-    self.title = NSLocalizedString(@"Profile", nil);
+    [self.navigationController.navigationBar setBackgroundImage:[[UIImage alloc]init] forBarMetrics:UIBarMetricsDefault];
+    [self.navigationController.navigationBar setShadowImage:[[UIImage alloc]init] ];
+    //    [self.navigationController.navigationBar setTintColor:[UIColor clearColor]];
+    
+    //    self.navigationController.
+    UIImageView *img = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 30, 30)];
+    img.image =[UIImage imageNamed:@"zonnexions-logo.png"];
+    [img setContentMode:UIViewContentModeScaleAspectFit];
+    self.navigationItem.titleView = img;
     
     SWRevealViewController *revealController = [self revealViewController];
     
     [self.navigationController.navigationBar addGestureRecognizer:revealController.panGestureRecognizer];
     
-    UIBarButtonItem *revealButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"reveal-icon.png"]
+    UIBarButtonItem *revealButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"button-burger-circle.png"]
                                                                          style:UIBarButtonItemStyleBordered target:revealController action:@selector(revealToggle:)];
     
     self.navigationItem.leftBarButtonItem = revealButtonItem;

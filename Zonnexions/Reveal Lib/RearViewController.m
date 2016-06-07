@@ -28,11 +28,11 @@
 #import "SWRevealViewController.h"
 #import "FrontViewController.h"
 #import "MapViewController.h"
-#import "SetingsViewController.h"
 #import "FriendsViewController.h"
 #import "ChatViewController.h"
 
-#import "ProfilSettingViewController.h"
+#import "UserProfileViewController.h"
+#import "SetingsViewController.h"
 #import "testingViewController.h"
 
 
@@ -95,21 +95,27 @@
 {
 	[super viewDidLoad];
     
+    _presentedRow = 999;
     // We determine whether we have a grand parent SWRevealViewController, this means we are at least one level behind the hierarchy
     SWRevealViewController *parentRevealController = self.revealViewController;
     SWRevealViewController *grandParentRevealController = parentRevealController.revealViewController;
     
-    UIBarButtonItem *revealButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"reveal-icon.png"]
+//    parentRevealController.childViewControllerForStatusBarStyle
+    UIBarButtonItem *revealButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"button-burger-circle.png"]
             style:UIBarButtonItemStyleBordered target:grandParentRevealController action:@selector(revealToggle:)];
     
     // if we have a reveal controller as a grand parent, this means we are are being added as a
     // child of a detail (child) reveal controller, so we add a gesture recognizer provided by our grand parent to our
     // navigation bar as well as a "reveal" button, we also set
 //    UIImage *image;
-    UIImageView *img = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"icon.png"]];
+    [self.navigationController.navigationBar setBackgroundImage:[[UIImage alloc]init] forBarMetrics:UIBarMetricsDefault];
+    [self.navigationController.navigationBar setShadowImage:[[UIImage alloc]init] ];
+
+    UIImageView *img = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 40, 40)];
+    img.image =[UIImage imageNamed:@"zonnexions-logo.png"];
     [img setContentMode:UIViewContentModeScaleAspectFit];
-    self.navigationItem.title = @"Zonnexions";
     self.navigationItem.titleView = img;
+    self.navigationItem.title = @"Zonnexions";
 //    self.navigationItem.titleView.
 
     if ( grandParentRevealController )
@@ -134,6 +140,8 @@
 //        self.navigationItem.title = @"Zonnexions";
 //        self.navigationItem.titleView = img;
     }
+    
+    NSLog(@"index path : %ld", (long)_presentedRow);
 }
 
 + (UIImage *)imageWithImage:(UIImage *)image scaledToSize:(CGSize)newSize {
@@ -239,10 +247,9 @@
     NSLog(@"tap");
     // Grab a handle to the reveal controller, as if you'd do with a navigtion controller via self.navigationController.
     SWRevealViewController *revealController = self.revealViewController;
-    
     // selecting row
     NSInteger row = indexPath.row;
-    
+    NSLog(@"presented row : %ld", (long)_presentedRow);
     // if we are trying to push the same row or perform an operation that does not imply frontViewController replacement
     // we'll just set position and return
     if ( row == _presentedRow )
@@ -257,6 +264,8 @@
 
     switch (indexPath.row) {
         case 0:{
+            UserProfileViewController *profileView = [[UserProfileViewController alloc] init];
+            newFrontController = [[UINavigationController alloc] initWithRootViewController:profileView];
                     }
             break;
         case 1:{
@@ -271,8 +280,10 @@
         }
             break;
         case 3:{
-            AppSettingViewController *settingViewController =[[AppSettingViewController alloc] init];
+            SetingsViewController *settingViewController = [[SetingsViewController alloc] init];
             newFrontController = [[UINavigationController alloc] initWithRootViewController:settingViewController];
+//            AppSettingViewController *settingViewController =[[AppSettingViewController alloc] init];
+//            newFrontController = [[UINavigationController alloc] initWithRootViewController:settingViewController];
         }
             break;
         case 4:{

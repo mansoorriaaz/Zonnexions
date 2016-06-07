@@ -49,13 +49,27 @@
                                                object:nil];
     
     
-    self.title = NSLocalizedString(@"Zonnexions", nil);
+    [self.navigationController.navigationBar setBackgroundImage:[[UIImage alloc]init] forBarMetrics:UIBarMetricsDefault];
+    [self.navigationController.navigationBar setShadowImage:[[UIImage alloc]init] ];
+    //    [self.navigationController.navigationBar setTintColor:[UIColor clearColor]];
     
+    //    self.navigationController.
+    UIImageView *img = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 30, 30)];
+    img.image =[UIImage imageNamed:@"zonnexions-logo.png"];
+    [img setContentMode:UIViewContentModeScaleAspectFit];
+    self.navigationItem.titleView = img;
+    
+//    self.navigationController.navigationBar.backgroundColor = [UIColor colorWithRed:34.0/255.0
+//                                                                              green:121.0/255.0
+//                                                                               blue:182.0/255.0
+//                                                                              alpha:1];
+//    
+
     SWRevealViewController *revealController = [self revealViewController];
     
     [self.navigationController.navigationBar addGestureRecognizer:revealController.panGestureRecognizer];
     
-    UIBarButtonItem *revealButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"reveal-icon.png"]
+    UIBarButtonItem *revealButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"button-burger-circle.png"]
                                                                          style:UIBarButtonItemStyleBordered target:revealController action:@selector(revealToggle:)];
     
     self.navigationItem.leftBarButtonItem = revealButtonItem;

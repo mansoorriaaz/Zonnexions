@@ -56,9 +56,18 @@
 		B64D16AB1C37DF6200B51B3C /* mystery-man.png in Resources */ = {isa = PBXBuildFile; fileRef = B64D16AA1C37DF6200B51B3C /* mystery-man.png */; };
 		B64D16AD1C37E1A300B51B3C /* navigate-right.png in Resources */ = {isa = PBXBuildFile; fileRef = B64D16AC1C37E1A300B51B3C /* navigate-right.png */; };
 		B64D16B01C37F89E00B51B3C /* CustomMarker.m in Sources */ = {isa = PBXBuildFile; fileRef = B64D16AF1C37F89E00B51B3C /* CustomMarker.m */; };
+		B65337BF1CEEFF64009D8247 /* UserProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B65337BE1CEEFF64009D8247 /* UserProfileViewController.m */; };
+		B65337C21CEF0B61009D8247 /* AnimalTableTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B65337C11CEF0B61009D8247 /* AnimalTableTableViewController.m */; };
+		B65337C61CEF411E009D8247 /* WorkInputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B65337C41CEF411E009D8247 /* WorkInputViewController.m */; };
+		B65337C71CEF411E009D8247 /* WorkInputViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B65337C51CEF411E009D8247 /* WorkInputViewController.xib */; };
+		B65337CB1CEF44D2009D8247 /* EducationInputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B65337C91CEF44D2009D8247 /* EducationInputViewController.m */; };
+		B65337CC1CEF44D2009D8247 /* EducationInputViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B65337CA1CEF44D2009D8247 /* EducationInputViewController.xib */; };
+		B65337D11CEF4622009D8247 /* HobbiesInputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B65337CF1CEF4622009D8247 /* HobbiesInputViewController.m */; };
+		B65337D21CEF4622009D8247 /* HobbiesInputViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B65337D01CEF4622009D8247 /* HobbiesInputViewController.xib */; };
 		B65498021C284B3100711106 /* People.m in Sources */ = {isa = PBXBuildFile; fileRef = B65498011C284B3100711106 /* People.m */; };
 		B654980B1C28547500711106 /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B65498091C28547500711106 /* ChatViewController.m */; };
 		B654980C1C28547500711106 /* ChatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B654980A1C28547500711106 /* ChatViewController.xib */; };
+		B660849C1CF6EB8300DEEF3F /* UnderlinedTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = B660849B1CF6EB8300DEEF3F /* UnderlinedTextField.m */; };
 		B69646D71CDDCF2C004580DB /* button-add.png in Resources */ = {isa = PBXBuildFile; fileRef = B69646D11CDDCF2C004580DB /* button-add.png */; };
 		B69646D81CDDCF2C004580DB /* button-tick-off.png in Resources */ = {isa = PBXBuildFile; fileRef = B69646D21CDDCF2C004580DB /* button-tick-off.png */; };
 		B69646D91CDDCF2C004580DB /* button-tick-on.png in Resources */ = {isa = PBXBuildFile; fileRef = B69646D31CDDCF2C004580DB /* button-tick-on.png */; };
@@ -67,8 +76,24 @@
 		B69646DC1CDDCF2C004580DB /* cover_white.png in Resources */ = {isa = PBXBuildFile; fileRef = B69646D61CDDCF2C004580DB /* cover_white.png */; };
 		B6A7AA661C4CB8C1003160EF /* ProfilSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6A7AA641C4CB8C1003160EF /* ProfilSettingViewController.m */; };
 		B6A7AA671C4CB8C1003160EF /* ProfilSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6A7AA651C4CB8C1003160EF /* ProfilSettingViewController.xib */; };
+		B6AC08E11CF1BC1C00E1E182 /* MZMethodSwizzler.m in Sources */ = {isa = PBXBuildFile; fileRef = B6AC08C91CF1BC1C00E1E182 /* MZMethodSwizzler.m */; };
+		B6AC08E21CF1BC1C00E1E182 /* MZBlurEffectAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = B6AC08CB1CF1BC1C00E1E182 /* MZBlurEffectAdapter.m */; };
+		B6AC08E31CF1BC1C00E1E182 /* MZFormSheetPresentationController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6AC08CE1CF1BC1C00E1E182 /* MZFormSheetPresentationController.m */; };
+		B6AC08E41CF1BC1C00E1E182 /* MZFormSheetPresentationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6AC08D01CF1BC1C00E1E182 /* MZFormSheetPresentationViewController.m */; };
+		B6AC08E51CF1BC1C00E1E182 /* MZFormSheetPresentationViewControllerAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = B6AC08D31CF1BC1C00E1E182 /* MZFormSheetPresentationViewControllerAnimator.m */; };
+		B6AC08E61CF1BC1C00E1E182 /* MZFormSheetPresentationViewControllerInteractiveAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = B6AC08D61CF1BC1C00E1E182 /* MZFormSheetPresentationViewControllerInteractiveAnimator.m */; };
+		B6AC08E71CF1BC1C00E1E182 /* MZFormSheetPresentationViewControllerSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = B6AC08D81CF1BC1C00E1E182 /* MZFormSheetPresentationViewControllerSegue.m */; };
+		B6AC08E81CF1BC1C00E1E182 /* MZTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = B6AC08DA1CF1BC1C00E1E182 /* MZTransition.m */; };
+		B6AC08E91CF1BC1C00E1E182 /* UIViewController+TargetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6AC08DC1CF1BC1C00E1E182 /* UIViewController+TargetViewController.m */; };
+		B6AC08EA1CF1BC1C00E1E182 /* MZFormSheetContentSizingNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6AC08DE1CF1BC1C00E1E182 /* MZFormSheetContentSizingNavigationController.m */; };
+		B6AC08EB1CF1BC1C00E1E182 /* MZFormSheetContentSizingNavigationControllerAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = B6AC08E01CF1BC1C00E1E182 /* MZFormSheetContentSizingNavigationControllerAnimator.m */; };
+		B6AC08F01CF1EEB100E1E182 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = B6AC08EF1CF1EEB100E1E182 /* logo.png */; };
 		B6B2B2421C219DB500531055 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6B2B2411C219DB500531055 /* FBSDKCoreKit.framework */; };
 		B6B2B2441C21A2F600531055 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6B2B2431C21A2F600531055 /* FBSDKLoginKit.framework */; };
+		B6BAC4971CF486A900086A80 /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6BAC4951CF486A900086A80 /* SignInViewController.m */; };
+		B6BAC4981CF486A900086A80 /* SignInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6BAC4961CF486A900086A80 /* SignInViewController.xib */; };
+		B6BD9F171CF1A01700998021 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6BD9F161CF1A01700998021 /* QuartzCore.framework */; };
+		B6BD9F191CF1A58200998021 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = B6BD9F181CF1A58200998021 /* Cartfile */; };
 		B6C31F371C1D84BA00E0D39A /* testingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C31F351C1D84BA00E0D39A /* testingViewController.m */; };
 		B6C31F381C1D84BA00E0D39A /* testingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6C31F361C1D84BA00E0D39A /* testingViewController.xib */; };
 		B6CC66A01C1D00E200AFB2D9 /* SocketAckEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CC668D1C1D00E200AFB2D9 /* SocketAckEmitter.swift */; };
@@ -93,6 +118,13 @@
 		B6D55E3D1C34FA850023B7EE /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6D55E3B1C34FA850023B7EE /* LoginViewController.m */; };
 		B6D55E3E1C34FA850023B7EE /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6D55E3C1C34FA850023B7EE /* LoginViewController.xib */; };
 		B6DCE2DC1CEC84BB00A3A1C6 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B6DCE2DB1CEC84BB00A3A1C6 /* icon.png */; };
+		B6E1B1D91CFB258E00858D0B /* button-burger-circle.png in Resources */ = {isa = PBXBuildFile; fileRef = B6E1B1D51CFB258E00858D0B /* button-burger-circle.png */; };
+		B6E1B1DA1CFB258E00858D0B /* button-close.png in Resources */ = {isa = PBXBuildFile; fileRef = B6E1B1D61CFB258E00858D0B /* button-close.png */; };
+		B6E1B1DB1CFB258E00858D0B /* button-search.png in Resources */ = {isa = PBXBuildFile; fileRef = B6E1B1D71CFB258E00858D0B /* button-search.png */; };
+		B6E1B1DC1CFB258E00858D0B /* zonnexions-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = B6E1B1D81CFB258E00858D0B /* zonnexions-logo.png */; };
+		B6E7C2761D01A0A90017D655 /* WorkingExperience.m in Sources */ = {isa = PBXBuildFile; fileRef = B6E7C2751D01A0A90017D655 /* WorkingExperience.m */; };
+		B6E7C2791D01B92D0017D655 /* EducationHistory.m in Sources */ = {isa = PBXBuildFile; fileRef = B6E7C2781D01B92D0017D655 /* EducationHistory.m */; };
+		B6E7C27C1D01B9630017D655 /* HobbyList.m in Sources */ = {isa = PBXBuildFile; fileRef = B6E7C27B1D01B9630017D655 /* HobbyList.m */; };
 		B6F9D35B1C2959E600F2B9CA /* AppSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6F9D3591C2959E600F2B9CA /* AppSettingViewController.m */; };
 		B6F9D35C1C2959E600F2B9CA /* AppSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6F9D35A1C2959E600F2B9CA /* AppSettingViewController.xib */; };
 		B6F9D35E1C297A3900F2B9CA /* InfoWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6F9D35D1C297A3900F2B9CA /* InfoWindow.xib */; };
@@ -100,8 +132,6 @@
 		B6F9D3651C298F3F00F2B9CA /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6F9D3631C298F3F00F2B9CA /* ProfileViewController.m */; };
 		B6F9D3661C298F3F00F2B9CA /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6F9D3641C298F3F00F2B9CA /* ProfileViewController.xib */; };
 		B6F9D3681C298FB500F2B9CA /* navigat_boxtk01.png in Resources */ = {isa = PBXBuildFile; fileRef = B6F9D3671C298FB500F2B9CA /* navigat_boxtk01.png */; };
-		B6FC7B471CEDB327005CDDAA /* tableViewCellCustomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6FC7B451CEDB327005CDDAA /* tableViewCellCustomViewController.m */; };
-		B6FC7B481CEDB327005CDDAA /* tableViewCellCustomViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6FC7B461CEDB327005CDDAA /* tableViewCellCustomViewController.xib */; };
 		E61EB66CBDDEB2BD8D2F338F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DB8EBA975A92D4E89E58F1D /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -199,11 +229,26 @@
 		B64D16AC1C37E1A300B51B3C /* navigate-right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "navigate-right.png"; path = "Assets.xcassets/navigate-right.png"; sourceTree = "<group>"; };
 		B64D16AE1C37F89E00B51B3C /* CustomMarker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomMarker.h; sourceTree = "<group>"; };
 		B64D16AF1C37F89E00B51B3C /* CustomMarker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomMarker.m; sourceTree = "<group>"; };
+		B65337BD1CEEFF64009D8247 /* UserProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserProfileViewController.h; sourceTree = "<group>"; };
+		B65337BE1CEEFF64009D8247 /* UserProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserProfileViewController.m; sourceTree = "<group>"; };
+		B65337C01CEF0B61009D8247 /* AnimalTableTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimalTableTableViewController.h; sourceTree = "<group>"; };
+		B65337C11CEF0B61009D8247 /* AnimalTableTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimalTableTableViewController.m; sourceTree = "<group>"; };
+		B65337C31CEF411E009D8247 /* WorkInputViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkInputViewController.h; sourceTree = "<group>"; };
+		B65337C41CEF411E009D8247 /* WorkInputViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkInputViewController.m; sourceTree = "<group>"; };
+		B65337C51CEF411E009D8247 /* WorkInputViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WorkInputViewController.xib; sourceTree = "<group>"; };
+		B65337C81CEF44D2009D8247 /* EducationInputViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EducationInputViewController.h; sourceTree = "<group>"; };
+		B65337C91CEF44D2009D8247 /* EducationInputViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EducationInputViewController.m; sourceTree = "<group>"; };
+		B65337CA1CEF44D2009D8247 /* EducationInputViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EducationInputViewController.xib; sourceTree = "<group>"; };
+		B65337CE1CEF4622009D8247 /* HobbiesInputViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HobbiesInputViewController.h; sourceTree = "<group>"; };
+		B65337CF1CEF4622009D8247 /* HobbiesInputViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HobbiesInputViewController.m; sourceTree = "<group>"; };
+		B65337D01CEF4622009D8247 /* HobbiesInputViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HobbiesInputViewController.xib; sourceTree = "<group>"; };
 		B65498001C284B3100711106 /* People.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = People.h; sourceTree = "<group>"; };
 		B65498011C284B3100711106 /* People.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = People.m; sourceTree = "<group>"; };
 		B65498081C28547500711106 /* ChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatViewController.h; sourceTree = "<group>"; };
 		B65498091C28547500711106 /* ChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
 		B654980A1C28547500711106 /* ChatViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChatViewController.xib; sourceTree = "<group>"; };
+		B660849A1CF6EB8300DEEF3F /* UnderlinedTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnderlinedTextField.h; sourceTree = "<group>"; };
+		B660849B1CF6EB8300DEEF3F /* UnderlinedTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnderlinedTextField.m; sourceTree = "<group>"; };
 		B69646D11CDDCF2C004580DB /* button-add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-add.png"; sourceTree = "<group>"; };
 		B69646D21CDDCF2C004580DB /* button-tick-off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-tick-off.png"; sourceTree = "<group>"; };
 		B69646D31CDDCF2C004580DB /* button-tick-on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-tick-on.png"; sourceTree = "<group>"; };
@@ -213,8 +258,39 @@
 		B6A7AA631C4CB8C1003160EF /* ProfilSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfilSettingViewController.h; sourceTree = "<group>"; };
 		B6A7AA641C4CB8C1003160EF /* ProfilSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfilSettingViewController.m; sourceTree = "<group>"; };
 		B6A7AA651C4CB8C1003160EF /* ProfilSettingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfilSettingViewController.xib; sourceTree = "<group>"; };
+		B6AC08C81CF1BC1C00E1E182 /* MZMethodSwizzler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MZMethodSwizzler.h; path = ../MZFormSheetPresentationController/MZFormSheetPresentationController/MZMethodSwizzler.h; sourceTree = "<group>"; };
+		B6AC08C91CF1BC1C00E1E182 /* MZMethodSwizzler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MZMethodSwizzler.m; path = ../MZFormSheetPresentationController/MZFormSheetPresentationController/MZMethodSwizzler.m; sourceTree = "<group>"; };
+		B6AC08CA1CF1BC1C00E1E182 /* MZBlurEffectAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MZBlurEffectAdapter.h; path = ../MZFormSheetPresentationController/MZFormSheetPresentationController/MZBlurEffectAdapter.h; sourceTree = "<group>"; };
+		B6AC08CB1CF1BC1C00E1E182 /* MZBlurEffectAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MZBlurEffectAdapter.m; path = ../MZFormSheetPresentationController/MZFormSheetPresentationController/MZBlurEffectAdapter.m; sourceTree = "<group>"; };
+		B6AC08CC1CF1BC1C00E1E182 /* MZFormSheetPresentationContentSizing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MZFormSheetPresentationContentSizing.h; path = ../MZFormSheetPresentationController/MZFormSheetPresentationController/MZFormSheetPresentationContentSizing.h; sourceTree = "<group>"; };
+		B6AC08CD1CF1BC1C00E1E182 /* MZFormSheetPresentationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MZFormSheetPresentationController.h; path = ../MZFormSheetPresentationController/MZFormSheetPresentationController/MZFormSheetPresentationController.h; sourceTree = "<group>"; };
+		B6AC08CE1CF1BC1C00E1E182 /* MZFormSheetPresentationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MZFormSheetPresentationController.m; path = ../MZFormSheetPresentationController/MZFormSheetPresentationController/MZFormSheetPresentationController.m; sourceTree = "<group>"; };
+		B6AC08CF1CF1BC1C00E1E182 /* MZFormSheetPresentationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MZFormSheetPresentationViewController.h; path = ../MZFormSheetPresentationController/MZFormSheetPresentationController/MZFormSheetPresentationViewController.h; sourceTree = "<group>"; };
+		B6AC08D01CF1BC1C00E1E182 /* MZFormSheetPresentationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MZFormSheetPresentationViewController.m; path = ../MZFormSheetPresentationController/MZFormSheetPresentationController/MZFormSheetPresentationViewController.m; sourceTree = "<group>"; };
+		B6AC08D11CF1BC1C00E1E182 /* MZFormSheetPresentationViewControllerAnimatedTransitioning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MZFormSheetPresentationViewControllerAnimatedTransitioning.h; path = ../MZFormSheetPresentationController/MZFormSheetPresentationController/MZFormSheetPresentationViewControllerAnimatedTransitioning.h; sourceTree = "<group>"; };
+		B6AC08D21CF1BC1C00E1E182 /* MZFormSheetPresentationViewControllerAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MZFormSheetPresentationViewControllerAnimator.h; path = ../MZFormSheetPresentationController/MZFormSheetPresentationController/MZFormSheetPresentationViewControllerAnimator.h; sourceTree = "<group>"; };
+		B6AC08D31CF1BC1C00E1E182 /* MZFormSheetPresentationViewControllerAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MZFormSheetPresentationViewControllerAnimator.m; path = ../MZFormSheetPresentationController/MZFormSheetPresentationController/MZFormSheetPresentationViewControllerAnimator.m; sourceTree = "<group>"; };
+		B6AC08D41CF1BC1C00E1E182 /* MZFormSheetPresentationViewControllerInteractiveTransitioning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MZFormSheetPresentationViewControllerInteractiveTransitioning.h; path = ../MZFormSheetPresentationController/MZFormSheetPresentationController/MZFormSheetPresentationViewControllerInteractiveTransitioning.h; sourceTree = "<group>"; };
+		B6AC08D51CF1BC1C00E1E182 /* MZFormSheetPresentationViewControllerInteractiveAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MZFormSheetPresentationViewControllerInteractiveAnimator.h; path = ../MZFormSheetPresentationController/MZFormSheetPresentationController/MZFormSheetPresentationViewControllerInteractiveAnimator.h; sourceTree = "<group>"; };
+		B6AC08D61CF1BC1C00E1E182 /* MZFormSheetPresentationViewControllerInteractiveAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MZFormSheetPresentationViewControllerInteractiveAnimator.m; path = ../MZFormSheetPresentationController/MZFormSheetPresentationController/MZFormSheetPresentationViewControllerInteractiveAnimator.m; sourceTree = "<group>"; };
+		B6AC08D71CF1BC1C00E1E182 /* MZFormSheetPresentationViewControllerSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MZFormSheetPresentationViewControllerSegue.h; path = ../MZFormSheetPresentationController/MZFormSheetPresentationController/MZFormSheetPresentationViewControllerSegue.h; sourceTree = "<group>"; };
+		B6AC08D81CF1BC1C00E1E182 /* MZFormSheetPresentationViewControllerSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MZFormSheetPresentationViewControllerSegue.m; path = ../MZFormSheetPresentationController/MZFormSheetPresentationController/MZFormSheetPresentationViewControllerSegue.m; sourceTree = "<group>"; };
+		B6AC08D91CF1BC1C00E1E182 /* MZTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MZTransition.h; path = ../MZFormSheetPresentationController/MZFormSheetPresentationController/MZTransition.h; sourceTree = "<group>"; };
+		B6AC08DA1CF1BC1C00E1E182 /* MZTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MZTransition.m; path = ../MZFormSheetPresentationController/MZFormSheetPresentationController/MZTransition.m; sourceTree = "<group>"; };
+		B6AC08DB1CF1BC1C00E1E182 /* UIViewController+TargetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+TargetViewController.h"; path = "../MZFormSheetPresentationController/MZFormSheetPresentationController/UIViewController+TargetViewController.h"; sourceTree = "<group>"; };
+		B6AC08DC1CF1BC1C00E1E182 /* UIViewController+TargetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+TargetViewController.m"; path = "../MZFormSheetPresentationController/MZFormSheetPresentationController/UIViewController+TargetViewController.m"; sourceTree = "<group>"; };
+		B6AC08DD1CF1BC1C00E1E182 /* MZFormSheetContentSizingNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MZFormSheetContentSizingNavigationController.h; path = ../MZFormSheetPresentationController/MZFormSheetPresentationController/MZFormSheetContentSizingNavigationController.h; sourceTree = "<group>"; };
+		B6AC08DE1CF1BC1C00E1E182 /* MZFormSheetContentSizingNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MZFormSheetContentSizingNavigationController.m; path = ../MZFormSheetPresentationController/MZFormSheetPresentationController/MZFormSheetContentSizingNavigationController.m; sourceTree = "<group>"; };
+		B6AC08DF1CF1BC1C00E1E182 /* MZFormSheetContentSizingNavigationControllerAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MZFormSheetContentSizingNavigationControllerAnimator.h; path = ../MZFormSheetPresentationController/MZFormSheetPresentationController/MZFormSheetContentSizingNavigationControllerAnimator.h; sourceTree = "<group>"; };
+		B6AC08E01CF1BC1C00E1E182 /* MZFormSheetContentSizingNavigationControllerAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MZFormSheetContentSizingNavigationControllerAnimator.m; path = ../MZFormSheetPresentationController/MZFormSheetPresentationController/MZFormSheetContentSizingNavigationControllerAnimator.m; sourceTree = "<group>"; };
+		B6AC08EF1CF1EEB100E1E182 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		B6B2B2411C219DB500531055 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		B6B2B2431C21A2F600531055 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		B6BAC4941CF486A900086A80 /* SignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInViewController.h; sourceTree = "<group>"; };
+		B6BAC4951CF486A900086A80 /* SignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInViewController.m; sourceTree = "<group>"; };
+		B6BAC4961CF486A900086A80 /* SignInViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignInViewController.xib; sourceTree = "<group>"; };
+		B6BD9F161CF1A01700998021 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		B6BD9F181CF1A58200998021 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		B6C31F341C1D84BA00E0D39A /* testingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testingViewController.h; sourceTree = "<group>"; };
 		B6C31F351C1D84BA00E0D39A /* testingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = testingViewController.m; sourceTree = "<group>"; };
 		B6C31F361C1D84BA00E0D39A /* testingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = testingViewController.xib; sourceTree = "<group>"; };
@@ -241,6 +317,16 @@
 		B6D55E3B1C34FA850023B7EE /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		B6D55E3C1C34FA850023B7EE /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		B6DCE2DB1CEC84BB00A3A1C6 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		B6E1B1D51CFB258E00858D0B /* button-burger-circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-burger-circle.png"; sourceTree = "<group>"; };
+		B6E1B1D61CFB258E00858D0B /* button-close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-close.png"; sourceTree = "<group>"; };
+		B6E1B1D71CFB258E00858D0B /* button-search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-search.png"; sourceTree = "<group>"; };
+		B6E1B1D81CFB258E00858D0B /* zonnexions-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zonnexions-logo.png"; sourceTree = "<group>"; };
+		B6E7C2741D01A0A90017D655 /* WorkingExperience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkingExperience.h; sourceTree = "<group>"; };
+		B6E7C2751D01A0A90017D655 /* WorkingExperience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkingExperience.m; sourceTree = "<group>"; };
+		B6E7C2771D01B92D0017D655 /* EducationHistory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EducationHistory.h; sourceTree = "<group>"; };
+		B6E7C2781D01B92D0017D655 /* EducationHistory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EducationHistory.m; sourceTree = "<group>"; };
+		B6E7C27A1D01B9630017D655 /* HobbyList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HobbyList.h; sourceTree = "<group>"; };
+		B6E7C27B1D01B9630017D655 /* HobbyList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HobbyList.m; sourceTree = "<group>"; };
 		B6F9D3581C2959E600F2B9CA /* AppSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppSettingViewController.h; sourceTree = "<group>"; };
 		B6F9D3591C2959E600F2B9CA /* AppSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppSettingViewController.m; sourceTree = "<group>"; };
 		B6F9D35A1C2959E600F2B9CA /* AppSettingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppSettingViewController.xib; sourceTree = "<group>"; };
@@ -251,9 +337,6 @@
 		B6F9D3631C298F3F00F2B9CA /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		B6F9D3641C298F3F00F2B9CA /* ProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
 		B6F9D3671C298FB500F2B9CA /* navigat_boxtk01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navigat_boxtk01.png; sourceTree = "<group>"; };
-		B6FC7B441CEDB327005CDDAA /* tableViewCellCustomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tableViewCellCustomViewController.h; sourceTree = "<group>"; };
-		B6FC7B451CEDB327005CDDAA /* tableViewCellCustomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = tableViewCellCustomViewController.m; sourceTree = "<group>"; };
-		B6FC7B461CEDB327005CDDAA /* tableViewCellCustomViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = tableViewCellCustomViewController.xib; sourceTree = "<group>"; };
 		F734AF28AC55E12F93C679AB /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -262,6 +345,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6BD9F171CF1A01700998021 /* QuartzCore.framework in Frameworks */,
 				B600C4CF1C2874EA00442126 /* libc++.1.dylib in Frameworks */,
 				B600C4CB1C2873B300442126 /* Realm.framework in Frameworks */,
 				B6B2B2441C21A2F600531055 /* FBSDKLoginKit.framework in Frameworks */,
@@ -299,6 +383,9 @@
 		5382B9381C05C334006AA0D6 = {
 			isa = PBXGroup;
 			children = (
+				B660849A1CF6EB8300DEEF3F /* UnderlinedTextField.h */,
+				B660849B1CF6EB8300DEEF3F /* UnderlinedTextField.m */,
+				B6BD9F181CF1A58200998021 /* Cartfile */,
 				B6A7AA631C4CB8C1003160EF /* ProfilSettingViewController.h */,
 				B6A7AA641C4CB8C1003160EF /* ProfilSettingViewController.m */,
 				B6A7AA651C4CB8C1003160EF /* ProfilSettingViewController.xib */,
@@ -313,11 +400,14 @@
 				B6F9D35F1C297AEE00F2B9CA /* CustomInfoWindow.h */,
 				B6F9D3601C297AEE00F2B9CA /* CustomInfoWindow.m */,
 				B6F9D35D1C297A3900F2B9CA /* InfoWindow.xib */,
-				B6F9D3581C2959E600F2B9CA /* AppSettingViewController.h */,
-				B6F9D3591C2959E600F2B9CA /* AppSettingViewController.m */,
-				B6F9D35A1C2959E600F2B9CA /* AppSettingViewController.xib */,
 				B602ACCA1C286C53000669AD /* Chat.h */,
 				B602ACCB1C286C53000669AD /* Chat.m */,
+				B6E7C2741D01A0A90017D655 /* WorkingExperience.h */,
+				B6E7C2751D01A0A90017D655 /* WorkingExperience.m */,
+				B6E7C2771D01B92D0017D655 /* EducationHistory.h */,
+				B6E7C2781D01B92D0017D655 /* EducationHistory.m */,
+				B6E7C27A1D01B9630017D655 /* HobbyList.h */,
+				B6E7C27B1D01B9630017D655 /* HobbyList.m */,
 				B65498081C28547500711106 /* ChatViewController.h */,
 				B65498091C28547500711106 /* ChatViewController.m */,
 				B654980A1C28547500711106 /* ChatViewController.xib */,
@@ -331,9 +421,13 @@
 				B69646D61CDDCF2C004580DB /* cover_white.png */,
 				B6F9D3671C298FB500F2B9CA /* navigat_boxtk01.png */,
 				B6DCE2DB1CEC84BB00A3A1C6 /* icon.png */,
+				B6AC08EF1CF1EEB100E1E182 /* logo.png */,
 				536621041C0B5D25006AF426 /* NodeController.swift */,
 				B648955B1CCF311B004B97B5 /* Modified */,
 				5382B9771C05C7B6006AA0D6 /* Podfile */,
+				B6F9D3581C2959E600F2B9CA /* AppSettingViewController.h */,
+				B6F9D3591C2959E600F2B9CA /* AppSettingViewController.m */,
+				B6F9D35A1C2959E600F2B9CA /* AppSettingViewController.xib */,
 				B61945901CCE001800E4FAA4 /* font montserrat */,
 				B611976D1C2047A1000FA21F /* LGSimpleChat */,
 				B6CC66B31C1D00F200AFB2D9 /* SocketIOLib */,
@@ -367,10 +461,14 @@
 				5382B9481C05C334006AA0D6 /* AppDelegate.m */,
 				5382B94A1C05C334006AA0D6 /* ViewController.h */,
 				5382B94B1C05C334006AA0D6 /* ViewController.m */,
+				B65337C01CEF0B61009D8247 /* AnimalTableTableViewController.h */,
+				B65337C11CEF0B61009D8247 /* AnimalTableTableViewController.m */,
 				534737961C13CBED00D87B7B /* MapViewController.h */,
 				534737971C13CBED00D87B7B /* MapViewController.m */,
 				53EBA4531C0B332800607407 /* FriendsViewController.h */,
 				53EBA4541C0B332800607407 /* FriendsViewController.m */,
+				B65337BD1CEEFF64009D8247 /* UserProfileViewController.h */,
+				B65337BE1CEEFF64009D8247 /* UserProfileViewController.m */,
 				53EBA3281C0B01FF00607407 /* SetingsViewController.h */,
 				53EBA3291C0B01FF00607407 /* SetingsViewController.m */,
 				53EBA3231C0B014600607407 /* LeftDrawerViewController.h */,
@@ -391,6 +489,10 @@
 		5382B9441C05C334006AA0D6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B6E1B1D51CFB258E00858D0B /* button-burger-circle.png */,
+				B6E1B1D61CFB258E00858D0B /* button-close.png */,
+				B6E1B1D71CFB258E00858D0B /* button-search.png */,
+				B6E1B1D81CFB258E00858D0B /* zonnexions-logo.png */,
 				B644E86E1CCE13AD009347E9 /* Z Logo.png */,
 				B64D16AC1C37E1A300B51B3C /* navigate-right.png */,
 				B64D16AA1C37DF6200B51B3C /* mystery-man.png */,
@@ -465,6 +567,7 @@
 		5C63C16152EAC574C3B3A34B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B6BD9F161CF1A01700998021 /* QuartzCore.framework */,
 				B600C4CE1C2874EA00442126 /* libc++.1.dylib */,
 				B600C4CC1C28740200442126 /* libc++.dylib */,
 				B600C4CA1C2873B300442126 /* Realm.framework */,
@@ -503,10 +606,12 @@
 		B648955B1CCF311B004B97B5 /* Modified */ = {
 			isa = PBXGroup;
 			children = (
+				B6AC08EC1CF1BC2400E1E182 /* MZPopup */,
+				B6BAC4931CF4845200086A80 /* SignIn */,
+				B65337CD1CEF44DC009D8247 /* Working Experience */,
+				B65337D31CEF462B009D8247 /* Previous Education */,
+				B65337D41CEF463B009D8247 /* Hobby List */,
 				B64895611CCF3146004B97B5 /* SignUp */,
-				B6FC7B441CEDB327005CDDAA /* tableViewCellCustomViewController.h */,
-				B6FC7B451CEDB327005CDDAA /* tableViewCellCustomViewController.m */,
-				B6FC7B461CEDB327005CDDAA /* tableViewCellCustomViewController.xib */,
 			);
 			name = Modified;
 			sourceTree = "<group>";
@@ -519,6 +624,78 @@
 				B648955E1CCF3136004B97B5 /* SignUpViewController.xib */,
 			);
 			name = SignUp;
+			sourceTree = "<group>";
+		};
+		B65337CD1CEF44DC009D8247 /* Working Experience */ = {
+			isa = PBXGroup;
+			children = (
+				B65337C31CEF411E009D8247 /* WorkInputViewController.h */,
+				B65337C41CEF411E009D8247 /* WorkInputViewController.m */,
+				B65337C51CEF411E009D8247 /* WorkInputViewController.xib */,
+			);
+			name = "Working Experience";
+			sourceTree = "<group>";
+		};
+		B65337D31CEF462B009D8247 /* Previous Education */ = {
+			isa = PBXGroup;
+			children = (
+				B65337C81CEF44D2009D8247 /* EducationInputViewController.h */,
+				B65337C91CEF44D2009D8247 /* EducationInputViewController.m */,
+				B65337CA1CEF44D2009D8247 /* EducationInputViewController.xib */,
+			);
+			name = "Previous Education";
+			sourceTree = "<group>";
+		};
+		B65337D41CEF463B009D8247 /* Hobby List */ = {
+			isa = PBXGroup;
+			children = (
+				B65337CE1CEF4622009D8247 /* HobbiesInputViewController.h */,
+				B65337CF1CEF4622009D8247 /* HobbiesInputViewController.m */,
+				B65337D01CEF4622009D8247 /* HobbiesInputViewController.xib */,
+			);
+			name = "Hobby List";
+			sourceTree = "<group>";
+		};
+		B6AC08EC1CF1BC2400E1E182 /* MZPopup */ = {
+			isa = PBXGroup;
+			children = (
+				B6AC08C81CF1BC1C00E1E182 /* MZMethodSwizzler.h */,
+				B6AC08C91CF1BC1C00E1E182 /* MZMethodSwizzler.m */,
+				B6AC08CA1CF1BC1C00E1E182 /* MZBlurEffectAdapter.h */,
+				B6AC08CB1CF1BC1C00E1E182 /* MZBlurEffectAdapter.m */,
+				B6AC08CC1CF1BC1C00E1E182 /* MZFormSheetPresentationContentSizing.h */,
+				B6AC08CD1CF1BC1C00E1E182 /* MZFormSheetPresentationController.h */,
+				B6AC08CE1CF1BC1C00E1E182 /* MZFormSheetPresentationController.m */,
+				B6AC08CF1CF1BC1C00E1E182 /* MZFormSheetPresentationViewController.h */,
+				B6AC08D01CF1BC1C00E1E182 /* MZFormSheetPresentationViewController.m */,
+				B6AC08D11CF1BC1C00E1E182 /* MZFormSheetPresentationViewControllerAnimatedTransitioning.h */,
+				B6AC08D21CF1BC1C00E1E182 /* MZFormSheetPresentationViewControllerAnimator.h */,
+				B6AC08D31CF1BC1C00E1E182 /* MZFormSheetPresentationViewControllerAnimator.m */,
+				B6AC08D41CF1BC1C00E1E182 /* MZFormSheetPresentationViewControllerInteractiveTransitioning.h */,
+				B6AC08D51CF1BC1C00E1E182 /* MZFormSheetPresentationViewControllerInteractiveAnimator.h */,
+				B6AC08D61CF1BC1C00E1E182 /* MZFormSheetPresentationViewControllerInteractiveAnimator.m */,
+				B6AC08D71CF1BC1C00E1E182 /* MZFormSheetPresentationViewControllerSegue.h */,
+				B6AC08D81CF1BC1C00E1E182 /* MZFormSheetPresentationViewControllerSegue.m */,
+				B6AC08D91CF1BC1C00E1E182 /* MZTransition.h */,
+				B6AC08DA1CF1BC1C00E1E182 /* MZTransition.m */,
+				B6AC08DB1CF1BC1C00E1E182 /* UIViewController+TargetViewController.h */,
+				B6AC08DC1CF1BC1C00E1E182 /* UIViewController+TargetViewController.m */,
+				B6AC08DD1CF1BC1C00E1E182 /* MZFormSheetContentSizingNavigationController.h */,
+				B6AC08DE1CF1BC1C00E1E182 /* MZFormSheetContentSizingNavigationController.m */,
+				B6AC08DF1CF1BC1C00E1E182 /* MZFormSheetContentSizingNavigationControllerAnimator.h */,
+				B6AC08E01CF1BC1C00E1E182 /* MZFormSheetContentSizingNavigationControllerAnimator.m */,
+			);
+			name = MZPopup;
+			sourceTree = "<group>";
+		};
+		B6BAC4931CF4845200086A80 /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				B6BAC4941CF486A900086A80 /* SignInViewController.h */,
+				B6BAC4951CF486A900086A80 /* SignInViewController.m */,
+				B6BAC4961CF486A900086A80 /* SignInViewController.xib */,
+			);
+			name = SignIn;
 			sourceTree = "<group>";
 		};
 		B6CC66B31C1D00F200AFB2D9 /* SocketIOLib */ = {
@@ -670,10 +847,17 @@
 				B69646D81CDDCF2C004580DB /* button-tick-off.png in Resources */,
 				B619459F1CCE001800E4FAA4 /* Montserrat-Regular.otf in Resources */,
 				B64895601CCF3136004B97B5 /* SignUpViewController.xib in Resources */,
+				B6E1B1D91CFB258E00858D0B /* button-burger-circle.png in Resources */,
+				B6AC08F01CF1EEB100E1E182 /* logo.png in Resources */,
+				B65337D21CEF4622009D8247 /* HobbiesInputViewController.xib in Resources */,
 				B619459C1CCE001800E4FAA4 /* Montserrat-ExtraBold.otf in Resources */,
 				B644E8741CCE1B76009347E9 /* Facebook Icon.png in Resources */,
+				B6E1B1DC1CFB258E00858D0B /* zonnexions-logo.png in Resources */,
+				B65337CC1CEF44D2009D8247 /* EducationInputViewController.xib in Resources */,
 				B6F9D3661C298F3F00F2B9CA /* ProfileViewController.xib in Resources */,
+				B6E1B1DB1CFB258E00858D0B /* button-search.png in Resources */,
 				B619459D1CCE001800E4FAA4 /* Montserrat-Hairline.otf in Resources */,
+				B65337C71CEF411E009D8247 /* WorkInputViewController.xib in Resources */,
 				B69646DB1CDDCF2C004580DB /* cover_blue.png in Resources */,
 				B654980C1C28547500711106 /* ChatViewController.xib in Resources */,
 				5382B9511C05C334006AA0D6 /* Assets.xcassets in Resources */,
@@ -686,6 +870,7 @@
 				B6F9D3681C298FB500F2B9CA /* navigat_boxtk01.png in Resources */,
 				B644E8731CCE1B76009347E9 /* Email Icon.png in Resources */,
 				B61945A21CCE001800E4FAA4 /* SIL Open Font License.txt in Resources */,
+				B6E1B1DA1CFB258E00858D0B /* button-close.png in Resources */,
 				B61945A11CCE001800E4FAA4 /* Montserrat-UltraLight.otf in Resources */,
 				B64D16AB1C37DF6200B51B3C /* mystery-man.png in Resources */,
 				5382B9781C05C7B6006AA0D6 /* Podfile in Resources */,
@@ -695,12 +880,13 @@
 				5382B94F1C05C334006AA0D6 /* Main.storyboard in Resources */,
 				B69646D91CDDCF2C004580DB /* button-tick-on.png in Resources */,
 				B69646DC1CDDCF2C004580DB /* cover_white.png in Resources */,
-				B6FC7B481CEDB327005CDDAA /* tableViewCellCustomViewController.xib in Resources */,
 				B69646DA1CDDCF2C004580DB /* button-white-big.png in Resources */,
 				B64D16AD1C37E1A300B51B3C /* navigate-right.png in Resources */,
 				B61197711C2047A1000FA21F /* License in Resources */,
+				B6BAC4981CF486A900086A80 /* SignInViewController.xib in Resources */,
 				53EBA4511C0B2D3200607407 /* reveal-icon.png in Resources */,
 				B6C31F381C1D84BA00E0D39A /* testingViewController.xib in Resources */,
+				B6BD9F191CF1A58200998021 /* Cartfile in Resources */,
 				B619459B1CCE001800E4FAA4 /* Montserrat-Bold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -790,25 +976,41 @@
 				53EBA4491C0B2B9200607407 /* FrontViewController.m in Sources */,
 				53EBA3211C0AF7E000607407 /* MMDrawerVisualState.m in Sources */,
 				B6CC66A21C1D00E200AFB2D9 /* SocketEngine.swift in Sources */,
+				B660849C1CF6EB8300DEEF3F /* UnderlinedTextField.m in Sources */,
+				B6AC08EB1CF1BC1C00E1E182 /* MZFormSheetContentSizingNavigationControllerAnimator.m in Sources */,
 				B6A7AA661C4CB8C1003160EF /* ProfilSettingViewController.m in Sources */,
 				B6CC66A51C1D00E200AFB2D9 /* SocketEngineSpec.swift in Sources */,
 				B6F9D3651C298F3F00F2B9CA /* ProfileViewController.m in Sources */,
+				B6BAC4971CF486A900086A80 /* SignInViewController.m in Sources */,
+				B6AC08E81CF1BC1C00E1E182 /* MZTransition.m in Sources */,
 				B6CC66A11C1D00E200AFB2D9 /* SocketAnyEvent.swift in Sources */,
 				53EBA4551C0B332800607407 /* FriendsViewController.m in Sources */,
-				B6FC7B471CEDB327005CDDAA /* tableViewCellCustomViewController.m in Sources */,
+				B65337C21CEF0B61009D8247 /* AnimalTableTableViewController.m in Sources */,
+				B6AC08EA1CF1BC1C00E1E182 /* MZFormSheetContentSizingNavigationController.m in Sources */,
 				B6CC66AF1C1D00E200AFB2D9 /* SocketStringReader.swift in Sources */,
+				B6E7C27C1D01B9630017D655 /* HobbyList.m in Sources */,
 				B6CC66A81C1D00E200AFB2D9 /* SocketIOClientStatus.swift in Sources */,
+				B6AC08E21CF1BC1C00E1E182 /* MZBlurEffectAdapter.m in Sources */,
 				B6CC66AA1C1D00E200AFB2D9 /* SocketEnginePacketType.swift in Sources */,
 				B64D16B01C37F89E00B51B3C /* CustomMarker.m in Sources */,
 				B6CC66B11C1D00E200AFB2D9 /* SocketIOClient.swift in Sources */,
+				B6AC08E91CF1BC1C00E1E182 /* UIViewController+TargetViewController.m in Sources */,
 				B6CC66A01C1D00E200AFB2D9 /* SocketAckEmitter.swift in Sources */,
 				B6CC66AB1C1D00E200AFB2D9 /* SocketIOClientOption.swift in Sources */,
+				B65337D11CEF4622009D8247 /* HobbiesInputViewController.m in Sources */,
+				B65337CB1CEF44D2009D8247 /* EducationInputViewController.m in Sources */,
 				B6CC66AD1C1D00E200AFB2D9 /* SocketParser.swift in Sources */,
+				B6AC08E41CF1BC1C00E1E182 /* MZFormSheetPresentationViewController.m in Sources */,
 				B602ACCC1C286C53000669AD /* Chat.m in Sources */,
 				B6CC66B01C1D00E200AFB2D9 /* SocketTypes.swift in Sources */,
+				B6AC08E61CF1BC1C00E1E182 /* MZFormSheetPresentationViewControllerInteractiveAnimator.m in Sources */,
 				B648955F1CCF3136004B97B5 /* SignUpViewController.m in Sources */,
 				B6CC66A91C1D00E200AFB2D9 /* WebSocket.swift in Sources */,
 				B6CC66AE1C1D00E200AFB2D9 /* SocketPacket.swift in Sources */,
+				B65337BF1CEEFF64009D8247 /* UserProfileViewController.m in Sources */,
+				B6AC08E31CF1BC1C00E1E182 /* MZFormSheetPresentationController.m in Sources */,
+				B6E7C2791D01B92D0017D655 /* EducationHistory.m in Sources */,
+				B6AC08E51CF1BC1C00E1E182 /* MZFormSheetPresentationViewControllerAnimator.m in Sources */,
 				B6CC66B21C1D00E200AFB2D9 /* SwiftRegex.swift in Sources */,
 				53EBA44A1C0B2B9200607407 /* RearViewController.m in Sources */,
 				B6D55E3D1C34FA850023B7EE /* LoginViewController.m in Sources */,
@@ -819,15 +1021,19 @@
 				53EBA3201C0AF7E000607407 /* MMDrawerController.m in Sources */,
 				B6CC66AC1C1D00E200AFB2D9 /* SocketLogger.swift in Sources */,
 				53EBA3261C0B014600607407 /* LeftDrawerViewController.m in Sources */,
+				B6AC08E11CF1BC1C00E1E182 /* MZMethodSwizzler.m in Sources */,
 				B6CC66A31C1D00E200AFB2D9 /* SocketEngineClient.swift in Sources */,
 				53EBA32A1C0B01FF00607407 /* SetingsViewController.m in Sources */,
 				B6F9D35B1C2959E600F2B9CA /* AppSettingViewController.m in Sources */,
+				B6E7C2761D01A0A90017D655 /* WorkingExperience.m in Sources */,
 				B6CC66A61C1D00E200AFB2D9 /* SocketAckManager.swift in Sources */,
 				B65498021C284B3100711106 /* People.m in Sources */,
 				53EBA31F1C0AF7E000607407 /* MMDrawerBarButtonItem.m in Sources */,
 				53EBA4431C0B1D2400607407 /* SWRevealViewController.m in Sources */,
 				5382B9491C05C334006AA0D6 /* AppDelegate.m in Sources */,
+				B6AC08E71CF1BC1C00E1E182 /* MZFormSheetPresentationViewControllerSegue.m in Sources */,
 				B6CC66A41C1D00E200AFB2D9 /* SocketEventHandler.swift in Sources */,
+				B65337C61CEF411E009D8247 /* WorkInputViewController.m in Sources */,
 				B654980B1C28547500711106 /* ChatViewController.m in Sources */,
 				B6CC66A71C1D00E200AFB2D9 /* SocketFixUTF8.swift in Sources */,
 				536621051C0B5D25006AF426 /* NodeController.swift in Sources */,
@@ -983,6 +1189,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/FacebookSDK",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = Zonnexions/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
@@ -1012,6 +1219,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/FacebookSDK",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = Zonnexions/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;

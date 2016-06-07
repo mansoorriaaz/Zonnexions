@@ -2,17 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>UIAppFonts</key>
-	<array>
-		<string>Montserrat-Black.otf</string>
-		<string>Montserrat-Bold.otf</string>
-		<string>Montserrat-ExtraBold.otf</string>
-		<string>Montserrat-Hairline.otf</string>
-		<string>Montserrat-Light.otf</string>
-		<string>Montserrat-Regular.otf</string>
-		<string>Montserrat-SemiBold.otf</string>
-		<string>Montserrat-UltraLight.otf</string>
-	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
@@ -26,7 +15,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.23</string>
+	<string>1.25.2</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleURLTypes</key>
@@ -39,7 +28,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>1.23.20160102</string>
+	<string>1.25.2.20160606</string>
 	<key>Fabric</key>
 	<dict>
 		<key>APIKey</key>
@@ -114,6 +103,17 @@
 	<string>Zonnexions need to always use this feature, approve?</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>when in use?</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Montserrat-Black.otf</string>
+		<string>Montserrat-Bold.otf</string>
+		<string>Montserrat-ExtraBold.otf</string>
+		<string>Montserrat-Hairline.otf</string>
+		<string>Montserrat-Light.otf</string>
+		<string>Montserrat-Regular.otf</string>
+		<string>Montserrat-SemiBold.otf</string>
+		<string>Montserrat-UltraLight.otf</string>
+	</array>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>location</string>
