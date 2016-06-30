@@ -44,7 +44,7 @@ CLLocationDistance *distance;
                                                      blue:182.0/255.0
                                                     alpha:1]];
     [self setView:viewSetting];
-    [self grabFriend];
+//    [self grabFriend];
     self.tableView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
     self.tableView.frame = CGRectMake(0, 20, self.view.frame.size.width,200);
 
@@ -53,15 +53,15 @@ CLLocationDistance *distance;
                                                  name:@"chat message"
                                                object:nil];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(userlist:)
-                                                 name:@"user list"
-                                               object:nil];
+//    [[NSNotificationCenter defaultCenter] addObserver:self
+//                                             selector:@selector(userlist:)
+//                                                 name:@"user list"
+//                                               object:nil];
 
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(friendMarking:)
-                                                 name:@"friend near"
-                                               object:nil];
+//    [[NSNotificationCenter defaultCenter] addObserver:self
+//                                             selector:@selector(friendMarking:)
+//                                                 name:@"friend near"
+//                                               object:nil];
 
     
     [viewSetting addSubview:self.tableView];
@@ -398,6 +398,8 @@ CLLocationDistance *distance;
     NSLog(@"Did Add Message: %@", message.content);
     
 }
+
+
 
 - (BOOL)shouldChatController:(LGChatController *)chatController addMessage:(LGChatMessage *)message{
     /**

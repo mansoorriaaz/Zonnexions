@@ -66,21 +66,21 @@ RLMResults *hobbyRLMDBSetting;
     [self.tableView setDataSource:self];
     [self.tableView setDelegate:self];
     
-    [viewSetting setBackgroundColor:[UIColor colorWithRed:34.0/255.0
-                                                    green:121.0/255.0
-                                                     blue:182.0/255.0
+    [viewSetting setBackgroundColor:[UIColor colorWithRed:0.0/255.0
+                                                    green:114.0/255.0
+                                                     blue:187.0/255.0
                                                     alpha:1]];
     
     [self setView:viewSetting];
     self.tableView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
     self.tableView.frame = CGRectMake(0, 20, self.view.frame.size.width,2);
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    self.tableView.backgroundColor = [UIColor colorWithRed:34.0/255.0
-                                                     green:121.0/255.0
-                                                      blue:182.0/255.0
+    self.tableView.backgroundColor = [UIColor colorWithRed:0.0/255.0
+                                                     green:114.0/255.0
+                                                      blue:187.0/255.0
                                                      alpha:1];
     //    self.tableView.backgroundColor = [UIColor greenColor];
-    
+
     [viewSetting addSubview:self.tableView];
     tableDataSetting = [NSArray arrayWithObjects:@"Ani",@"Budi",@"Joko",@"Toni",@"Jobs", nil];
     
@@ -165,16 +165,19 @@ RLMResults *hobbyRLMDBSetting;
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"reload ??");
     static NSString *simpleTableIdentifier= @"settingsTableItem";
     cellSetting = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
     //
 //    NSLog(@"width : %f",self.view.frame.size.width);
 //    NSLog(@"height : %f",self.view.frame.size.height);
     
+    if (cellSetting) {
+        cellSetting = nil;
+        [cellSetting removeFromSuperview];
+    }
+    
     if (cellSetting == nil) {
         cellSetting = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
-        NSLog(@"cell : ");
     }
     
     cellSetting.backgroundColor = [UIColor clearColor];
@@ -209,6 +212,12 @@ RLMResults *hobbyRLMDBSetting;
                     distanceSlider.minimumValue = 0;
                     distanceSlider.maximumValue = 100;
 //                    [distanceSlider addTarget:self action:@selector(sliderValueChanged:) forControlEvents:UIControlEventValueChanged];
+                    NSString *s = [[NSUserDefaults standardUserDefaults] objectForKey:@"distanceShare"];
+                    float f = [s floatValue];
+                    distanceLabel.text = s;
+
+                    [distanceSlider setValue:f animated:YES];
+
                     [distanceSlider addTarget:self action:@selector(sliderValueChanged:) forControlEvents:UIControlEventAllEvents];
 
                     distanceLabel = [[UILabel alloc] initWithFrame:CGRectMake(tableView.frame.size.width - 60, 2, 50, 20)];
@@ -290,11 +299,11 @@ RLMResults *hobbyRLMDBSetting;
 }
 
 - (IBAction)sliderValueChanged:(id)sender{
-    NSLog(@"float : %f",distanceSlider.value);
     int a = (int)ceilf(distanceSlider.value);
-    NSLog(@"int : %d", a);
     [distanceLabel setText:[NSString stringWithFormat:@"%d",a]];
     NSLog(@"label : %@", distanceLabel.text );
+    [[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%d",a] forKey:@"distanceShare"];
+    NSLog(@"distance :%@", [[NSUserDefaults standardUserDefaults] objectForKey:@"distanceShare"]);
 }
 //-(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
 //}
@@ -389,6 +398,7 @@ RLMResults *hobbyRLMDBSetting;
             break;
             
         default:
+            [tableView deselectRowAtIndexPath:indexPath animated:YES];
             break;
     }
 }
@@ -800,6 +810,10 @@ RLMResults *hobbyRLMDBSetting;
 - (void)setSwipe
 {
     [self.navigationController.navigationBar setBackgroundImage:[[UIImage alloc]init] forBarMetrics:UIBarMetricsDefault];
+    [self.navigationController.navigationBar setBackgroundColor:[UIColor colorWithRed:0.0/255.0
+                                                                                green:114.0/255.0
+                                                                                 blue:187.0/255.0
+                                                                                alpha:1]];
     [self.navigationController.navigationBar setShadowImage:[[UIImage alloc]init] ];
     
     UIImageView *img = [[UIImageView alloc]initWithFrame:CGRectMake(-100, 0, 30, 30)];

@@ -117,6 +117,9 @@
 		B6CC66B21C1D00E200AFB2D9 /* SwiftRegex.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CC669F1C1D00E200AFB2D9 /* SwiftRegex.swift */; };
 		B6D55E3D1C34FA850023B7EE /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6D55E3B1C34FA850023B7EE /* LoginViewController.m */; };
 		B6D55E3E1C34FA850023B7EE /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6D55E3C1C34FA850023B7EE /* LoginViewController.xib */; };
+		B6DAC33B1D24E9D90052E49F /* SearchList.m in Sources */ = {isa = PBXBuildFile; fileRef = B6DAC33A1D24E9D90052E49F /* SearchList.m */; };
+		B6DAF55B1D0ED4BA00B68BFD /* SearchPeopleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6DAF5591D0ED4BA00B68BFD /* SearchPeopleViewController.m */; };
+		B6DAF55C1D0ED4BA00B68BFD /* SearchPeopleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6DAF55A1D0ED4BA00B68BFD /* SearchPeopleViewController.xib */; };
 		B6DCE2DC1CEC84BB00A3A1C6 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B6DCE2DB1CEC84BB00A3A1C6 /* icon.png */; };
 		B6E1B1D91CFB258E00858D0B /* button-burger-circle.png in Resources */ = {isa = PBXBuildFile; fileRef = B6E1B1D51CFB258E00858D0B /* button-burger-circle.png */; };
 		B6E1B1DA1CFB258E00858D0B /* button-close.png in Resources */ = {isa = PBXBuildFile; fileRef = B6E1B1D61CFB258E00858D0B /* button-close.png */; };
@@ -316,6 +319,11 @@
 		B6D55E3A1C34FA850023B7EE /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		B6D55E3B1C34FA850023B7EE /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		B6D55E3C1C34FA850023B7EE /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		B6DAC3391D24E9D90052E49F /* SearchList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchList.h; sourceTree = "<group>"; };
+		B6DAC33A1D24E9D90052E49F /* SearchList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchList.m; sourceTree = "<group>"; };
+		B6DAF5581D0ED4BA00B68BFD /* SearchPeopleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchPeopleViewController.h; sourceTree = "<group>"; };
+		B6DAF5591D0ED4BA00B68BFD /* SearchPeopleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchPeopleViewController.m; sourceTree = "<group>"; };
+		B6DAF55A1D0ED4BA00B68BFD /* SearchPeopleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchPeopleViewController.xib; sourceTree = "<group>"; };
 		B6DCE2DB1CEC84BB00A3A1C6 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		B6E1B1D51CFB258E00858D0B /* button-burger-circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-burger-circle.png"; sourceTree = "<group>"; };
 		B6E1B1D61CFB258E00858D0B /* button-close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-close.png"; sourceTree = "<group>"; };
@@ -383,6 +391,8 @@
 		5382B9381C05C334006AA0D6 = {
 			isa = PBXGroup;
 			children = (
+				B6DAC3391D24E9D90052E49F /* SearchList.h */,
+				B6DAC33A1D24E9D90052E49F /* SearchList.m */,
 				B660849A1CF6EB8300DEEF3F /* UnderlinedTextField.h */,
 				B660849B1CF6EB8300DEEF3F /* UnderlinedTextField.m */,
 				B6BD9F181CF1A58200998021 /* Cartfile */,
@@ -606,6 +616,9 @@
 		B648955B1CCF311B004B97B5 /* Modified */ = {
 			isa = PBXGroup;
 			children = (
+				B6DAF5581D0ED4BA00B68BFD /* SearchPeopleViewController.h */,
+				B6DAF5591D0ED4BA00B68BFD /* SearchPeopleViewController.m */,
+				B6DAF55A1D0ED4BA00B68BFD /* SearchPeopleViewController.xib */,
 				B6AC08EC1CF1BC2400E1E182 /* MZPopup */,
 				B6BAC4931CF4845200086A80 /* SignIn */,
 				B65337CD1CEF44DC009D8247 /* Working Experience */,
@@ -878,6 +891,7 @@
 				53EBA4521C0B2D3200607407 /* reveal-icon@2x.png in Resources */,
 				53EBA44D1C0B2C3A00607407 /* FrontViewController.xib in Resources */,
 				5382B94F1C05C334006AA0D6 /* Main.storyboard in Resources */,
+				B6DAF55C1D0ED4BA00B68BFD /* SearchPeopleViewController.xib in Resources */,
 				B69646D91CDDCF2C004580DB /* button-tick-on.png in Resources */,
 				B69646DC1CDDCF2C004580DB /* cover_white.png in Resources */,
 				B69646DA1CDDCF2C004580DB /* button-white-big.png in Resources */,
@@ -982,6 +996,7 @@
 				B6CC66A51C1D00E200AFB2D9 /* SocketEngineSpec.swift in Sources */,
 				B6F9D3651C298F3F00F2B9CA /* ProfileViewController.m in Sources */,
 				B6BAC4971CF486A900086A80 /* SignInViewController.m in Sources */,
+				B6DAF55B1D0ED4BA00B68BFD /* SearchPeopleViewController.m in Sources */,
 				B6AC08E81CF1BC1C00E1E182 /* MZTransition.m in Sources */,
 				B6CC66A11C1D00E200AFB2D9 /* SocketAnyEvent.swift in Sources */,
 				53EBA4551C0B332800607407 /* FriendsViewController.m in Sources */,
@@ -1040,6 +1055,7 @@
 				5382B9461C05C334006AA0D6 /* main.m in Sources */,
 				B61197701C2047A1000FA21F /* LGSimpleChat.swift in Sources */,
 				B6C31F371C1D84BA00E0D39A /* testingViewController.m in Sources */,
+				B6DAC33B1D24E9D90052E49F /* SearchList.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

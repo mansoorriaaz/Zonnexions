@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="61X-dp-dqU">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="61X-dp-dqU">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -22,6 +23,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zvJ-tU-RMQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="686" y="914"/>
+        </scene>
+        <!--Search Person View Controller-->
+        <scene sceneID="RlF-xi-BFB">
+            <objects>
+                <viewController id="LoT-1M-aOI" customClass="SearchPersonViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Euu-p4-LfM"/>
+                        <viewControllerLayoutGuide type="bottom" id="cM6-P0-6ie"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vaP-9S-gZU">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jUe-9P-93F">
+                                <rect key="frame" x="20" y="82" width="560" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="jUe-9P-93F" firstAttribute="top" secondItem="Euu-p4-LfM" secondAttribute="bottom" constant="62" id="4Qg-NB-TCT"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="jUe-9P-93F" secondAttribute="leading" id="9yx-pq-HkN"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="jUe-9P-93F" secondAttribute="trailing" id="msR-fZ-FSz"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZRo-Ic-7Kv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1576" y="1268"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="0oK-Cx-RS7">

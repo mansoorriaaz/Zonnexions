@@ -103,6 +103,12 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     notification = [[UILocalNotification alloc]init];
     
+    UIWindow *window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window = window;
+    
+    FrontViewController *frontViewController = [[FrontViewController alloc] init];
+    RearViewController *rearViewController = [[RearViewController alloc] init];
+    
 //    for (NSString* family in [UIFont familyNames])
 //    {
 //        NSLog(@"%@", family);
@@ -129,27 +135,54 @@
     
     [self updateLocation];
     
-    self.socket = [[SocketIOClient alloc] initWithSocketURL:@"103.23.22.6:3000" options:@{@"log": @YES, @"forcePolling": @YES}];
+//    self.socket = [[SocketIOClient alloc] initWithSocketURL:@"103.23.22.6:3000" options:@{@"log": @YES, @"forcePolling": @YES}];
 
-//    self.socket = [[SocketIOClient alloc] initWithSocketURL:@"http://103.23.22.6:9000?__sails_io_sdk_version=0.11.0" options:@{@"log": @YES, @"forcePolling": @YES}];
+    self.socket = [[SocketIOClient alloc] initWithSocketURL:@"http://103.23.22.6:9000" options:@{@"log": @YES, @"forcePolling": @YES}];
 
 
     
-    [self.socket on:@"authenticated" callback:^(NSArray* data, SocketAckEmitter* ack) {
-        NSLog(@"welcome %@", data);
+//    [self.socket on:@"authenticated" callback:^(NSArray* data, SocketAckEmitter* ack) {
+//        NSLog(@"welcome %@", data);
+//        self.isAuthenticated = YES;
+//    }];
+    NSLog(@"tes");
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"fbData"]|| [[NSUserDefaults standardUserDefaults] objectForKey:@"userID"]) {
+        [self.socket on:@"connect" callback:^(NSArray* data, SocketAckEmitter* ack) {
+            NSLog(@"welcome in connect : %@", data);
+            NSMutableDictionary *dic = [[NSMutableDictionary alloc] initWithObjectsAndKeys:[[NSUserDefaults standardUserDefaults] objectForKey:@"userID"],@"id", nil];
+            if (!([[NSUserDefaults standardUserDefaults] objectForKey:@"name"] == nil )) {
+                [dic setObject:[[NSUserDefaults standardUserDefaults] objectForKey:@"name"] forKey:@"name"];
+            }
+            //        NSDictionary *dic = [[NSDictionary alloc] initWithObjectsAndKeys:@"574313c6785d7bed3dd24",@"id", nil];
+            NSMutableArray *arr = [[NSMutableArray alloc]init];
+            [arr setObject:dic atIndexedSubscript:0];
+            NSLog(@"arr : %@", [arr description]);
+            [self.socket emit:@"auth" withItems:arr];
+        }];
+    }
+    
+    
+    [self.socket on:@"auth success" callback:^(NSArray* data, SocketAckEmitter* ack) {
+        NSLog(@"welcome in auth : %@", data);
         self.isAuthenticated = YES;
+        [frontViewController checkPermission];
     }];
     
-    [self.socket on:@"hello" callback:^(NSArray* data, SocketAckEmitter* ack) {
-        NSLog(@"socket connected %@", data);
-        if([[NSUserDefaults standardUserDefaults]objectForKey:@"fbData"]!= NULL){
-            self.isAuthenticated = true;
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"authentication" object:self userInfo:[[NSUserDefaults standardUserDefaults] objectForKey:@"fbData"]];
-            NSLog(@"fb data not null");
-        }else{
-            NSLog(@"fb data null");
-        }
+    [self.socket on:@"disconnect" callback:^(NSArray* data, SocketAckEmitter* ack) {
+        NSLog(@"bye %@", data);
     }];
+
+
+//    [self.socket on:@"hello" callback:^(NSArray* data, SocketAckEmitter* ack) {
+//        NSLog(@"socket connected %@", data);
+//        if([[NSUserDefaults standardUserDefaults]objectForKey:@"fbData"]!= NULL){
+//            self.isAuthenticated = true;
+//            [[NSNotificationCenter defaultCenter] postNotificationName:@"authentication" object:self userInfo:[[NSUserDefaults standardUserDefaults] objectForKey:@"fbData"]];
+//            NSLog(@"fb data not null");
+//        }else{
+//            NSLog(@"fb data null");
+//        }
+//    }];
     
     // Override point for customization after application launch.
     /*
@@ -184,11 +217,6 @@
     [self.window setRootViewController:self.drawerController];
     */
     
-    UIWindow *window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.window = window;
-    
-    FrontViewController *frontViewController = [[FrontViewController alloc] init];
-    RearViewController *rearViewController = [[RearViewController alloc] init];
     
     UINavigationController *frontNavigationController = [[UINavigationController alloc] initWithRootViewController:frontViewController];
     UINavigationController *rearNavigationController = [[UINavigationController alloc] initWithRootViewController:rearViewController];
@@ -215,9 +243,9 @@
     }];
     
     [self.socket on:@"request user location" callback:^(NSArray* data, SocketAckEmitter* ack) {
-        
+        [data description];
         NSMutableDictionary *dic = (NSMutableDictionary*)[data objectAtIndex:0];
-        
+        NSLog(@"appd dic : %@", [dic description]);
         NSMutableDictionary *jsonLocation = [[NSMutableDictionary alloc]init];
         [jsonLocation setObject:[dic objectForKey:@"requester"] forKey:@"requester"];
         //[jsonLocation setObject: forKey:@"responder"];
@@ -381,7 +409,11 @@
 
 -(void)hello:(NSNotification *) notification{
     NSLog(@"authentication onHello post notification brooo");
-    [self.socket emit:@"authentication" withItems:[NSArray arrayWithObject:[[NSUserDefaults standardUserDefaults] objectForKey:@"fbData"]]];
+//    if (!([[NSUserDefaults standardUserDefaults] objectForKey:@"fbdata"])) {
+//        [self.socket emit:@"authentication" withItems:[NSArray arrayWithObject:[[NSUserDefaults standardUserDefaults] objectForKey:@"fbData"]]];
+//    }else{
+        [self.socket emit:@"authentication" withItems:[NSArray arrayWithObject:[[NSUserDefaults standardUserDefaults] objectForKey:@"userID"]]];
+//    }
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

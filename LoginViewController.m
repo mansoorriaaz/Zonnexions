@@ -21,7 +21,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    NSLog(@"%s", __PRETTY_FUNCTION__);
     if (self.appd.isAuthenticated) {
         [self idAuthenticated];
             }

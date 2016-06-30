@@ -83,7 +83,8 @@ NSMutableURLRequest *requestSocial;
 - (void)viewDidLoad{
 	[super viewDidLoad];
     
-    
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+
         /*
     FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
     loginButton.center = self.view.center;
@@ -142,12 +143,13 @@ NSMutableURLRequest *requestSocial;
 
 -(void)checkPermission{
     NSLog(@"checking %d", self.appd.isAuthenticated);
-//    if (self.appd.isAuthenticated == YES) {
-//        NSLog(@"authenticated");
-//        self.navigationItem.leftBarButtonItem.enabled = YES;
-//    }else self.navigationItem.leftBarButtonItem.enabled = NO;
-            self.navigationItem.leftBarButtonItem.enabled = YES;
-//    NSLog(@"nope");
+    if (self.appd.isAuthenticated == YES) {
+        NSLog(@"authenticated");
+        self.navigationItem.leftBarButtonItem.enabled = YES;
+    }else {
+        self.navigationItem.leftBarButtonItem.enabled = NO;
+        NSLog(@"nope");
+    }
 }
 
 #pragma mark - Example Code
@@ -226,12 +228,13 @@ NSMutableURLRequest *requestSocial;
                               [fbData setObject:customId forKey:@"customId"];
                               [[NSUserDefaults standardUserDefaults] setObject:fbData forKey:@"fbData"];
                               [[NSUserDefaults standardUserDefaults] setObject:customId forKey:@"custom id"];
-
+                              [[NSUserDefaults standardUserDefaults] setObject:[fbData objectForKey:@"socialID"] forKey:@"userID"];
+                              NSLog(@"custom id %@",[[NSUserDefaults standardUserDefaults] objectForKey:@"custom id"] );
                               NSLog(@"test %@", [result objectForKey:@"id"]);
                               NSLog(@"test %@", [result objectForKey:@"name"]);
 
                               NSString *urlOnline = [NSString stringWithFormat:
-                                                     @"https://103.23.22.6:9000/users/registerWithSocial?"];
+                                                     @"http://103.23.22.6:9000/users/registerWithSocial?"];
                               
                               NSString *stringUrl =[urlOnline stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
                               
@@ -277,18 +280,22 @@ NSMutableURLRequest *requestSocial;
                                {
                                    //in case your data is chunked
                                    [fragmentData appendData:data];
-                                   
+                                   NSString *msg;
                                    if ([data length] == 0 && error == nil)
                                    {
                                        NSLog(@"No response from server");
+                                       msg = @"No Response from Server";
+
                                    }
                                    else if (error != nil && error.code == NSURLErrorTimedOut)
                                    {
                                        NSLog(@"Request time out");
+                                       msg = @"Request Time Out";
                                    }
                                    else if (error != nil)
                                    {
                                        NSLog(@"Unexpected error occur: %@", error.localizedDescription);
+                                       msg = @"Unexpected Error Occur, Please contact Admin";
                                    }
                                    // response of the server without error will be handled here
                                    else if ([data length] > 0 && error == nil)
@@ -312,19 +319,30 @@ NSMutableURLRequest *requestSocial;
                                                NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
                                                
                                                [defaults setObject:[result objectForKey:@"name"] forKey:@"name"];
+                                               msg = [NSString stringWithFormat:@"Welcome %@", [result objectForKey:@"name"]];
+                                               [[NSUserDefaults standardUserDefaults] setObject:[str objectForKey:@"id"] forKey:@"userID"];
+
+                                               [[NSNotificationCenter defaultCenter] postNotificationName:@"authentication" object:self userInfo:str];
                                            }
                                            
                                            NSString *serverRplyLoginString = [[NSString alloc] initWithData:fragmentData/*responseData*/ encoding:NSASCIIStringEncoding];
                                            
                                            NSDictionary *dictobj=[NSJSONSerialization JSONObjectWithData:fragmentData/*responseData*/ options:kNilOptions error:&error];
                                            
-                                           NSLog(@"Login Response Is :%@",serverRplyLoginString);
+                                           NSLog(@"Login Response In FBLogin :%@",serverRplyLoginString);
                                            
                                            NSLog(@"dictobj :%@",dictobj);
                                        }
                                        // if fragmentDatas length is not equal to server response's expectedContentLength
                                        // that means it is a chunked data and the other half of the data will be reloaded and `[fragmentData appendData:data];` will handle that
                                    }
+                                   UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Social Media Login"
+                                                                                   message:msg
+                                                                                  delegate:nil
+                                                                         cancelButtonTitle:@"OK"
+                                                                         otherButtonTitles:nil];
+                                   [alert show];
+
                                }];
 
                           }

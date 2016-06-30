@@ -50,8 +50,12 @@
     
     
     [self.navigationController.navigationBar setBackgroundImage:[[UIImage alloc]init] forBarMetrics:UIBarMetricsDefault];
+    [self.navigationController.navigationBar setBackgroundColor:[UIColor colorWithRed:0.0/255.0
+                                                                                green:114.0/255.0
+                                                                                 blue:187.0/255.0
+                                                                                alpha:1]];
     [self.navigationController.navigationBar setShadowImage:[[UIImage alloc]init] ];
-    //    [self.navigationController.navigationBar setTintColor:[UIColor clearColor]];
+//    [self.navigationController.navigationBar setTintColor:[UIColor clearColor]];
     
     //    self.navigationController.
     UIImageView *img = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 30, 30)];
@@ -142,7 +146,7 @@
         marker.map = mapView_;
         marker.title = [dic objectForKey:@"responder"];
         marker.userName = [dic objectForKey:@"responder"];
-        marker.userKey = [dic objectForKey:@"responderCustomId"];
+        marker.userKey = [dic objectForKey:@"responderId"];
         marker.snippet = @"test";
         marker.infoWindowAnchor = CGPointMake(0.44f, 0.45f);
 
@@ -152,6 +156,7 @@
 
 - (void) measureDistance:(NSNotification *) notification
 {
+    NSLog(@"received request user location");
     if ([[notification name] isEqualToString:@"request user location"])
     {
         locationManager = [[CLLocationManager alloc] init];
@@ -162,10 +167,11 @@
         NSLog(@"lati %f", locationManager.location.coordinate.latitude);
         NSLog(@"longi %f", locationManager.location.coordinate.longitude);
         NSDictionary *dic = [notification userInfo];
+        NSLog(@"dic measure %@", [dic description]);
         
         NSMutableDictionary *jsonLocation = [[NSMutableDictionary alloc]init];
         [jsonLocation setObject:[dic objectForKey:@"requester"] forKey:@"requester"];
-        [jsonLocation setObject:@"entah lah" forKey:@"responder"];
+        [jsonLocation setObject:[[NSUserDefaults standardUserDefaults] objectForKey:@"userID"] forKey:@"responder"];
         [jsonLocation setObject:[NSNumber numberWithDouble:locationManager.location.coordinate.latitude] forKey:@"lat"];
         [jsonLocation setObject:[NSNumber numberWithDouble:locationManager.location.coordinate.longitude] forKey:@"long"];
         [jsonLocation setObject:@"ios" forKey:@"mobile"];
@@ -228,7 +234,7 @@
     NSLog(@"long func %f", location.coordinate.longitude);
     
     NSMutableDictionary *json = [[NSMutableDictionary alloc]init];
-    [json setObject:[[NSUserDefaults standardUserDefaults] objectForKey:@"custom id"] forKey:@"requester"];
+    [json setObject:[[NSUserDefaults standardUserDefaults] objectForKey:@"userID"] forKey:@"requester"];
     [json setObject:[NSNumber numberWithDouble:locationManager.location.coordinate.latitude] forKey:@"lat"];
     [json setObject:[NSNumber numberWithDouble:locationManager.location.coordinate.longitude] forKey:@"long"];
     if (self.appd.limitDistance > 0) {
@@ -248,7 +254,11 @@
      */
     //Emit terima data NsArray so kita masukin seluruh NsDictionary ke array.
     // json untuk emit balik location
-    if (self.appd.isAuthenticated) { [self.appd.socket emit:@"find friend" withItems:[NSArray arrayWithObject:json]]; }
+    NSLog(@"socket connection : %ld", (long)self.appd.socket.status);
+    NSLog(@"find friend json %@", [json description]);
+    [self.appd.socket emit:@"find friend" withItems:[NSArray arrayWithObject:json]];
+//    self.appd.socket emit
+//    if (self.appd.isAuthenticated) { [self.appd.socket emit:@"Users/findFriend" withItems:[NSArray arrayWithObject:json]]; }
 }
 
 @end
