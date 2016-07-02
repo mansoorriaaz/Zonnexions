@@ -47,6 +47,7 @@
 		B61945A01CCE001800E4FAA4 /* Montserrat-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = B61945971CCE001800E4FAA4 /* Montserrat-SemiBold.otf */; };
 		B61945A11CCE001800E4FAA4 /* Montserrat-UltraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = B61945981CCE001800E4FAA4 /* Montserrat-UltraLight.otf */; };
 		B61945A21CCE001800E4FAA4 /* SIL Open Font License.txt in Resources */ = {isa = PBXBuildFile; fileRef = B61945991CCE001800E4FAA4 /* SIL Open Font License.txt */; };
+		B63733DB1D25389F00355FE9 /* ProfileViewerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B63733DA1D25389F00355FE9 /* ProfileViewerViewController.m */; };
 		B644E86F1CCE13AD009347E9 /* Z Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = B644E86E1CCE13AD009347E9 /* Z Logo.png */; };
 		B644E8731CCE1B76009347E9 /* Email Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B644E8701CCE1B76009347E9 /* Email Icon.png */; };
 		B644E8741CCE1B76009347E9 /* Facebook Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B644E8711CCE1B76009347E9 /* Facebook Icon.png */; };
@@ -221,6 +222,8 @@
 		B61945971CCE001800E4FAA4 /* Montserrat-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.otf"; sourceTree = "<group>"; };
 		B61945981CCE001800E4FAA4 /* Montserrat-UltraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-UltraLight.otf"; sourceTree = "<group>"; };
 		B61945991CCE001800E4FAA4 /* SIL Open Font License.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "SIL Open Font License.txt"; sourceTree = "<group>"; };
+		B63733D91D25389F00355FE9 /* ProfileViewerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewerViewController.h; sourceTree = "<group>"; };
+		B63733DA1D25389F00355FE9 /* ProfileViewerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewerViewController.m; sourceTree = "<group>"; };
 		B644E86E1CCE13AD009347E9 /* Z Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Z Logo.png"; sourceTree = "<group>"; };
 		B644E8701CCE1B76009347E9 /* Email Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Email Icon.png"; sourceTree = "<group>"; };
 		B644E8711CCE1B76009347E9 /* Facebook Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Facebook Icon.png"; sourceTree = "<group>"; };
@@ -479,6 +482,8 @@
 				53EBA4541C0B332800607407 /* FriendsViewController.m */,
 				B65337BD1CEEFF64009D8247 /* UserProfileViewController.h */,
 				B65337BE1CEEFF64009D8247 /* UserProfileViewController.m */,
+				B63733D91D25389F00355FE9 /* ProfileViewerViewController.h */,
+				B63733DA1D25389F00355FE9 /* ProfileViewerViewController.m */,
 				53EBA3281C0B01FF00607407 /* SetingsViewController.h */,
 				53EBA3291C0B01FF00607407 /* SetingsViewController.m */,
 				53EBA3231C0B014600607407 /* LeftDrawerViewController.h */,
@@ -1037,6 +1042,7 @@
 				B6CC66AC1C1D00E200AFB2D9 /* SocketLogger.swift in Sources */,
 				53EBA3261C0B014600607407 /* LeftDrawerViewController.m in Sources */,
 				B6AC08E11CF1BC1C00E1E182 /* MZMethodSwizzler.m in Sources */,
+				B63733DB1D25389F00355FE9 /* ProfileViewerViewController.m in Sources */,
 				B6CC66A31C1D00E200AFB2D9 /* SocketEngineClient.swift in Sources */,
 				53EBA32A1C0B01FF00607407 /* SetingsViewController.m in Sources */,
 				B6F9D35B1C2959E600F2B9CA /* AppSettingViewController.m in Sources */,

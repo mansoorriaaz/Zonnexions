@@ -7,6 +7,8 @@
 //
 
 #import "FriendsViewController.h"
+#import "ProfileViewerViewController.h"
+#import "SearchList.h"
 
 @interface FriendsViewController ()
 @property (strong, nonatomic) UITableView *tableView;
@@ -25,16 +27,28 @@ CLLocationManager *locationManager;
 LGChatController *chatController;
 CLLocationDistance *distance;
 
-@implementation FriendsViewController
+NSMutableURLRequest *requestGetPictureFV;
+NSString *pictureID;
+NSMutableArray *findList;
+RLMResults *peopleRLMDB;
+
+
+@implementation FriendsViewController{
+    SearchList *sL;
+}
 
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    tableData3 = [[NSMutableArray alloc]init];
-    [self setSwipe];
-    if (self.appd.isAuthenticated) { [self.appd.socket emit:@"user list" withItems:[NSArray array]]; }
+    sL = [[SearchList alloc]init];
+//    [self deleteWorkinRLM];
     
+//    tableData3 = [[NSMutableArray alloc]init];
+    [self setSwipe];
+//    if (self.appd.isAuthenticated) { [self.appd.socket emit:@"user list" withItems:[NSArray array]]; }
+    findList = [[NSMutableArray alloc]init];
+
     UIView *viewSetting = [[UIView alloc]init];
     self.tableView = [[UITableView alloc] init];
     [self.tableView setDataSource:self];
@@ -44,15 +58,12 @@ CLLocationDistance *distance;
                                                      blue:182.0/255.0
                                                     alpha:1]];
     [self setView:viewSetting];
+    [self grabPeopleFromRLM];
 //    [self grabFriend];
     self.tableView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
     self.tableView.frame = CGRectMake(0, 20, self.view.frame.size.width,200);
 
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(receiveChat:)
-                                                 name:@"chat message"
-                                               object:nil];
-    
+
 //    [[NSNotificationCenter defaultCenter] addObserver:self
 //                                             selector:@selector(userlist:)
 //                                                 name:@"user list"
@@ -74,6 +85,8 @@ CLLocationDistance *distance;
     NSLog(@"view did appear");
     chatController = NULL;
     chatController = [LGChatController new];
+//    [self.tableView reloadData];
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -242,7 +255,7 @@ CLLocationDistance *distance;
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"test masuk");
+    NSLog(@"============= test masuk =============");
     static NSString *simpleTableIdentifier= @"settingsTableItem";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
     
@@ -297,7 +310,7 @@ CLLocationDistance *distance;
     
     UILabel *rangeLabel = [[UILabel alloc]initWithFrame:CGRectMake(91, 45, 400, labelSize.height)];
     NSString *jarak;
-    rangeLabel.text = @"approx %@ meters", text ;
+    rangeLabel.text = @"approx 100 meters";
     rangeLabel.font = customFont;
     rangeLabel.numberOfLines = 1;
     rangeLabel.baselineAdjustment = UIBaselineAdjustmentAlignBaselines; // or UIBaselineAdjustmentAlignCenters, or UIBaselineAdjustmentNone
@@ -308,6 +321,18 @@ CLLocationDistance *distance;
     rangeLabel.backgroundColor = [UIColor clearColor];
     rangeLabel.textColor = [UIColor blackColor];
     rangeLabel.textAlignment = NSTextAlignmentLeft;
+    if (peopleRLMDB.count > 0) {
+//        NSLog(@"education list :%@", [eduRLMDB description]);
+        SearchList *sLst = [peopleRLMDB objectAtIndex:indexPath.row];
+        //        NSLog(@"chat object = %@",[ch description]);
+        nameLabel.text = sLst.friendName;
+        if (!(sLst.friendPicture == nil)) {
+            pictureID = sLst.friendPicture;
+            [self grabImage];
+        }
+        [findList insertObject:sLst.friendID atIndex:indexPath.row];
+//        NSLog(@"school : %@", edu.educationName);
+    }
     
     [cell addSubview:imv];
     [cell addSubview:nameLabel];
@@ -321,66 +346,57 @@ CLLocationDistance *distance;
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UIViewController * center;
-//    NSLog(@"choice : %@" self.tableView.tableData3);
-//    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    People *user = (People *) [tableData3 objectAtIndex:indexPath.row];
-    NSLog(@"user %@", [user description]);
-    currentUser = user;
-    NSLog(@"custom id = %@",currentUser.customId);
-//    [chatController setMessages:[NSArray<LGChatMessage *> array]];
-    
-    
-    chatController.opponentImage = [UIImage imageNamed:@"YourImageName"];
-    chatController.title = user.name;
-    chatController.delegate = self;
-    
-    
-    RLMResults *chatResult = [[Chat objectsWhere:[NSString stringWithFormat:@"chatWith = '%@'", currentUser.customId]] sortedResultsUsingProperty:@"timeStamp" ascending:YES];
-    
-
-    NSMutableArray<LGChatMessage *> *messages = [[NSMutableArray alloc] init];
-    for (int i =0; i < [chatResult count]; i++) {
-        Chat *ch = [chatResult objectAtIndex:i];
-//        NSLog(@"chat object = %@",[ch description]);
-        LGChatMessage *message;
-        if (ch.is_me) {
-//            NSLog(@"is this me??? %i",ch.is_me);
-             message = [[LGChatMessage alloc] initWithContent:ch.message sentByString:[LGChatMessage SentByUserString]];
-        }else{
-//                        NSLog(@"is this me? %i",ch.is_me);
-                message= [[LGChatMessage alloc] initWithContent:ch.message sentByString:[LGChatMessage SentByOpponentString]];
-        }
-        [messages addObject:message];
-    }
-    [chatController setMessages:messages];
-    [self.navigationController pushViewController:chatController animated:YES];
-
-//    NSLog(@"%lu",(unsigned long)[chatResult count]);
-    
-//    switch (indexPath.row) {
-//        case 0:
-//            [self launchChatController];
-//            break;
-//        case 1:
-//            center = [[MapViewController alloc] init];
-//            //center = [[UIViewController alloc] init];
-//            break;
-//        case 2:
-//            center = [[UIViewController alloc]init];
-//            [center.view setBackgroundColor:[UIColor purpleColor]];
-//            break;
-//            
-//        default:
-//            break;
+//    UIViewController * center;
+////    NSLog(@"choice : %@" self.tableView.tableData3);
+////    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+//    People *user = (People *) [tableData3 objectAtIndex:indexPath.row];
+//    NSLog(@"user %@", [user description]);
+//    currentUser = user;
+//    NSLog(@"custom id = %@",currentUser.customId);
+////    [chatController setMessages:[NSArray<LGChatMessage *> array]];
+//    
+//    
+//    chatController.opponentImage = [UIImage imageNamed:@"YourImageName"];
+//    chatController.title = user.name;
+//    chatController.delegate = self;
+//    
+//    
+//    RLMResults *chatResult = [[Chat objectsWhere:[NSString stringWithFormat:@"chatWith = '%@'", currentUser.customId]] sortedResultsUsingProperty:@"timeStamp" ascending:YES];
+//    
+//
+//    NSMutableArray<LGChatMessage *> *messages = [[NSMutableArray alloc] init];
+//    for (int i =0; i < [chatResult count]; i++) {
+//        Chat *ch = [chatResult objectAtIndex:i];
+////        NSLog(@"chat object = %@",[ch description]);
+//        LGChatMessage *message;
+//        if (ch.is_me) {
+////            NSLog(@"is this me??? %i",ch.is_me);
+//             message = [[LGChatMessage alloc] initWithContent:ch.message sentByString:[LGChatMessage SentByUserString]];
+//        }else{
+////                        NSLog(@"is this me? %i",ch.is_me);
+//                message= [[LGChatMessage alloc] initWithContent:ch.message sentByString:[LGChatMessage SentByOpponentString]];
+//        }
+//        [messages addObject:message];
 //    }
+//    [chatController setMessages:messages];
+//    [self.navigationController pushViewController:chatController animated:YES];
     
-//    [appDelegate.drawerController setCenterViewController:center];
+    [[NSUserDefaults standardUserDefaults] setValue:[NSString stringWithFormat:@"%@", [findList objectAtIndex:indexPath.row]] forKey:@"friendID"];
+    
+    SWRevealViewController *revealController = self.revealViewController;
+
+    UIViewController *newFrontController = nil;
+
+    ProfileViewerViewController *profileView = [[ProfileViewerViewController alloc] init];
+    newFrontController = [[UINavigationController alloc] initWithRootViewController:profileView];
+    
+    [revealController pushFrontViewController:newFrontController animated:YES];
+
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [tableData3 count];
+    return [peopleRLMDB count];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -399,7 +415,134 @@ CLLocationDistance *distance;
     
 }
 
+- (void) grabPeopleFromRLM{
+    peopleRLMDB = [SearchList allObjects];
+    NSLog(@"list : %@", [peopleRLMDB description]);
+    [self.tableView reloadData];
+}
 
+-(void)grabImage{
+    NSString *urlOnline = [NSString stringWithFormat:
+                           @"http://103.23.22.6:9000/users/getProfilePicture"];
+    
+    
+    NSString *stringUrl =[urlOnline stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    
+    
+    requestGetPictureFV = [[NSMutableURLRequest alloc] initWithURL:
+                        [NSURL URLWithString:stringUrl]];
+    
+    NSLog(@"test %@", requestGetPictureFV);
+    
+    [requestGetPictureFV setHTTPMethod:@"POST"];
+    
+    NSString *postData = [[NSString alloc]initWithString:[NSString stringWithFormat:@"fd=%@",pictureID]];
+    NSLog(@"post data :%@ ", postData);
+    [requestGetPictureFV setValue:@"application/x-www-form-urlencoded; charset=utf-8" forHTTPHeaderField:@"Content-type"];
+    
+    //                              [request setValue:[NSString stringWithFormat:@"%lu",(unsigned long)[content length]]forHTTPHeaderField:@"Content-length"];
+    
+    [requestGetPictureFV setHTTPBody:[postData dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    NSError *error;
+    
+    NSURLResponse *response;
+    
+    //    NSData *urlData=[NSURLConnection sendSynchronousRequest:requestGetWork returningResponse:&response error:&error];
+    //
+    //    NSDictionary *str =[NSJSONSerialization JSONObjectWithData:urlData options:kNilOptions error:&error];
+    //    //            [[NSString alloc]initWithData:urlData encoding:NSUTF8StringEncoding];
+    //
+    
+    
+    __block NSMutableData *fragmentData = [NSMutableData data];
+    
+    [[NSOperationQueue mainQueue] cancelAllOperations];
+    
+    
+    [NSURLConnection sendAsynchronousRequest:requestGetPictureFV queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error)
+     {
+         //in case your data is chunked
+         [fragmentData appendData:data];
+         
+         if ([data length] == 0 && error == nil)
+         {
+             NSLog(@"No response from server");
+         }
+         else if (error != nil && error.code == NSURLErrorTimedOut)
+         {
+             NSLog(@"Request time out");
+         }
+         else if (error != nil)
+         {
+             NSLog(@"Unexpected error occur: %@", error.localizedDescription);
+         }
+         // response of the server without error will be handled here
+         else if ([data length] > 0 && error == nil)
+         {
+             // if all the data was successfully gather without error
+             if ([fragmentData length] == [response expectedContentLength])
+             {
+                 // finished loading all your data
+                 
+                 // handle your response data here, in this example it's `fragmentData`
+                 NSDictionary *str =[NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+                 //            [[NSString alloc]initWithData:urlData encoding:NSUTF8StringEncoding];
+                 
+                 NSLog(@"=========================== WORK  ==========================");
+                 
+                 NSLog(@"str : %@", [str description] );
+                 NSLog(@"status : %@, message : %@ ", [str objectForKey:@"status"], [str objectForKey:@"msg"]);
+                 NSLog(@"preparing data from server to local");
+                 if ([[str objectForKey:@"status"] intValue]== 1) {
+//                     NSLog(@"inserting data from server to local");
+//                     NSArray *arr = [[NSArray alloc]initWithArray:[str objectForKey:@"data"]];
+//                     for (int i = 0; i < arr.count; i++) {
+//                         NSDictionary *dic = [[NSDictionary alloc] initWithDictionary:[arr objectAtIndex:i]];
+//                         wPV = [[WorkingExperience alloc] init];
+//                         
+//                         wPV.companyID = [dic objectForKey:@"id"];
+//                         wPV.companyName = [dic objectForKey:@"company"];
+//                         wPV.companyLocation = [dic objectForKey:@"location"];;
+//                         wPV.year = [dic objectForKey:@"year"];;
+//                         wPV.isShare = [dic objectForKey:@"isShare"];
+//                         
+//                         RLMRealm *realm = [RLMRealm defaultRealm];
+//                         [realm beginWriteTransaction];
+//                         [realm addObject:wPV];
+//                         [realm commitWriteTransaction];
+//                     
+//                     }
+                     [self.tableView reloadData];
+                 }
+                 NSLog(@"finish inserting data from server to local");
+                 
+                 NSString *serverRplyLoginString = [[NSString alloc] initWithData:fragmentData/*responseData*/ encoding:NSASCIIStringEncoding];
+                 
+                 NSDictionary *dictobj=[NSJSONSerialization JSONObjectWithData:fragmentData/*responseData*/ options:kNilOptions error:&error];
+                 
+                 NSLog(@"Login Response Is :%@",serverRplyLoginString);
+                 
+                 NSLog(@"dictobj :%@",dictobj);
+             }
+             // if fragmentDatas length is not equal to server response's expectedContentLength
+             // that means it is a chunked data and the other half of the data will be reloaded and `[fragmentData appendData:data];` will handle that
+         }
+     }];
+    
+    //    NSLog(@"str : %@", [str description] );
+    //    NSLog(@"status : %@, message : %@ ", [str objectForKey:@"status"], [str objectForKey:@"msg"]);
+    //
+    
+}
+
+- (void) deleteWorkinRLM{
+    RLMRealm *realm = [RLMRealm defaultRealm];
+    NSLog(@"deleting now");
+    [realm beginWriteTransaction];
+    [realm deleteObject:sL];
+    [realm commitWriteTransaction];
+}
 
 - (BOOL)shouldChatController:(LGChatController *)chatController addMessage:(LGChatMessage *)message{
     /**
