@@ -28,6 +28,7 @@ LGChatController *chatController;
 CLLocationDistance *distance;
 
 NSMutableURLRequest *requestGetPictureFV;
+UIImage *imageForThumbnail;
 NSString *pictureID;
 NSMutableArray *findList;
 RLMResults *peopleRLMDB;
@@ -41,6 +42,8 @@ RLMResults *peopleRLMDB;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [[NSUserDefaults standardUserDefaults]setObject:@"2" forKey:@"menu"];
+
     sL = [[SearchList alloc]init];
 //    [self deleteWorkinRLM];
     
@@ -259,9 +262,17 @@ RLMResults *peopleRLMDB;
     static NSString *simpleTableIdentifier= @"settingsTableItem";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
     
-        UIImageView *imv = [[UIImageView alloc]initWithFrame:CGRectMake(0,-10, 95, 95)];
-    imv.image=[UIImage imageNamed:@"icon.png"];
-    
+    UIImageView *imv = [[UIImageView alloc]initWithFrame:CGRectMake(5,-10, 95, 95)];
+    if (!(imageForThumbnail == nil)) {
+        imv.image=imageForThumbnail;
+    }else{
+        imv.image=[UIImage imageNamed:@"icon.png"];
+    }
+    if (cell) {
+        cell = nil;
+        [cell removeFromSuperview];
+    }
+
     if (cell == nil) {
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
         NSLog(@"cell : ");
@@ -294,9 +305,9 @@ RLMResults *peopleRLMDB;
     
     CGSize labelSize = [text sizeWithFont:customFont constrainedToSize:CGSizeMake(380, 20) lineBreakMode:NSLineBreakByTruncatingTail];
     
-    UILabel *nameLabel = [[UILabel alloc]initWithFrame:CGRectMake(91, 10, 380, 40)];
+    UILabel *nameLabel = [[UILabel alloc]initWithFrame:CGRectMake(105, 10, 380, 40)];
     nameLabel.text = user.name;
-    nameLabel.font = [UIFont fontWithName:@"Montserrat-Bold" size:18];
+    nameLabel.font = [UIFont fontWithName:@"Montserrat-regular" size:18];
     nameLabel.numberOfLines = 1;
     nameLabel.baselineAdjustment = UIBaselineAdjustmentAlignBaselines; // or UIBaselineAdjustmentAlignCenters, or UIBaselineAdjustmentNone
     nameLabel.adjustsFontSizeToFitWidth = YES;
@@ -321,14 +332,22 @@ RLMResults *peopleRLMDB;
     rangeLabel.backgroundColor = [UIColor clearColor];
     rangeLabel.textColor = [UIColor blackColor];
     rangeLabel.textAlignment = NSTextAlignmentLeft;
+    NSLog(@"people count : %lu", (unsigned long)peopleRLMDB.count);
     if (peopleRLMDB.count > 0) {
 //        NSLog(@"education list :%@", [eduRLMDB description]);
         SearchList *sLst = [peopleRLMDB objectAtIndex:indexPath.row];
         //        NSLog(@"chat object = %@",[ch description]);
+        if (sLst.friendID == nil) {
+//            [peopleRLMDB ]
+        }
         nameLabel.text = sLst.friendName;
+        
         if (!(sLst.friendPicture == nil)) {
+            NSLog(@"friend pict : %@", sLst.friendPicture);
             pictureID = sLst.friendPicture;
+            NSLog(@"pict id : %@", pictureID);
             [self grabImage];
+            imageForThumbnail = nil;
         }
         [findList insertObject:sLst.friendID atIndex:indexPath.row];
 //        NSLog(@"school : %@", edu.educationName);
@@ -339,7 +358,7 @@ RLMResults *peopleRLMDB;
     [cell addSubview:rangeLabel];
 //    cell.textLabel.text = user.name;
 //    cell.textLabel.text = user.name;
-    
+
     return cell;
     
 }
@@ -417,9 +436,10 @@ RLMResults *peopleRLMDB;
 
 - (void) grabPeopleFromRLM{
     peopleRLMDB = [SearchList allObjects];
-    NSLog(@"list : %@", [peopleRLMDB description]);
+    NSLog(@"list grab people : %@", [peopleRLMDB description]);
     [self.tableView reloadData];
 }
+
 
 -(void)grabImage{
     NSString *urlOnline = [NSString stringWithFormat:
@@ -435,6 +455,7 @@ RLMResults *peopleRLMDB;
     NSLog(@"test %@", requestGetPictureFV);
     
     [requestGetPictureFV setHTTPMethod:@"POST"];
+    
     
     NSString *postData = [[NSString alloc]initWithString:[NSString stringWithFormat:@"fd=%@",pictureID]];
     NSLog(@"post data :%@ ", postData);
@@ -480,53 +501,32 @@ RLMResults *peopleRLMDB;
          // response of the server without error will be handled here
          else if ([data length] > 0 && error == nil)
          {
-             // if all the data was successfully gather without error
-             if ([fragmentData length] == [response expectedContentLength])
-             {
-                 // finished loading all your data
+             NSLog(@"=========================== Image  ==========================");
+             NSData *image = data;
+             if (image == nil) {
+                 NSLog(@"image nil");
+             }else{
+                 NSLog(@"image here?");
                  
-                 // handle your response data here, in this example it's `fragmentData`
-                 NSDictionary *str =[NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
-                 //            [[NSString alloc]initWithData:urlData encoding:NSUTF8StringEncoding];
+                 UIImage *topImage = [UIImage imageNamed:@"cover_white.png"];
                  
-                 NSLog(@"=========================== WORK  ==========================");
+                 CGSize size = CGSizeMake(topImage.size.width, topImage.size.height);// + profilImage.size.height);
                  
-                 NSLog(@"str : %@", [str description] );
-                 NSLog(@"status : %@, message : %@ ", [str objectForKey:@"status"], [str objectForKey:@"msg"]);
-                 NSLog(@"preparing data from server to local");
-                 if ([[str objectForKey:@"status"] intValue]== 1) {
-//                     NSLog(@"inserting data from server to local");
-//                     NSArray *arr = [[NSArray alloc]initWithArray:[str objectForKey:@"data"]];
-//                     for (int i = 0; i < arr.count; i++) {
-//                         NSDictionary *dic = [[NSDictionary alloc] initWithDictionary:[arr objectAtIndex:i]];
-//                         wPV = [[WorkingExperience alloc] init];
-//                         
-//                         wPV.companyID = [dic objectForKey:@"id"];
-//                         wPV.companyName = [dic objectForKey:@"company"];
-//                         wPV.companyLocation = [dic objectForKey:@"location"];;
-//                         wPV.year = [dic objectForKey:@"year"];;
-//                         wPV.isShare = [dic objectForKey:@"isShare"];
-//                         
-//                         RLMRealm *realm = [RLMRealm defaultRealm];
-//                         [realm beginWriteTransaction];
-//                         [realm addObject:wPV];
-//                         [realm commitWriteTransaction];
-//                     
-//                     }
-                     [self.tableView reloadData];
-                 }
-                 NSLog(@"finish inserting data from server to local");
+                 UIGraphicsBeginImageContextWithOptions(size,false,0.0);
                  
-                 NSString *serverRplyLoginString = [[NSString alloc] initWithData:fragmentData/*responseData*/ encoding:NSASCIIStringEncoding];
+                 [[UIImage imageWithData:image] drawInRect:CGRectMake(0,0,size.width, topImage.size.height)];
+                 [topImage drawInRect:CGRectMake(0,0,size.width,size.height)];//, profilImage.size.height)];
                  
-                 NSDictionary *dictobj=[NSJSONSerialization JSONObjectWithData:fragmentData/*responseData*/ options:kNilOptions error:&error];
+                 UIImage *finalImage = UIGraphicsGetImageFromCurrentImageContext();
                  
-                 NSLog(@"Login Response Is :%@",serverRplyLoginString);
-                 
-                 NSLog(@"dictobj :%@",dictobj);
+                 UIGraphicsEndImageContext();
+
+                 imageForThumbnail = finalImage;
+                 [self.tableView reloadData];
              }
-             // if fragmentDatas length is not equal to server response's expectedContentLength
-             // that means it is a chunked data and the other half of the data will be reloaded and `[fragmentData appendData:data];` will handle that
+             NSDictionary *str =[NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+             NSLog(@"str : %@", [str description] );
+             
          }
      }];
     

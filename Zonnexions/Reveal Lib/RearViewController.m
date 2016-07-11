@@ -165,7 +165,12 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    
+    NSLog(@"menu : %d",[[[NSUserDefaults standardUserDefaults]objectForKey:@"menu"] intValue]);
+    if ([[[NSUserDefaults standardUserDefaults]objectForKey:@"menu"] intValue] == 2) {
+        _presentedRow = 2;
+        [self.rearTableView reloadData];
+        [[NSUserDefaults standardUserDefaults]setObject:0 forKey:@"menu"];
+    }
     SWRevealViewController *grandParentRevealController = self.revealViewController.revealViewController;
     grandParentRevealController.bounceBackOnOverdraw = NO;
 }
