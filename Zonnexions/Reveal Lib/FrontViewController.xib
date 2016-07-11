@@ -87,7 +87,7 @@
                     </constraints>
                 </imageView>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" ambiguous="YES" misplaced="YES" text="You would be connected more than you could possibly ever imagined" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="60">
-                    <rect key="frame" x="65" y="215" width="190" height="122"/>
+                    <rect key="frame" x="20" y="211" width="280" height="122"/>
                     <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="18"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
@@ -98,17 +98,17 @@
             <color key="backgroundColor" red="0.13333333333333333" green="0.47450980392156861" blue="0.71372549019607845" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="gSP-xB-yS8" firstAttribute="top" secondItem="vnu-ZA-yQp" secondAttribute="bottom" constant="2" id="0Rv-MB-5h9"/>
+                <constraint firstItem="60" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="20" id="2nL-gT-hVS"/>
                 <constraint firstItem="I4G-V0-8fQ" firstAttribute="top" secondItem="1" secondAttribute="top" constant="59" id="4Yn-W5-4B7"/>
-                <constraint firstItem="60" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="65" id="5Vh-X0-h3o"/>
-                <constraint firstItem="vnu-ZA-yQp" firstAttribute="top" secondItem="60" secondAttribute="bottom" constant="60" id="5nz-2m-Fxf"/>
+                <constraint firstItem="vnu-ZA-yQp" firstAttribute="top" relation="lessThanOrEqual" secondItem="60" secondAttribute="bottom" constant="60" id="5nz-2m-Fxf"/>
+                <constraint firstAttribute="trailing" secondItem="60" secondAttribute="trailing" constant="20" id="8uB-Gd-RYN"/>
                 <constraint firstItem="B4A-iH-7uM" firstAttribute="top" secondItem="vnu-ZA-yQp" secondAttribute="bottom" constant="2" id="FVC-UC-hJ9"/>
                 <constraint firstItem="gSP-xB-yS8" firstAttribute="leading" secondItem="zFK-2I-lDP" secondAttribute="trailing" constant="8" id="Je4-cw-dU4"/>
                 <constraint firstAttribute="trailing" secondItem="58" secondAttribute="trailing" constant="20" id="NjC-bN-GyW"/>
                 <constraint firstItem="B4A-iH-7uM" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="65" id="UQV-QR-6kH"/>
                 <constraint firstItem="58" firstAttribute="top" secondItem="zFK-2I-lDP" secondAttribute="bottom" constant="13" id="WTK-KK-nFH"/>
-                <constraint firstItem="60" firstAttribute="top" secondItem="I4G-V0-8fQ" secondAttribute="bottom" constant="28" id="YYR-ck-JGi"/>
+                <constraint firstItem="60" firstAttribute="top" relation="lessThanOrEqual" secondItem="I4G-V0-8fQ" secondAttribute="bottom" constant="8" id="YYR-ck-JGi"/>
                 <constraint firstAttribute="bottom" secondItem="58" secondAttribute="bottom" constant="21" id="fX8-Fg-Glb"/>
-                <constraint firstAttribute="trailing" secondItem="60" secondAttribute="trailing" constant="65" id="iNe-oy-B69"/>
                 <constraint firstItem="zFK-2I-lDP" firstAttribute="leading" secondItem="B4A-iH-7uM" secondAttribute="trailing" constant="8" id="iTa-fZ-KbF"/>
                 <constraint firstItem="I4G-V0-8fQ" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="40" id="khr-ee-3jW"/>
                 <constraint firstItem="58" firstAttribute="top" secondItem="gSP-xB-yS8" secondAttribute="bottom" constant="13" id="lWe-yN-1yO"/>

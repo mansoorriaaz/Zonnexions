@@ -47,6 +47,7 @@
 		B61945A01CCE001800E4FAA4 /* Montserrat-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = B61945971CCE001800E4FAA4 /* Montserrat-SemiBold.otf */; };
 		B61945A11CCE001800E4FAA4 /* Montserrat-UltraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = B61945981CCE001800E4FAA4 /* Montserrat-UltraLight.otf */; };
 		B61945A21CCE001800E4FAA4 /* SIL Open Font License.txt in Resources */ = {isa = PBXBuildFile; fileRef = B61945991CCE001800E4FAA4 /* SIL Open Font License.txt */; };
+		B63733DB1D25389F00355FE9 /* ProfileViewerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B63733DA1D25389F00355FE9 /* ProfileViewerViewController.m */; };
 		B644E86F1CCE13AD009347E9 /* Z Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = B644E86E1CCE13AD009347E9 /* Z Logo.png */; };
 		B644E8731CCE1B76009347E9 /* Email Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B644E8701CCE1B76009347E9 /* Email Icon.png */; };
 		B644E8741CCE1B76009347E9 /* Facebook Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B644E8711CCE1B76009347E9 /* Facebook Icon.png */; };
@@ -117,6 +118,9 @@
 		B6CC66B21C1D00E200AFB2D9 /* SwiftRegex.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CC669F1C1D00E200AFB2D9 /* SwiftRegex.swift */; };
 		B6D55E3D1C34FA850023B7EE /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6D55E3B1C34FA850023B7EE /* LoginViewController.m */; };
 		B6D55E3E1C34FA850023B7EE /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6D55E3C1C34FA850023B7EE /* LoginViewController.xib */; };
+		B6DAC33B1D24E9D90052E49F /* SearchList.m in Sources */ = {isa = PBXBuildFile; fileRef = B6DAC33A1D24E9D90052E49F /* SearchList.m */; };
+		B6DAF55B1D0ED4BA00B68BFD /* SearchPeopleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6DAF5591D0ED4BA00B68BFD /* SearchPeopleViewController.m */; };
+		B6DAF55C1D0ED4BA00B68BFD /* SearchPeopleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6DAF55A1D0ED4BA00B68BFD /* SearchPeopleViewController.xib */; };
 		B6DCE2DC1CEC84BB00A3A1C6 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B6DCE2DB1CEC84BB00A3A1C6 /* icon.png */; };
 		B6E1B1D91CFB258E00858D0B /* button-burger-circle.png in Resources */ = {isa = PBXBuildFile; fileRef = B6E1B1D51CFB258E00858D0B /* button-burger-circle.png */; };
 		B6E1B1DA1CFB258E00858D0B /* button-close.png in Resources */ = {isa = PBXBuildFile; fileRef = B6E1B1D61CFB258E00858D0B /* button-close.png */; };
@@ -218,6 +222,8 @@
 		B61945971CCE001800E4FAA4 /* Montserrat-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.otf"; sourceTree = "<group>"; };
 		B61945981CCE001800E4FAA4 /* Montserrat-UltraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-UltraLight.otf"; sourceTree = "<group>"; };
 		B61945991CCE001800E4FAA4 /* SIL Open Font License.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "SIL Open Font License.txt"; sourceTree = "<group>"; };
+		B63733D91D25389F00355FE9 /* ProfileViewerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewerViewController.h; sourceTree = "<group>"; };
+		B63733DA1D25389F00355FE9 /* ProfileViewerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewerViewController.m; sourceTree = "<group>"; };
 		B644E86E1CCE13AD009347E9 /* Z Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Z Logo.png"; sourceTree = "<group>"; };
 		B644E8701CCE1B76009347E9 /* Email Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Email Icon.png"; sourceTree = "<group>"; };
 		B644E8711CCE1B76009347E9 /* Facebook Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Facebook Icon.png"; sourceTree = "<group>"; };
@@ -316,6 +322,11 @@
 		B6D55E3A1C34FA850023B7EE /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		B6D55E3B1C34FA850023B7EE /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		B6D55E3C1C34FA850023B7EE /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		B6DAC3391D24E9D90052E49F /* SearchList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchList.h; sourceTree = "<group>"; };
+		B6DAC33A1D24E9D90052E49F /* SearchList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchList.m; sourceTree = "<group>"; };
+		B6DAF5581D0ED4BA00B68BFD /* SearchPeopleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchPeopleViewController.h; sourceTree = "<group>"; };
+		B6DAF5591D0ED4BA00B68BFD /* SearchPeopleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchPeopleViewController.m; sourceTree = "<group>"; };
+		B6DAF55A1D0ED4BA00B68BFD /* SearchPeopleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchPeopleViewController.xib; sourceTree = "<group>"; };
 		B6DCE2DB1CEC84BB00A3A1C6 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		B6E1B1D51CFB258E00858D0B /* button-burger-circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-burger-circle.png"; sourceTree = "<group>"; };
 		B6E1B1D61CFB258E00858D0B /* button-close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-close.png"; sourceTree = "<group>"; };
@@ -383,6 +394,8 @@
 		5382B9381C05C334006AA0D6 = {
 			isa = PBXGroup;
 			children = (
+				B6DAC3391D24E9D90052E49F /* SearchList.h */,
+				B6DAC33A1D24E9D90052E49F /* SearchList.m */,
 				B660849A1CF6EB8300DEEF3F /* UnderlinedTextField.h */,
 				B660849B1CF6EB8300DEEF3F /* UnderlinedTextField.m */,
 				B6BD9F181CF1A58200998021 /* Cartfile */,
@@ -469,6 +482,8 @@
 				53EBA4541C0B332800607407 /* FriendsViewController.m */,
 				B65337BD1CEEFF64009D8247 /* UserProfileViewController.h */,
 				B65337BE1CEEFF64009D8247 /* UserProfileViewController.m */,
+				B63733D91D25389F00355FE9 /* ProfileViewerViewController.h */,
+				B63733DA1D25389F00355FE9 /* ProfileViewerViewController.m */,
 				53EBA3281C0B01FF00607407 /* SetingsViewController.h */,
 				53EBA3291C0B01FF00607407 /* SetingsViewController.m */,
 				53EBA3231C0B014600607407 /* LeftDrawerViewController.h */,
@@ -606,6 +621,9 @@
 		B648955B1CCF311B004B97B5 /* Modified */ = {
 			isa = PBXGroup;
 			children = (
+				B6DAF5581D0ED4BA00B68BFD /* SearchPeopleViewController.h */,
+				B6DAF5591D0ED4BA00B68BFD /* SearchPeopleViewController.m */,
+				B6DAF55A1D0ED4BA00B68BFD /* SearchPeopleViewController.xib */,
 				B6AC08EC1CF1BC2400E1E182 /* MZPopup */,
 				B6BAC4931CF4845200086A80 /* SignIn */,
 				B65337CD1CEF44DC009D8247 /* Working Experience */,
@@ -878,6 +896,7 @@
 				53EBA4521C0B2D3200607407 /* reveal-icon@2x.png in Resources */,
 				53EBA44D1C0B2C3A00607407 /* FrontViewController.xib in Resources */,
 				5382B94F1C05C334006AA0D6 /* Main.storyboard in Resources */,
+				B6DAF55C1D0ED4BA00B68BFD /* SearchPeopleViewController.xib in Resources */,
 				B69646D91CDDCF2C004580DB /* button-tick-on.png in Resources */,
 				B69646DC1CDDCF2C004580DB /* cover_white.png in Resources */,
 				B69646DA1CDDCF2C004580DB /* button-white-big.png in Resources */,
@@ -982,6 +1001,7 @@
 				B6CC66A51C1D00E200AFB2D9 /* SocketEngineSpec.swift in Sources */,
 				B6F9D3651C298F3F00F2B9CA /* ProfileViewController.m in Sources */,
 				B6BAC4971CF486A900086A80 /* SignInViewController.m in Sources */,
+				B6DAF55B1D0ED4BA00B68BFD /* SearchPeopleViewController.m in Sources */,
 				B6AC08E81CF1BC1C00E1E182 /* MZTransition.m in Sources */,
 				B6CC66A11C1D00E200AFB2D9 /* SocketAnyEvent.swift in Sources */,
 				53EBA4551C0B332800607407 /* FriendsViewController.m in Sources */,
@@ -1022,6 +1042,7 @@
 				B6CC66AC1C1D00E200AFB2D9 /* SocketLogger.swift in Sources */,
 				53EBA3261C0B014600607407 /* LeftDrawerViewController.m in Sources */,
 				B6AC08E11CF1BC1C00E1E182 /* MZMethodSwizzler.m in Sources */,
+				B63733DB1D25389F00355FE9 /* ProfileViewerViewController.m in Sources */,
 				B6CC66A31C1D00E200AFB2D9 /* SocketEngineClient.swift in Sources */,
 				53EBA32A1C0B01FF00607407 /* SetingsViewController.m in Sources */,
 				B6F9D35B1C2959E600F2B9CA /* AppSettingViewController.m in Sources */,
@@ -1040,6 +1061,7 @@
 				5382B9461C05C334006AA0D6 /* main.m in Sources */,
 				B61197701C2047A1000FA21F /* LGSimpleChat.swift in Sources */,
 				B6C31F371C1D84BA00E0D39A /* testingViewController.m in Sources */,
+				B6DAC33B1D24E9D90052E49F /* SearchList.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

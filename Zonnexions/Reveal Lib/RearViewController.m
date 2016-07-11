@@ -34,7 +34,7 @@
 #import "UserProfileViewController.h"
 #import "SetingsViewController.h"
 #import "testingViewController.h"
-
+#import "SearchPeopleViewController.h"
 
 
 @interface RearViewController() 
@@ -165,7 +165,12 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    
+    NSLog(@"menu : %d",[[[NSUserDefaults standardUserDefaults]objectForKey:@"menu"] intValue]);
+    if ([[[NSUserDefaults standardUserDefaults]objectForKey:@"menu"] intValue] == 2) {
+        _presentedRow = 2;
+        [self.rearTableView reloadData];
+        [[NSUserDefaults standardUserDefaults]setObject:0 forKey:@"menu"];
+    }
     SWRevealViewController *grandParentRevealController = self.revealViewController.revealViewController;
     grandParentRevealController.bounceBackOnOverdraw = NO;
 }
@@ -191,7 +196,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-	return 5;
+	return 6;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -226,9 +231,13 @@
     }
     else if (row == 3)
     {
-        text = @"Setting";
+        text = @"Search";
     }
     else if (row == 4)
+    {
+        text = @"Setting";
+    }
+    else if (row == 5)
     {
         if (self.appd.isShared == true) {
             text = @"Hide Me";
@@ -254,7 +263,7 @@
     // we'll just set position and return
     if ( row == _presentedRow )
     {
-        if (row != 4) {
+        if (row != 5) {
             [revealController setFrontViewPosition:FrontViewPositionLeft animated:YES];
             return;
         }
@@ -280,13 +289,20 @@
         }
             break;
         case 3:{
+            SearchPeopleViewController *searchPeopleViewController = [[SearchPeopleViewController alloc] init];
+            newFrontController = [[UINavigationController alloc] initWithRootViewController:searchPeopleViewController];
+            //            AppSettingViewController *settingViewController =[[AppSettingViewController alloc] init];
+            //            newFrontController = [[UINavigationController alloc] initWithRootViewController:settingViewController];
+        }
+            break;
+        case 4:{
             SetingsViewController *settingViewController = [[SetingsViewController alloc] init];
             newFrontController = [[UINavigationController alloc] initWithRootViewController:settingViewController];
 //            AppSettingViewController *settingViewController =[[AppSettingViewController alloc] init];
 //            newFrontController = [[UINavigationController alloc] initWithRootViewController:settingViewController];
         }
             break;
-        case 4:{
+        case 5:{
             if (self.appd.isShared == true) {
                 cell.textLabel.text = @"Show Me";
                 self.appd.isShared = false;
@@ -348,8 +364,8 @@
 //        newFrontController = [[UINavigationController alloc] initWithRootViewController:profilView];
     }
     
-    if (indexPath.row != 4) {
-        NSLog(@"not 4");
+    if (indexPath.row != 5) {
+        NSLog(@"not 5");
         [revealController pushFrontViewController:newFrontController animated:YES];
         
         _presentedRow = row;  // <- store the presented row
